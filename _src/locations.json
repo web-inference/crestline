@@ -1,0 +1,18 @@
+[
+  {
+    "src": "palo-alto.main.html",
+    "out": "palo-alto.html",
+    "title": "Palo Alto Property Management | Crestline Property Management",
+    "desc": "Local, hands-on property management in Palo Alto for homes, condos and small multifamily properties. Tenant screening, rent collection and full Palo Alto rent-rule compliance.",
+    "ctitle": "Get a free rental analysis<br>for your <em>Palo Alto</em> home.",
+    "clead": "Tell us about your Palo Alto property and we’ll send a free rental analysis within 2 business days."
+  },
+  {
+    "src": "location-template.main.html",
+    "out": "location-template.html",
+    "title": "[City] Property Management | Crestline Property Management",
+    "desc": "Local, hands-on property management in [City], CA. Tenant screening, rent collection, maintenance and [City] rent-rule compliance.",
+    "ctitle": "Get a free rental analysis<br>for your <em>[City]</em> home.",
+    "clead": "Tell us about your [City] property and we’ll send a free rental analysis within 2 business days."
+  }
+]

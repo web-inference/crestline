@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Palo Alto Property Management | Crestline Property Management</title>
+  <meta name="description" content="Local, hands-on property management in Palo Alto for homes, condos and small multifamily properties. Tenant screening, rent collection and full Palo Alto rent-rule compliance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- Icon sprite (same icons as assets/icons/*.svg for Elementor upload) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 10h18"/><path d="M7 15h4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.3 5.3L3.6 17.4a1.8 1.8 0 0 0 2.6 2.6l5.8-5.8a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.4-.6-.6-2.4z"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H5.5v17h13V4H15"/><rect x="9" y="2.5" width="6" height="3"/><path d="m9 13 2 2 4-4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20v-9"/><path d="M10 20V5"/><path d="M14 20v-8"/><path d="M18 20v-4"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6.5a1.5 1.5 0 0 0-3 0V11"/><path d="M15 10.5V4.5a1.5 1.5 0 0 0-3 0v6"/><path d="M12 10.5V5.5a1.5 1.5 0 0 0-3 0V13"/><path d="M9 13v-2.5a1.5 1.5 0 0 0-3 0V15a6 6 0 0 0 6 6h1.5a4.5 4.5 0 0 0 4.5-4.5V11"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="3.5"/><path d="m9.5 14.5 10-10"/><path d="m15.5 8.5 2.5 2.5"/><path d="m18 6 2 2"/></symbol>
+    <symbol id="i-house-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-17z"/><path d="m8.5 14 2.5 2.5 4.5-4.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 5.8V12c0 4.4 3.2 7.9 7.5 9 4.3-1.1 7.5-4.6 7.5-9V5.8z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ TOP BAR ============ -->
+<div class="cl-topbar">
+  <div class="cl-container">
+    <div class="cl-topbar__left">
+      <a href="tel:6508890570">650 889 0570</a>
+      <a href="mailto:realtor@baliliu.homes">realtor@baliliu.homes</a>
+    </div>
+    <div class="cl-topbar__right">Licensed &amp; Insured · DRE #01234567</div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="cl-header" id="top">
+  <div class="cl-container">
+    <a href="index.html" class="cl-logo" aria-label="Crestline Property Management home">
+      <span class="cl-logo__name">Crestline</span>
+      <span class="cl-logo__sub">Property Management</span>
+    </a>
+    <nav class="cl-nav" aria-label="Main">
+      <ul class="cl-nav__list">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="index.html#services">Owner Services</a></li>
+        <li><a href="service-areas.html" class="is-active">Service Areas</a></li>
+        <li><a href="index.html#fees">Fees</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+      </ul>
+      <a href="#contact" class="cl-btn cl-btn--gold">Free Rental Analysis</a>
+    </nav>
+    <button class="cl-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- PALO ALTO — generated from data/cities/palo-alto.js by _src/render-location.js. Edit the data file, not this file. -->
+
+<!-- ============ 1. HERO ============ -->
+<section class="cl-hero cl-hero--page">
+  <div class="cl-container">
+    <div class="cl-hero__copy">
+      <nav class="cl-crumbs" aria-label="Breadcrumb" data-reveal="fade"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="service-areas.html">Service Areas</a><span aria-hidden="true">/</span><span>Palo Alto</span></nav>
+      <div class="cl-eyebrow" data-reveal="fade">Santa Clara County · Service Area</div>
+      <h1 class="cl-h cl-h--light cl-h1">
+        <span class="line"><span>Palo Alto</span></span>
+        <span class="line"><span><em>Property Management</em></span></span>
+      </h1>
+      <p class="cl-lead" data-reveal style="--d:.45s">Local, hands-on management for homes, condos, and small multifamily properties in Palo Alto. We find good tenants, take care of your property, and keep you compliant so you don’t have to worry about the day-to-day.</p>
+      <div class="cl-hero__btns" data-reveal style="--d:.6s">
+        <a href="#contact" class="cl-btn cl-btn--gold">Get a Free Rental Analysis <span class="arr">→</span></a>
+        <a href="tel:6508890570" class="cl-btn cl-btn--outline">Call 650 889 0570</a>
+      </div>
+    </div>
+    <div class="cl-hero__frame" data-reveal="fade" style="--d:.2s">
+      <div class="cl-ph cl-ph--dark" data-reveal="wipe" style="--d:.3s">
+        <div class="cl-ph__inner cl-parallax" data-speed="0.06"><svg><use href="#i-image"/></svg>Palo Alto hero · 5:4
+          <span class="cl-ph__prompt">Tree-lined street in Palo Alto's Professorville with historic Craftsman and shingle-style homes under mature oaks, golden-hour light, editorial real-estate photography, photorealistic, no text</span>
+        </div>
+      </div>
+      <div class="cl-hero__tag" data-reveal style="--d:.9s">Professorville · Crescent Park · College Terrace</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. KEY TAKEAWAYS ============ -->
+<section class="cl-takeaways">
+  <div class="cl-container">
+    <div class="cl-take" data-reveal>
+      <div class="cl-icon"><svg><use href="#i-chart"/></svg></div>
+      <h3>Real Local Pricing</h3>
+      <p>Managed by a Coldwell Banker Realtor with recent Palo Alto sales, so pricing and advice come from real local market experience.</p>
+    </div>
+    <div class="cl-take" data-reveal style="--d:.1s">
+      <div class="cl-icon"><svg><use href="#i-key"/></svg></div>
+      <h3>We Know the Renters</h3>
+      <p>Experience with Palo Alto’s renters: Stanford faculty and staff, visiting scholars, medical professionals, and families moving for the schools.</p>
+    </div>
+    <div class="cl-take" data-reveal style="--d:.2s">
+      <div class="cl-icon"><svg><use href="#i-shield"/></svg></div>
+      <h3>Compliance Built In</h3>
+      <p>Built-in compliance with Palo Alto’s 1-year lease offer, Rental Registry, and relocation rules.</p>
+    </div>
+    <div class="cl-take" data-reveal style="--d:.3s">
+      <div class="cl-icon"><svg><use href="#i-hand"/></svg></div>
+      <h3>English &amp; 中文 Support</h3>
+      <p>English and Mandarin support for local, out-of-state, and overseas owners.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. ABOUT THE CITY ============ -->
+<section class="cl-section bg-cream cl-about">
+  <div class="cl-container cl-split">
+    <div class="cl-about__media" data-reveal="left">
+      <div class="cl-ph cl-zoom"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>About Palo Alto · 9:8
+        <span class="cl-ph__prompt">A towering old coastal redwood beside a shaded creek in Palo Alto, California, soft dappled morning light through the canopy, calm and timeless mood, editorial travel photography, photorealistic, no people, no text</span></div></div>
+      <div class="cl-about__badge" data-reveal style="--d:.35s">
+        <div class="cl-h">Palo Alto</div>
+        <span>Santa Clara County</span>
+      </div>
+    </div>
+    <div class="cl-about__copy">
+      <div class="cl-eyebrow" data-reveal>About Palo Alto</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Why owners rent<br>in <em>Palo Alto.</em></h2>
+      <div data-reveal style="--d:.2s">
+        <p>Palo Alto took its name from El Palo Alto, a tall redwood by San Francisquito Creek, and grew up alongside Stanford University after Leland and Jane Stanford founded the school in the 1890s. The Hewlett-Packard garage on Addison Avenue earned the city its reputation as the birthplace of Silicon Valley, and Stanford Research Park is still home to companies like HP and VMware today.</p>
+        <p>Away from the tech headlines, most of the city is quiet and residential, with historic homes in the north and mid-century Eichlers and ranch houses in Midtown and South Palo Alto. Families are drawn by the Palo Alto Unified School District, dozens of neighborhood parks, and open space that stretches from Foothills Park to the Baylands.</p>
+      </div>
+      <div class="cl-mini-stats" data-reveal style="--d:.3s">
+        <div><strong>44%</strong><span>Homes rented</span></div>
+        <div><strong>Stanford</strong><span>Largest employer</span></div>
+        <div><strong>Caltrain</strong><span>Transit</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. MARKET SNAPSHOT ============ -->
+<section class="cl-section bg-deep">
+  <div class="cl-container">
+    <div class="cl-head">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Rental Market Snapshot</div>
+        <h2 class="cl-h cl-h--light cl-h2" data-reveal style="--d:.1s">Palo Alto rents <em>at a glance</em></h2>
+      </div>
+      <p class="cl-head__aside" style="color:var(--text-light);--d:.2s" data-reveal>Typical asking rents in Palo Alto. We price every home individually, using recent comps from your street and school area.</p>
+    </div>
+    <div class="cl-tiles" data-reveal style="--d:.15s">
+      <div class="cl-tile"><div class="cl-tile__num"><em>~</em>$2,900</div><div class="cl-tile__label">1 Bed Apartment</div></div>
+      <div class="cl-tile"><div class="cl-tile__num"><em>~</em>$4,300</div><div class="cl-tile__label">2 Bed Apartment</div></div>
+      <div class="cl-tile"><div class="cl-tile__num"><em>~</em>$7,100</div><div class="cl-tile__label">3 Bed House</div></div>
+      <div class="cl-tile"><div class="cl-tile__num"><em>~</em>$10,600</div><div class="cl-tile__label">4+ Bed House</div></div>
+      <div class="cl-tile"><div class="cl-tile__num">44%</div><div class="cl-tile__label">Homes Rented</div></div>
+      <div class="cl-tile"><div class="cl-tile__num"><em>~</em>$2M</div><div class="cl-tile__label">Median Home Value</div></div>
+    </div>
+    <p class="cl-dark-note" data-reveal>Source: Rentometer, May 2026. Figures are approximate and change with the market.</p>
+  </div>
+</section>
+
+<!-- ============ 5. WHO RENTS ============ -->
+<section class="cl-section bg-sand">
+  <div class="cl-container">
+    <div class="cl-head cl-head--wide">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Who Rents Here</div>
+        <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Who rents in <em>Palo Alto</em></h2>
+      </div>
+      <p class="cl-head__quote" data-reveal style="--d:.2s">Knowing your renters means faster leasing and longer tenancies.</p>
+    </div>
+    <div class="cl-cards">
+      <div class="cl-card cl-card--top" data-reveal>
+        <div class="cl-icon"><svg><use href="#i-key"/></svg></div>
+        <h3 class="cl-h cl-h3">Stanford Community</h3>
+        <p>Stanford is the city’s largest employer, so faculty, postdocs, visiting scholars, and Stanford Health Care staff are a big part of the rental market. Many come for 1–2 years and look for move-in ready homes close to campus.</p>
+      </div>
+      <div class="cl-card cl-card--top" data-reveal style="--d:.12s">
+        <div class="cl-icon"><svg><use href="#i-chart"/></svg></div>
+        <h3 class="cl-h cl-h3">Tech Professionals</h3>
+        <p>Employees at Stanford Research Park, HP, VMware, and startups along University and California Avenues often want walkable homes near Caltrain.</p>
+      </div>
+      <div class="cl-card cl-card--top" data-reveal style="--d:.24s">
+        <div class="cl-icon"><svg><use href="#i-home"/></svg></div>
+        <h3 class="cl-h cl-h3">Families</h3>
+        <p>Many families rent while they wait to buy, choosing homes inside the Gunn or Palo Alto High attendance areas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. HOW WE MANAGE ============ -->
+<section class="cl-section bg-white cl-process">
+  <div class="cl-container cl-split">
+    <div>
+      <div class="cl-eyebrow" data-reveal>Our Services</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">How we manage<br><em>Palo Alto homes.</em></h2>
+      <p class="cl-process__intro" data-reveal style="--d:.2s">Full-service management built around Palo Alto’s market, homes and rules. Five things we do for every owner.</p>
+      <div class="cl-ph cl-zoom" data-reveal="wipe" style="--d:.2s"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Services image · 5:3
+        <span class="cl-ph__prompt">Interior of a mid-century Eichler home in Palo Alto, floor-to-ceiling glass walls opening to a garden atrium, exposed post-and-beam ceiling, warm wood, staged with neutral furniture and navy accents, soft daylight, interior real-estate photography, photorealistic, no people</span></div></div>
+      <a href="#contact" class="cl-btn cl-btn--navy" data-reveal>Get a Free Rental Analysis <span class="arr">→</span></a>
+    </div>
+    <div class="cl-timeline">
+      <span class="cl-timeline__track"></span>
+      <span class="cl-timeline__fill"></span>
+      <div class="cl-step" data-reveal="right">
+        <div class="cl-step__title"><span class="cl-num">01</span><h3 class="cl-h cl-h3">Pricing by Neighborhood &amp; School Area</h3></div>
+        <p>Rents in Palo Alto can vary a lot from one street to the next. We price using recent local comps, school boundaries, and the timing of Stanford’s academic calendar to cut vacancy.</p>
+        <div class="cl-meta">Local comps · Academic calendar</div>
+      </div>
+      <div class="cl-step" data-reveal="right" style="--d:.1s">
+        <div class="cl-step__title"><span class="cl-num">02</span><h3 class="cl-h cl-h3">Care for Older Homes &amp; Eichlers</h3></div>
+        <p>Many Palo Alto homes were built before 1970, and Eichlers have features like radiant floor heating and flat roofs. We schedule preventive maintenance and use trusted local vendors who know these homes.</p>
+        <div class="cl-meta">Preventive maintenance</div>
+      </div>
+      <div class="cl-step" data-reveal="right" style="--d:.2s">
+        <div class="cl-step__title"><span class="cl-num">03</span><h3 class="cl-h cl-h3">Tenant Screening</h3></div>
+        <p>Credit, income, employment, and rental history checks, with flexibility for international scholars and new arrivals who may not have a U.S. credit history.</p>
+        <div class="cl-meta">International-friendly</div>
+      </div>
+      <div class="cl-step" data-reveal="right" style="--d:.3s">
+        <div class="cl-step__title"><span class="cl-num">04</span><h3 class="cl-h cl-h3">Palo Alto Compliance</h3></div>
+        <p>We handle the 1-year lease offer, annual Rental Registry filing for 3+ unit properties, required notices, and relocation rules, and stay on top of changes from City Council.</p>
+        <div class="cl-meta">Lease · Registry · Notices</div>
+      </div>
+      <div class="cl-step cl-step--last" data-reveal="right" style="--d:.4s">
+        <div class="cl-step__title"><span class="cl-num">05</span><h3 class="cl-h cl-h3">Reporting</h3></div>
+        <p>Online rent collection, monthly owner statements, photo inspections at move-in and move-out, and year-end tax documents.</p>
+        <div class="cl-meta">Monthly statements</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. NEIGHBORHOODS ============ -->
+<section class="cl-section bg-cream">
+  <div class="cl-container">
+    <div class="cl-head">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Neighborhoods We Serve</div>
+        <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Across <em>Palo Alto</em></h2>
+      </div>
+      <p class="cl-head__aside" data-reveal style="--d:.2s">Rents can change a lot from one street to the next. We know what each neighborhood offers and who it suits.</p>
+    </div>
+    <div class="cl-hoods">
+      <div class="cl-hood" data-reveal><h3 class="cl-h cl-h3">Downtown North, University South &amp; Professorville</h3><p>Historic homes within walking distance of University Ave and the downtown Caltrain station.</p></div>
+      <div class="cl-hood" data-reveal style="--d:.1s"><h3 class="cl-h cl-h3">Crescent Park &amp; Old Palo Alto</h3><p>Large lots and tree-lined streets, popular with families and executives.</p></div>
+      <div class="cl-hood" data-reveal style="--d:.2s"><h3 class="cl-h cl-h3">College Terrace &amp; Evergreen Park</h3><p>Steps from Stanford and California Ave, a favorite for university staff and scholars.</p></div>
+      <div class="cl-hood" data-reveal><h3 class="cl-h cl-h3">Midtown &amp; Palo Verde</h3><p>Central, family-friendly, with Eichlers and easy access to Highway 101.</p></div>
+      <div class="cl-hood" data-reveal style="--d:.1s"><h3 class="cl-h cl-h3">Barron Park, Green Acres &amp; South Palo Alto</h3><p>Quieter streets near Gunn High School, Bol Park, and El Camino Real.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. LOCAL RENT RULES ============ -->
+<section class="cl-section bg-white">
+  <div class="cl-container">
+    <div class="cl-head">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Local Rent Rules</div>
+        <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Palo Alto rules,<br><em>handled for you.</em></h2>
+      </div>
+      <p class="cl-head__aside" data-reveal style="--d:.2s">A plain-English summary of the rules that apply to Palo Alto rentals. Not legal advice. We keep up with every change from City Council.</p>
+    </div>
+    <div class="cl-rules-wrap">
+      <div class="cl-rules">
+        <div class="cl-rule-row" data-reveal><span class="cl-num">01</span><div><h3>One-Year Lease</h3><p>Landlords must offer a lease of at least 1 year (PAMC 9.68.030). A shorter lease can only be offered if the tenant turns down the 1-year lease first.</p></div></div>
+        <div class="cl-rule-row" data-reveal><span class="cl-num">02</span><div><h3>Just Cause Eviction</h3><p>Palo Alto expanded just cause eviction protections to more renters than state law covers. The city’s protections are permanent, while the state’s (AB 1482) are set to end in 2030.</p></div></div>
+        <div class="cl-rule-row" data-reveal><span class="cl-num">03</span><div><h3>Relocation Assistance</h3><p>Required for no-fault evictions. Properties with fewer than 10 units: 1 month’s rent (or waive the last month) within 15 days of the notice. Properties with 10+ units: about $8,400 (studio) to $20,400 (3+ bed), plus about $3,600 extra if the household is low-income, 60+, has a disability, or includes a minor. Amounts update every July 1.</p></div></div>
+        <div class="cl-rule-row" data-reveal><span class="cl-num">04</span><div><h3>Security Deposit</h3><p>City limit is 1.5x monthly rent for unfurnished units (since July 2023). State law (AB 12, since July 2024) is stricter for most landlords at 1 month’s rent.</p></div></div>
+        <div class="cl-rule-row" data-reveal><span class="cl-num">05</span><div><h3>Rental Registry</h3><p>Properties with 3+ units must register every year ($40/unit). 2026–27 registration is open Oct 1, 2026 – Jan 19, 2027. Rent changes, new tenants, and notices must be reported within 10 days. Late registration can result in a citation.</p></div></div>
+        <div class="cl-rule-row" data-reveal><span class="cl-num">06</span><div><h3>Mandatory Mediation</h3><p>Many landlord-tenant disputes require a response through the free Palo Alto Mediation Program (650-856-4062).</p></div></div>
+        <div class="cl-rule-row" data-reveal><span class="cl-num">07</span><div><h3>Other Resources</h3><p>Palo Alto Tenant Guide (English, Spanish, Chinese), Project Sentinel housing counseling, and California Apartment Association forms.</p></div></div>
+      </div>
+      <aside class="cl-aside" data-reveal="right" style="--d:.15s">
+        <div class="cl-eyebrow">City Resource</div>
+        <h3>Official Palo Alto tenant &amp; landlord resources</h3>
+        <p>Always confirm current amounts and dates with the city. We do this for every property we manage.</p>
+        <dl>
+          <dt>City help line</dt><dd>Palo Alto Mediation Program · 650-856-4062</dd>
+          <dt>Last reviewed</dt><dd>May 2026</dd>
+        </dl>
+        <a href="https://www.paloalto.gov/City-Hall/Housing/Tenant-Landlord-Resources/Tenant-Resources" class="cl-btn cl-btn--gold" target="_blank" rel="noopener">Visit City Website <span class="arr">↗</span></a>
+        <p class="cl-sources" style="color:#8d96a6;margin:22px 0 0">Sources: Utopia Management, Belong, Awning, Rentometer (May 2026), City of Palo Alto Tenant &amp; Landlord Resources</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. FEES ============ -->
+<section class="cl-section bg-sand" style="padding-bottom:0">
+  <div class="cl-container">
+    <div class="cl-feeband" data-reveal>
+      <div>
+        <div class="cl-eyebrow">Management Fees</div>
+        <h2 class="cl-h cl-h--light cl-h2">Simple, <em>honest</em> pricing</h2>
+        <a href="index.html#fees" class="cl-link">See All Fees <span class="arr">→</span></a>
+      </div>
+      <div class="cl-feeband__items">
+        <div class="cl-fee"><strong>8%</strong><span>of monthly rent collected, full management</span></div>
+        <div class="cl-fee"><strong>75%</strong><span>of first month’s rent, leasing only</span></div>
+        <div class="cl-fee"><strong>$0</strong><span>hidden fees and no markup on maintenance</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. REVIEW ============ -->
+<section class="cl-section bg-sand">
+  <div class="cl-container">
+    <div class="cl-feature-quote" data-reveal>
+      <div class="cl-eyebrow cl-eyebrow--center">Owner Feedback</div>
+      <div class="cl-quote__mark">“</div>
+      <blockquote>Clear statements every month, quick answers and repairs handled at fair prices. It finally feels like someone is looking after my property properly.</blockquote>
+      <div class="cl-quote__who"><div class="cl-avatar">DK</div><span>David K. · Owner, Palo Alto</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. FAQ ============ -->
+<section class="cl-section bg-white">
+  <div class="cl-container">
+    <div class="cl-head cl-head--center" style="margin-bottom:0">
+      <div class="cl-eyebrow cl-eyebrow--center" data-reveal>Palo Alto Owner Questions</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Palo Alto <em>FAQs</em></h2>
+    </div>
+    <div class="cl-faq" data-reveal style="--d:.2s">
+      <div class="cl-faq__item is-open">
+        <button class="cl-faq__q" aria-expanded="true">How much does property management cost in Palo Alto?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>Full management is 8% of the monthly rent collected, and leasing only is 75% of the first month’s rent, plus a one-time $250 setup fee. We keep pricing simple, with no hidden charges and no markup on maintenance.</p></div></div>
+      </div>
+      <div class="cl-faq__item">
+        <button class="cl-faq__q" aria-expanded="false">Do I have to offer my tenant a 1-year lease?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>Yes. Palo Alto requires landlords to offer a lease of at least 1 year. A shorter term is only allowed if the tenant turns down the 1-year lease first.</p></div></div>
+      </div>
+      <div class="cl-faq__item">
+        <button class="cl-faq__q" aria-expanded="false">Do I need to register my rental with the city?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>If your property has 3 or more units, yes, every year. We can handle the registration and the 10-day event reporting for you.</p></div></div>
+      </div>
+      <div class="cl-faq__item">
+        <button class="cl-faq__q" aria-expanded="false">Can you rent to a visiting Stanford scholar?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>Yes. We regularly screen international and relocating tenants and can set lease terms that work around the academic year, while still meeting Palo Alto’s lease rules.</p></div></div>
+      </div>
+      <div class="cl-faq__item">
+        <button class="cl-faq__q" aria-expanded="false">Can you manage my home if I live out of state or overseas?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>Yes. Many owners live outside the Bay Area. You get online statements, photo inspection reports, and one point of contact in English or Mandarin.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. NEARBY CITIES ============ -->
+<section class="cl-section bg-cream" style="padding:80px 0">
+  <div class="cl-container cl-nearby">
+    <div>
+      <div class="cl-eyebrow" data-reveal>Nearby Cities</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Also near <em>Palo Alto</em></h2>
+    </div>
+    <div class="cl-chips" data-reveal style="--d:.15s">
+      <a href="service-areas.html#cities" class="cl-chip">Menlo Park <span class="arr">→</span></a>
+      <a href="service-areas.html#cities" class="cl-chip">Mountain View <span class="arr">→</span></a>
+      <a href="service-areas.html#cities" class="cl-chip">Los Altos <span class="arr">→</span></a>
+      <a href="service-areas.html#cities" class="cl-chip">Sunnyvale <span class="arr">→</span></a>
+      <a href="service-areas.html" class="cl-chip">All Service Areas <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. CONTACT ============ -->
+<section class="cl-section bg-navy cl-contact" id="contact">
+  <div class="cl-container cl-split">
+    <div>
+      <div class="cl-eyebrow" data-reveal>Get in Touch</div>
+      <h2 class="cl-h cl-h--light cl-h2" data-reveal style="--d:.1s">Get a free rental analysis<br>for your <em>Palo Alto</em> home.</h2>
+      <p class="cl-lead" data-reveal style="--d:.2s">Tell us about your Palo Alto property and we’ll send a free rental analysis within 2 business days.</p>
+      <ul class="cl-contact__info" data-reveal style="--d:.3s">
+        <li><a href="tel:6508890570">650 889 0570</a></li>
+        <li><a href="mailto:realtor@baliliu.homes">realtor@baliliu.homes</a></li>
+        <li>175 S San Antonio Rd, #100, Los Altos, CA</li>
+      </ul>
+    </div>
+    <form class="cl-form" data-reveal="right" style="--d:.15s" novalidate>
+      <div class="cl-field cl-field--half"><label for="f-name">Name</label><input id="f-name" name="name" type="text" required></div>
+      <div class="cl-field cl-field--half"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel"></div>
+      <div class="cl-field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+      <div class="cl-field"><label for="f-address">Property Address</label><input id="f-address" name="address" type="text"></div>
+      <div class="cl-field"><label for="f-message">Message</label><textarea id="f-message" name="message"></textarea></div>
+      <input class="cl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="cl-form__note">Spam protected (reCAPTCHA / honeypot)</p>
+      <button type="submit" class="cl-btn cl-btn--gold">Request Free Analysis <span class="arr">→</span></button>
+      <p class="cl-form__ok" role="status">Thank you. We’ll be in touch within 2 business days.</p>
+    </form>
+  </div>
+</section>
+
+
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="cl-footer">
+  <div class="cl-container">
+    <div class="cl-footer__grid">
+      <div>
+        <div class="cl-logo"><span class="cl-logo__name">Crestline</span><span class="cl-logo__sub">Property Management</span></div>
+        <p class="cl-footer__about">Thoughtful property management for Bay Area homeowners.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Owner Services</a></li>
+          <li><a href="index.html#fees">Fees</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="palo-alto.html">Palo Alto</a></li>
+          <li><a href="service-areas.html">Mountain View</a></li>
+          <li><a href="service-areas.html">Sunnyvale</a></li>
+          <li><a href="service-areas.html">San Jose</a></li>
+          <li><a href="service-areas.html">Menlo Park</a></li>
+          <li><a href="service-areas.html">Foster City</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:6508890570">650 889 0570</a></li>
+          <li><a href="mailto:realtor@baliliu.homes">realtor@baliliu.homes</a></li>
+          <li>175 S San Antonio Rd, #100, Los Altos, CA</li>
+          <li>DRE #01234567</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="cl-container">
+    <div class="cl-footer__bar">
+      <span>© 2026 Crestline Property Management. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Fair Housing</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

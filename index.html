@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crestline Property Management | Bay Area Property Management</title>
+  <meta name="description" content="Thoughtful, hands-on property management for Bay Area homeowners. Tenant screening, leasing, rent collection and maintenance in Los Altos, Palo Alto, Mountain View and Sunnyvale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- Icon sprite (same icons as assets/icons/*.svg for Elementor upload) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 10h18"/><path d="M7 15h4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.3 5.3L3.6 17.4a1.8 1.8 0 0 0 2.6 2.6l5.8-5.8a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.4-.6-.6-2.4z"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H5.5v17h13V4H15"/><rect x="9" y="2.5" width="6" height="3"/><path d="m9 13 2 2 4-4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20v-9"/><path d="M10 20V5"/><path d="M14 20v-8"/><path d="M18 20v-4"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6.5a1.5 1.5 0 0 0-3 0V11"/><path d="M15 10.5V4.5a1.5 1.5 0 0 0-3 0v6"/><path d="M12 10.5V5.5a1.5 1.5 0 0 0-3 0V13"/><path d="M9 13v-2.5a1.5 1.5 0 0 0-3 0V15a6 6 0 0 0 6 6h1.5a4.5 4.5 0 0 0 4.5-4.5V11"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="3.5"/><path d="m9.5 14.5 10-10"/><path d="m15.5 8.5 2.5 2.5"/><path d="m18 6 2 2"/></symbol>
+    <symbol id="i-house-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-17z"/><path d="m8.5 14 2.5 2.5 4.5-4.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 5.8V12c0 4.4 3.2 7.9 7.5 9 4.3-1.1 7.5-4.6 7.5-9V5.8z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ TOP BAR ============ -->
+<div class="cl-topbar">
+  <div class="cl-container">
+    <div class="cl-topbar__left">
+      <a href="tel:6508890570">650 889 0570</a>
+      <a href="mailto:realtor@baliliu.homes">realtor@baliliu.homes</a>
+    </div>
+    <div class="cl-topbar__right">Licensed &amp; Insured · DRE #01234567</div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="cl-header" id="top">
+  <div class="cl-container">
+    <a href="#top" class="cl-logo" aria-label="Crestline Property Management home">
+      <span class="cl-logo__name">Crestline</span>
+      <span class="cl-logo__sub">Property Management</span>
+    </a>
+    <nav class="cl-nav" aria-label="Main">
+      <ul class="cl-nav__list">
+        <li><a href="#top" class="is-active">Home</a></li>
+        <li><a href="#services">Owner Services</a></li>
+        <li><a href="#areas">Service Areas</a></li>
+        <li><a href="#fees">Fees</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+      <a href="#contact" class="cl-btn cl-btn--gold">Free Rental Analysis</a>
+    </nav>
+    <button class="cl-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="cl-hero">
+  <div class="cl-container">
+    <div class="cl-hero__copy">
+      <div class="cl-eyebrow" data-reveal="fade">Bay Area Property Management</div>
+      <h1 class="cl-h cl-h--light cl-h1">
+        <span class="line"><span>Need Property</span></span>
+        <span class="line"><span>Management?</span></span>
+        <span class="line"><span><em>We’ll take it from here.</em></span></span>
+      </h1>
+      <p class="cl-lead" data-reveal style="--d:.45s">Thoughtful, hands-on care for your rental home. We find great tenants, look after the property and keep you informed, so you can enjoy the returns without the stress.</p>
+      <div class="cl-hero__btns" data-reveal style="--d:.6s">
+        <a href="#contact" class="cl-btn cl-btn--gold">Get a Free Rental Analysis <span class="arr">→</span></a>
+        <a href="#services" class="cl-btn cl-btn--outline">Explore Our Services</a>
+      </div>
+    </div>
+    <div class="cl-hero__frame" data-reveal="fade" style="--d:.2s">
+      <div class="cl-ph cl-ph--dark" data-reveal="wipe" style="--d:.3s">
+        <div class="cl-ph__inner cl-parallax" data-speed="0.06"><svg><use href="#i-image"/></svg>Hero image · 1:1</div>
+      </div>
+      <div class="cl-hero__tag" data-reveal style="--d:.9s">Los Altos · Palo Alto · Mountain View</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="cl-stats">
+  <div class="cl-container">
+    <div class="cl-stat" data-reveal>
+      <div class="cl-stat__num"><span data-count="10">10</span>+</div>
+      <div class="cl-stat__label">Years in Property Management</div>
+    </div>
+    <div class="cl-stat" data-reveal style="--d:.12s">
+      <div class="cl-stat__num"><span data-count="100">100</span>%</div>
+      <div class="cl-stat__label">Transparent</div>
+    </div>
+    <div class="cl-stat" data-reveal style="--d:.24s">
+      <div class="cl-stat__num">$<span data-count="0">0</span></div>
+      <div class="cl-stat__label">Hidden Fees</div>
+    </div>
+    <div class="cl-stat" data-reveal style="--d:.36s">
+      <div class="cl-stat__num">Bay Area</div>
+      <div class="cl-stat__label">Local Market Experts</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="cl-section bg-cream cl-about" id="about">
+  <div class="cl-container cl-split">
+    <div class="cl-about__media" data-reveal="left">
+      <div class="cl-ph cl-zoom"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>About image · 9:8</div></div>
+      <div class="cl-about__badge" data-reveal style="--d:.35s">
+        <div class="cl-h">Los Altos</div>
+        <span>Local, Boutique Team</span>
+      </div>
+    </div>
+    <div class="cl-about__copy">
+      <div class="cl-eyebrow" data-reveal>Who We Are</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Local people,<br><em>personal service.</em></h2>
+      <div data-reveal style="--d:.2s">
+        <p>We are a boutique property management team based in Los Altos. For more than ten years we have helped Bay Area homeowners rent their properties with confidence, without the stress of handling tenants, repairs and paperwork on their own.</p>
+        <p>We keep our portfolio small on purpose. That way every owner gets personal attention, honest advice and a team that treats their home like its own.</p>
+      </div>
+      <a href="#about" class="cl-link" data-reveal style="--d:.3s">More About Us <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY HIRE US ============ -->
+<section class="cl-section bg-navy cl-why">
+  <div class="cl-container cl-split">
+    <div>
+      <div class="cl-eyebrow" data-reveal>Why Hire Us</div>
+      <h2 class="cl-h cl-h--light cl-h2" data-reveal style="--d:.1s">Less stress for you, <em>more from your rental.</em></h2>
+      <p class="cl-lead" data-reveal style="--d:.2s">Owning a rental should grow your wealth, not take over your weekends. We handle the day-to-day work so you can enjoy the returns with confidence.</p>
+      <a href="#contact" class="cl-btn cl-btn--gold" data-reveal style="--d:.3s">Talk to Us <span class="arr">→</span></a>
+    </div>
+    <div class="cl-why__grid">
+      <div class="cl-why__item" data-reveal>
+        <span class="cl-num">01</span>
+        <h3 class="cl-h cl-h3">One Dedicated Manager</h3>
+        <p>A single point of contact who knows your property, your tenants and your goals.</p>
+      </div>
+      <div class="cl-why__item" data-reveal style="--d:.12s">
+        <span class="cl-num">02</span>
+        <h3 class="cl-h cl-h3">Fewer Vacant Days</h3>
+        <p>Smart pricing and strong marketing help your home rent quickly, so it keeps earning.</p>
+      </div>
+      <div class="cl-why__item" data-reveal style="--d:.24s">
+        <span class="cl-num">03</span>
+        <h3 class="cl-h cl-h3">Honest, Simple Pricing</h3>
+        <p>One clear management fee, no surprise charges and no markup on repairs.</p>
+      </div>
+      <div class="cl-why__item" data-reveal style="--d:.36s">
+        <span class="cl-num">04</span>
+        <h3 class="cl-h cl-h3">Flexible Agreements</h3>
+        <p>No long lock-in contracts. Simple terms that keep you in control of your property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="cl-section bg-white" id="services">
+  <div class="cl-container">
+    <div class="cl-head">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Owner Services</div>
+        <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">What <em>We Do</em></h2>
+      </div>
+      <p class="cl-head__aside" data-reveal style="--d:.2s">Full-service management for single-family homes, condos and small multi-unit properties. Everything you need, under one roof.</p>
+    </div>
+    <div class="cl-services">
+      <div class="cl-service" data-reveal>
+        <div class="cl-icon"><svg><use href="#i-search"/></svg></div>
+        <h3 class="cl-h cl-h3">Tenant Screening</h3>
+        <p>Credit, background, income and rental history checks to keep bad tenants out.</p>
+      </div>
+      <div class="cl-service" data-reveal style="--d:.1s">
+        <div class="cl-icon"><svg><use href="#i-home"/></svg></div>
+        <h3 class="cl-h cl-h3">Marketing &amp; Leasing</h3>
+        <p>Professional photos, listings and showings that fill vacancies quickly.</p>
+      </div>
+      <div class="cl-service" data-reveal style="--d:.2s">
+        <div class="cl-icon"><svg><use href="#i-card"/></svg></div>
+        <h3 class="cl-h cl-h3">Rent Collection</h3>
+        <p>On-time rent collection and fast deposits straight to your account.</p>
+      </div>
+      <div class="cl-service" data-reveal style="--d:.3s">
+        <div class="cl-icon"><svg><use href="#i-wrench"/></svg></div>
+        <h3 class="cl-h cl-h3">Maintenance &amp; Repairs</h3>
+        <p>Trusted local vendors and fair pricing, with your approval on larger jobs.</p>
+      </div>
+      <div class="cl-service" data-reveal style="--d:.4s">
+        <div class="cl-icon"><svg><use href="#i-clipboard"/></svg></div>
+        <h3 class="cl-h cl-h3">Property Inspections</h3>
+        <p>Move-in, routine and move-out inspections with photo reports.</p>
+      </div>
+      <div class="cl-service" data-reveal style="--d:.5s">
+        <div class="cl-icon"><svg><use href="#i-chart"/></svg></div>
+        <h3 class="cl-h cl-h3">Owner Reporting</h3>
+        <p>Detailed income and expense records, plus year-end tax documents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR APPROACH ============ -->
+<section class="cl-section bg-sand">
+  <div class="cl-container">
+    <div class="cl-head cl-head--wide">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Our Approach</div>
+        <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">How We Manage <em>Your Property</em></h2>
+      </div>
+      <p class="cl-head__quote" data-reveal style="--d:.2s">Your property deserves a manager who truly cares.</p>
+    </div>
+    <div class="cl-cards">
+      <div class="cl-card cl-card--top" data-reveal>
+        <div class="cl-icon"><svg><use href="#i-hand"/></svg></div>
+        <h3 class="cl-h cl-h3">Hands-On Support</h3>
+        <p>Say goodbye to DIY stress. We handle everything so you don’t have to lift a finger.</p>
+      </div>
+      <div class="cl-card cl-card--top" data-reveal style="--d:.12s">
+        <div class="cl-icon"><svg><use href="#i-eye"/></svg></div>
+        <h3 class="cl-h cl-h3">Full Transparency, Always</h3>
+        <p>From monthly statements to inspection updates, you’ll always know exactly what’s happening with your property.</p>
+      </div>
+      <div class="cl-card cl-card--top" data-reveal style="--d:.24s">
+        <div class="cl-icon"><svg><use href="#i-wrench"/></svg></div>
+        <h3 class="cl-h cl-h3">Maintenance Handled</h3>
+        <p>From small repairs to emergencies, we coordinate everything quickly, keeping your property in top shape.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR DIFFERENCE ============ -->
+<section class="cl-section bg-deep cl-diff">
+  <div class="cl-container">
+    <div class="cl-head cl-head--center" style="margin-bottom:84px">
+      <div class="cl-eyebrow cl-eyebrow--center" data-reveal>Our Difference</div>
+      <h2 class="cl-h cl-h--light cl-h2" data-reveal style="--d:.1s">What Makes Us <em>Different</em></h2>
+      <p class="cl-sub" data-reveal style="--d:.2s">Three promises we make to every owner, from the first showing to the last lease renewal.</p>
+    </div>
+    <div class="cl-cards">
+      <div class="cl-card cl-card--dark" data-reveal>
+        <div class="cl-icon"><svg><use href="#i-key"/></svg></div>
+        <h3 class="cl-h cl-h3">Only the Best Tenants</h3>
+        <p>We protect your investment with thorough background, credit and rental history checks, so only the best tenants call your property home.</p>
+      </div>
+      <div class="cl-card cl-card--dark" data-reveal style="--d:.12s">
+        <div class="cl-icon"><svg><use href="#i-house-check"/></svg></div>
+        <h3 class="cl-h cl-h3">Cared For Like Our Own</h3>
+        <p>We treat your property like our own, coordinating repairs and upkeep with the same care and pride you put into it.</p>
+      </div>
+      <div class="cl-card cl-card--dark" data-reveal style="--d:.24s">
+        <div class="cl-icon"><svg><use href="#i-shield"/></svg></div>
+        <h3 class="cl-h cl-h3">Every Law Handled</h3>
+        <p>Rest easy knowing every lease, disclosure and California rental law is handled, so you never have to worry about what you don’t know.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORE VALUES ============ -->
+<section class="cl-section bg-sand cl-values">
+  <div class="cl-container cl-split">
+    <div>
+      <div class="cl-eyebrow" data-reveal>Our Core Values</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Our core values,<br><em>your peace of mind.</em></h2>
+      <div class="cl-rule" data-reveal style="--d:.2s"></div>
+      <p class="cl-values__sub" data-reveal style="--d:.25s">Everything we do is built around you.</p>
+      <div class="cl-ph cl-zoom" data-reveal="wipe" style="--d:.2s"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Values image · 17:10</div></div>
+    </div>
+    <div class="cl-values__grid">
+      <div class="cl-value" data-reveal>
+        <h3 class="cl-h cl-h3">You Come First</h3>
+        <p>Your goals guide every decision we make, from how we price your home to who we choose to live in it.</p>
+      </div>
+      <div class="cl-value" data-reveal style="--d:.12s">
+        <h3 class="cl-h cl-h3">Integrity in Everything</h3>
+        <p>Transparent, ethical and reliable in every interaction and every transaction.</p>
+      </div>
+      <div class="cl-value" data-reveal style="--d:.24s">
+        <h3 class="cl-h cl-h3">Results You Can Count On</h3>
+        <p>We measure our success by yours, delivering consistent, reliable results for every property owner we serve.</p>
+      </div>
+      <div class="cl-value" data-reveal style="--d:.36s">
+        <h3 class="cl-h cl-h3">Local Expertise</h3>
+        <p>Deep knowledge of the Bay Area rental market means smarter decisions for your property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GETTING STARTED ============ -->
+<section class="cl-section bg-cream cl-process">
+  <div class="cl-container cl-split">
+    <div>
+      <div class="cl-eyebrow" data-reveal>Getting Started</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">From first call<br>to <em>fully managed.</em></h2>
+      <p class="cl-process__intro" data-reveal style="--d:.2s">Handing over your property should feel easy. Four calm, clear steps, and we take care of the rest.</p>
+      <div class="cl-ph cl-zoom" data-reveal="wipe" style="--d:.2s"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Process image · 5:3</div></div>
+      <a href="#contact" class="cl-btn cl-btn--navy" data-reveal>Book a Free Consultation <span class="arr">→</span></a>
+    </div>
+    <div class="cl-timeline">
+      <span class="cl-timeline__track"></span>
+      <span class="cl-timeline__fill"></span>
+      <div class="cl-step" data-reveal="right">
+        <div class="cl-step__title"><span class="cl-num">01</span><h3 class="cl-h cl-h3">Free Consultation</h3></div>
+        <p>A relaxed conversation about your property, your goals and any concerns you have about renting it out.</p>
+        <div class="cl-meta">Day 1 · No obligation</div>
+      </div>
+      <div class="cl-step" data-reveal="right" style="--d:.1s">
+        <div class="cl-step__title"><span class="cl-num">02</span><h3 class="cl-h cl-h3">Rental Analysis</h3></div>
+        <p>We visit the home and price it using current Bay Area market data, so it rents quickly at the right rate.</p>
+        <div class="cl-meta">Within 3 days</div>
+      </div>
+      <div class="cl-step" data-reveal="right" style="--d:.2s">
+        <div class="cl-step__title"><span class="cl-num">03</span><h3 class="cl-h cl-h3">Sign &amp; Onboard</h3></div>
+        <p>A simple, clear agreement. We collect the keys, documents and property details, and set up your owner account.</p>
+        <div class="cl-meta">Simple paperwork</div>
+      </div>
+      <div class="cl-step cl-step--last" data-reveal="right" style="--d:.3s">
+        <div class="cl-step__title"><span class="cl-num">04</span><h3 class="cl-h cl-h3">We Take It From Here</h3></div>
+        <p>Marketing, tenant screening, rent collection and repairs, all handled. You get clear monthly statements and peace of mind.</p>
+        <div class="cl-meta">Ongoing care</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="cl-section bg-white" id="fees">
+  <div class="cl-container">
+    <div class="cl-head cl-head--center">
+      <div class="cl-eyebrow cl-eyebrow--center" data-reveal>Management Fees</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Simple, <em>honest</em> pricing</h2>
+      <p class="cl-sub" data-reveal style="--d:.2s">100% transparent, with $0 hidden fees. You always know what you pay and why.</p>
+    </div>
+    <div class="cl-prices">
+      <div class="cl-price" data-reveal>
+        <div class="cl-price__label">Leasing Only</div>
+        <div class="cl-price__amount">75%</div>
+        <div class="cl-price__unit">of first month’s rent</div>
+        <ul class="cl-price__list">
+          <li>✓ Rental pricing analysis</li>
+          <li>✓ Professional photos and listing</li>
+          <li>✓ Showings and full tenant screening</li>
+          <li>✓ Lease preparation and move-in report</li>
+        </ul>
+      </div>
+      <div class="cl-price cl-price--featured" data-reveal style="--d:.12s">
+        <div class="cl-price__label">Full Management · Most Popular</div>
+        <div class="cl-price__amount">8%</div>
+        <div class="cl-price__unit">of monthly rent collected</div>
+        <ul class="cl-price__list">
+          <li>✓ Everything in Leasing Only</li>
+          <li>✓ Rent collection and monthly deposits</li>
+          <li>✓ 24/7 maintenance coordination</li>
+          <li>✓ Routine inspections with photo reports</li>
+          <li>✓ Monthly statements and year-end 1099</li>
+        </ul>
+      </div>
+      <div class="cl-price" data-reveal style="--d:.24s">
+        <div class="cl-price__label">Other Fees</div>
+        <div class="cl-price__amount">$250</div>
+        <div class="cl-price__unit">one-time setup fee</div>
+        <ul class="cl-price__list">
+          <li>Lease renewal: $200</li>
+          <li>Eviction support: at cost</li>
+          <li>Vacancy fee: none</li>
+          <li>Maintenance markup: none</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREAS ============ -->
+<section class="cl-section bg-cream cl-areas-sec" id="areas">
+  <div class="cl-container">
+    <div class="cl-head">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Service Areas</div>
+        <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Areas <em>We Serve</em></h2>
+      </div>
+      <p class="cl-head__aside" data-reveal style="--d:.2s">Each area links to its own page with local history and rental insights. New areas can be added any time.</p>
+    </div>
+    <div class="cl-areas">
+      <a href="#" class="cl-area cl-zoom" data-reveal>
+        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Los Altos</div></div>
+        <div class="cl-area__row"><h3 class="cl-h cl-h3">Los Altos</h3><span class="arr">→</span></div>
+      </a>
+      <a href="palo-alto.html" class="cl-area cl-zoom" data-reveal style="--d:.1s">
+        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Palo Alto</div></div>
+        <div class="cl-area__row"><h3 class="cl-h cl-h3">Palo Alto</h3><span class="arr">→</span></div>
+      </a>
+      <a href="#" class="cl-area cl-zoom" data-reveal style="--d:.2s">
+        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Mountain View</div></div>
+        <div class="cl-area__row"><h3 class="cl-h cl-h3">Mountain View</h3><span class="arr">→</span></div>
+      </a>
+      <a href="#" class="cl-area cl-zoom" data-reveal style="--d:.3s">
+        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Sunnyvale</div></div>
+        <div class="cl-area__row"><h3 class="cl-h cl-h3">Sunnyvale</h3><span class="arr">→</span></div>
+      </a>
+    </div>
+    <p class="cl-areas__more" data-reveal>Also serving: Los Altos Hills · Cupertino · Menlo Park · Saratoga</p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="cl-section bg-sand">
+  <div class="cl-container">
+    <div class="cl-head cl-head--center">
+      <div class="cl-eyebrow cl-eyebrow--center" data-reveal>Client Feedback</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">What our <em>owners say</em></h2>
+    </div>
+    <div class="cl-cards">
+      <div class="cl-card cl-quote" data-reveal>
+        <div class="cl-quote__mark">“</div>
+        <p class="cl-quote__text">We moved overseas and were nervous about renting our home. They found wonderful tenants within two weeks and we have not had a single worry since.</p>
+        <div class="cl-quote__who"><div class="cl-avatar">SM</div><span>Sarah M. · Owner, Los Altos</span></div>
+      </div>
+      <div class="cl-card cl-quote" data-reveal style="--d:.12s">
+        <div class="cl-quote__mark">“</div>
+        <p class="cl-quote__text">Clear statements every month, quick answers and repairs handled at fair prices. It finally feels like someone is looking after my property properly.</p>
+        <div class="cl-quote__who"><div class="cl-avatar">DK</div><span>David K. · Owner, Palo Alto</span></div>
+      </div>
+      <div class="cl-card cl-quote" data-reveal style="--d:.24s">
+        <div class="cl-quote__mark">“</div>
+        <p class="cl-quote__text">Their screening is thorough and their advice on California rental rules saved me from a costly mistake. Professional, honest and kind.</p>
+        <div class="cl-quote__who"><div class="cl-avatar">JL</div><span>Jenny L. · Owner, Sunnyvale</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="cl-section bg-cream" id="blog">
+  <div class="cl-container">
+    <div class="cl-head cl-head--blog">
+      <div>
+        <div class="cl-eyebrow" data-reveal>Owner Insights</div>
+        <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">From the <em>Blog</em></h2>
+      </div>
+      <a href="#" class="cl-link" data-reveal style="--d:.2s">View All Articles <span class="arr">→</span></a>
+    </div>
+    <div class="cl-posts">
+      <a href="#" class="cl-post cl-zoom" data-reveal>
+        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Featured image</div></div>
+        <div class="cl-post__meta">Tenant Risk · Sep 18, 2026</div>
+        <h3 class="cl-h cl-h3">5 warning signs of a bad tenant, and how to spot them early</h3>
+        <p>From gaps in rental history to rushed move-in dates, here is what our screening looks for.</p>
+      </a>
+      <a href="#" class="cl-post cl-zoom" data-reveal style="--d:.12s">
+        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Featured image</div></div>
+        <div class="cl-post__meta">Owner Tips · Sep 4, 2026</div>
+        <h3 class="cl-h cl-h3">How to prepare your home for a higher rent</h3>
+        <p>Small, smart upgrades that help Bay Area rentals lease faster and earn more.</p>
+      </a>
+      <a href="#" class="cl-post cl-zoom" data-reveal style="--d:.24s">
+        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Featured image</div></div>
+        <div class="cl-post__meta">Local Market · Aug 21, 2026</div>
+        <h3 class="cl-h cl-h3">Bay Area rental market update: fall 2026</h3>
+        <p>Where rents are heading in Los Altos, Palo Alto and nearby cities this season.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="cl-section bg-white">
+  <div class="cl-container">
+    <div class="cl-head cl-head--center" style="margin-bottom:0">
+      <div class="cl-eyebrow cl-eyebrow--center" data-reveal>Owner Questions</div>
+      <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Owner <em>FAQs</em></h2>
+    </div>
+    <div class="cl-faq" data-reveal style="--d:.2s">
+      <div class="cl-faq__item is-open">
+        <button class="cl-faq__q" aria-expanded="true">How much does property management cost?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>Full management is 8% of the monthly rent collected, and leasing only is 75% of the first month’s rent. There are no hidden fees and no markup on maintenance.</p></div></div>
+      </div>
+      <div class="cl-faq__item">
+        <button class="cl-faq__q" aria-expanded="false">How do you screen tenants?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>Every applicant goes through credit, background, income and rental history checks. We verify employment and speak with previous landlords before recommending anyone to you.</p></div></div>
+      </div>
+      <div class="cl-faq__item">
+        <button class="cl-faq__q" aria-expanded="false">How quickly can you rent my home?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>Most homes rent within two to three weeks. Smart pricing, professional photos and quick showings keep vacant days to a minimum.</p></div></div>
+      </div>
+      <div class="cl-faq__item">
+        <button class="cl-faq__q" aria-expanded="false">What happens with the security deposit?<span class="cl-faq__icon"></span></button>
+        <div class="cl-faq__a"><div><p>We collect and hold the deposit in line with California law, document the home at move-in and move-out, and handle any deductions with a clear, itemized statement.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="cl-section bg-navy cl-contact" id="contact">
+  <div class="cl-container cl-split">
+    <div>
+      <div class="cl-eyebrow" data-reveal>Get in Touch</div>
+      <h2 class="cl-h cl-h--light cl-h2" data-reveal style="--d:.1s">Ready to <em>maximize</em><br>your investment?</h2>
+      <p class="cl-lead" data-reveal style="--d:.2s">Tell us about your property and we’ll send a free rental analysis within 2 business days.</p>
+      <ul class="cl-contact__info" data-reveal style="--d:.3s">
+        <li><a href="tel:6508890570">650 889 0570</a></li>
+        <li><a href="mailto:realtor@baliliu.homes">realtor@baliliu.homes</a></li>
+        <li>175 S San Antonio Rd, #100, Los Altos, CA</li>
+      </ul>
+    </div>
+    <form class="cl-form" data-reveal="right" style="--d:.15s" novalidate>
+      <div class="cl-field cl-field--half"><label for="f-name">Name</label><input id="f-name" name="name" type="text" required></div>
+      <div class="cl-field cl-field--half"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel"></div>
+      <div class="cl-field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+      <div class="cl-field"><label for="f-address">Property Address</label><input id="f-address" name="address" type="text"></div>
+      <div class="cl-field"><label for="f-message">Message</label><textarea id="f-message" name="message"></textarea></div>
+      <input class="cl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="cl-form__note">Spam protected (reCAPTCHA / honeypot)</p>
+      <button type="submit" class="cl-btn cl-btn--gold">Request Free Analysis <span class="arr">→</span></button>
+      <p class="cl-form__ok" role="status">Thank you. We’ll be in touch within 2 business days.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="cl-footer">
+  <div class="cl-container">
+    <div class="cl-footer__grid">
+      <div>
+        <div class="cl-logo"><span class="cl-logo__name">Crestline</span><span class="cl-logo__sub">Property Management</span></div>
+        <p class="cl-footer__about">Thoughtful property management for Bay Area homeowners.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Owner Services</a></li>
+          <li><a href="#fees">Fees</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="palo-alto.html">Palo Alto</a></li>
+          <li><a href="service-areas.html">Mountain View</a></li>
+          <li><a href="service-areas.html">Sunnyvale</a></li>
+          <li><a href="service-areas.html">San Jose</a></li>
+          <li><a href="service-areas.html">Menlo Park</a></li>
+          <li><a href="service-areas.html">Foster City</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:6508890570">650 889 0570</a></li>
+          <li><a href="mailto:realtor@baliliu.homes">realtor@baliliu.homes</a></li>
+          <li>175 S San Antonio Rd, #100, Los Altos, CA</li>
+          <li>DRE #01234567</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="cl-container">
+    <div class="cl-footer__bar">
+      <span>© 2026 Crestline Property Management. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Fair Housing</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

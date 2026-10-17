@@ -1,0 +1,175 @@
+/* =====================================================================
+   Crestline — Global CSS for Elementor
+   Paste ONCE into: Elementor > Site Settings > Custom CSS
+   (also embedded in each template's Page Settings > Custom CSS)
+   Class names match DESIGN_SYSTEM.md and the HTML preview.
+   ===================================================================== */
+
+:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}
+
+/* Softer entrance animation than Elementor's default fadeInUp */
+@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}
+@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}
+@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}
+.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}
+.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}
+.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}
+.elementor-element.animated{animation-duration:.95s}
+
+/* Headings: <em> = gold italic accent */
+.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}
+.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}
+
+/* Eyebrow with gold line(s) */
+.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}
+.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:"";width:36px;height:1px;background:currentColor;flex:none}
+
+/* Buttons: arrow nudge */
+.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}
+.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}
+.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}
+
+/* Text link with underline */
+.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}
+.cl-link:hover .elementor-heading-title{letter-spacing:.26em}
+
+/* Image placeholders / images keep their ratio */
+.cl-img{overflow:hidden}
+.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}
+.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}
+.cl-r-1-1 img{aspect-ratio:1/1}
+.cl-r-9-8 img{aspect-ratio:9/8}
+.cl-r-17-10 img{aspect-ratio:17/10}
+.cl-r-5-3 img{aspect-ratio:5/3}
+.cl-r-area img{aspect-ratio:281/220}
+.cl-r-post img{aspect-ratio:375/240}
+
+/* Hero frame + caption tag */
+.cl-hero-frame{position:relative}
+.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}
+@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}
+
+/* About badge over image */
+.cl-about-media{position:relative}
+.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}
+@media(max-width:767px){.cl-about-badge{min-width:0}}
+
+/* Cards hover */
+.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}
+.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}
+.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}
+.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}
+.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}
+.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}
+
+/* Services grid (shared borders) */
+.cl-services{border:1px solid var(--cl-line)}
+.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}
+.cl-service:nth-child(3n){border-right:0}
+.cl-service:nth-last-child(-n+3){border-bottom:0}
+.cl-service::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}
+.cl-service:hover{background:var(--cl-cream)}
+.cl-service:hover::before{transform:scaleX(1)}
+@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}
+
+/* Timeline */
+.cl-timeline{position:relative}
+.cl-timeline::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}
+.cl-step{position:relative}
+.cl-step::before{content:"";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}
+.cl-step:hover::before{transform:scale(1.4)}
+.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}
+@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}
+
+/* Pricing list */
+.cl-price-list ul{list-style:none;margin:0;padding:0}
+.cl-price-list li{padding:6px 0}
+
+/* Area card row */
+.cl-area-row{transition:border-color .4s var(--cl-ease)}
+.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}
+.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}
+.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}
+
+/* Avatar */
+.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}
+
+/* Blog card */
+.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}
+.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}
+
+/* FAQ (Accordion widget) */
+.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}
+.cl-faq .elementor-accordion{border-top:1px solid #dedad3}
+.cl-faq .elementor-tab-title{padding:30px 0!important}
+.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}
+.cl-faq .elementor-accordion-icon{font-size:12px}
+
+/* Form (Elementor Pro Form widget) */
+.cl-form .elementor-field-group{margin-bottom:26px}
+.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}
+.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}
+.cl-form textarea.elementor-field-textual{min-height:112px}
+.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}
+.cl-form .elementor-field-type-submit{justify-content:flex-start}
+
+/* Header nav underline + footer links */
+.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}
+.cl-footer-links ul{list-style:none;margin:0;padding:0}
+.cl-footer-links li{margin-bottom:12px;line-height:1.5}
+.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}
+.cl-footer-links a:hover{color:var(--cl-gold)}
+.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}
+
+@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}
+
+/* =====================================================================
+   Inner pages — Service Areas archive + Location template
+   ===================================================================== */
+.cl-r-5-4 img{aspect-ratio:5/4}
+.cl-r-4-3 img{aspect-ratio:4/3}
+
+/* Breadcrumb */
+.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}
+.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}
+.cl-crumbs a:hover{color:var(--cl-gold)}
+.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}
+
+/* Location cards */
+.cl-loc{display:flex;flex-direction:column;height:100%}
+.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}
+.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}
+
+/* Chips */
+.cl-chips{display:flex;flex-wrap:wrap;gap:12px}
+.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}
+.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}
+a.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}
+.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}
+a.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}
+@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}
+
+/* Comparison table (inside a Text Editor widget) */
+.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}
+.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}
+.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}
+.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}
+.cl-table tbody th{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}
+.cl-table tbody th a{color:inherit}
+.cl-table tbody th a:hover{color:var(--cl-gold-dark)}
+.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}
+.cl-table tbody tr:hover{background:var(--cl-cream)}
+.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}
+.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}
+.cl-yes{color:var(--cl-gold-dark)}
+.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}
+
+/* Market tiles */
+.cl-tile{transition:background-color .45s var(--cl-ease)}
+.cl-tile:hover{background:rgba(255,255,255,.03)}
+
+/* Rules sidebar */
+.cl-aside{position:sticky!important;top:110px}
+@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}
