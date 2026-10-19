@@ -11,6 +11,7 @@ const CITIES = require(path.join(root, 'elementor', 'locations-data.js'));
 const built = (slug) => fs.existsSync(path.join(root, 'data', 'cities', `${slug}.js`));
 
 let html = fs.readFileSync(path.join(root, 'index.html'), 'utf8').split('\r\n').join('\n'); // tolerate CRLF
+html = html.replace(/(assets\/(?:css|js)\/[A-Za-z0-9_-]+\.(?:css|js))\?v=[0-9a-f]+/g, '$1'); // version stamps are re-added by apply-images.js
 const swap = (from, to) => { if (!html.includes(from)) throw new Error('not found: ' + from.slice(0, 60)); html = html.replace(from, () => to); };
 
 /* 1. Mandarin: hero note */

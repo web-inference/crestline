@@ -72,6 +72,7 @@ for (const c of CITIES) {
 /* Los Altos is the home office. It has a card on the original homepage (index.html) but no city page yet. */
 add({
   slot: 'city-los-altos', group: 'City cards (homepage + Service Areas)', where: 'Los Altos card (original homepage only)', ratio: '4:3', minSize: '1600 × 1200',
+  note: 'STAND-IN: currently a copy of the Menlo Park photo. Replace with a real Los Altos image (same file name).',
   alt: 'Los Altos village street', prompt: `Village main street in Los Altos, California at golden hour, low-rise brick and stucco storefronts, mature street trees, planters and café umbrellas, a few pedestrians far in the distance, warm soft light, clear sky, ${STYLE_LINE}`,
 });
 

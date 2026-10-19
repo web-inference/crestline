@@ -80,7 +80,7 @@ for (const g of groups) {
   for (const e of rows) md += `| \`${e.slot}.jpg\` | ${cell(e.where)} | ${e.ratio} · ${e.minSize} | ${cell(e.prompt)} |\n`;
 }
 md += `\n## Already in the site (${have.length})\n\nThe prompts below describe what each slot needs, in case you ever want to replace the photo.\n\n| File name | Used for | Ratio | Prompt to recreate or replace |\n|---|---|---|---|\n`;
-for (const e of have) md += `| \`${e.file}\` | ${cell(e.group)} · ${cell(e.where)} | ${e.ratio} | ${cell(e.prompt)} |\n`;
+for (const e of have) md += `| \`${e.file}\` | ${cell(e.group)} · ${cell(e.where)}${e.note ? ' · **' + cell(e.note) + '**' : ''} | ${e.ratio} | ${cell(e.prompt)} |\n`;
 md += `
 ## Future city pages
 Each new city page (Mountain View, Sunnyvale, San Jose, Menlo Park, Foster City) needs 3 more images, named **\`<city-slug>-hero\`**, **\`<city-slug>-about\`** and **\`<city-slug>-services\`** (for example \`mountain-view-hero.jpg\`). Their prompts are written when the page is built. The Palo Alto page above is the example.
