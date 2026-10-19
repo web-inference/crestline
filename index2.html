@@ -529,7 +529,7 @@
     <div>
       <div class="cl-eyebrow" data-reveal>Get in Touch</div>
       <h2 class="cl-h cl-h--light cl-h2" data-reveal style="--d:.1s">Ready to <em>maximize</em><br>your investment?</h2>
-      <p class="cl-lead" data-reveal style="--d:.2s">Tell us about your property and we’ll send a free rental analysis within 2 business days.</p>
+      <p class="cl-lead" data-reveal style="--d:.2s">Pick a time that suits you and we’ll walk through a free rental analysis for your property on a short call.</p>
       <ul class="cl-contact__info" data-reveal style="--d:.3s">
         <li><a href="tel:6508890570">650 889 0570</a></li>
         <li><a href="mailto:realtor@baliliu.homes">realtor@baliliu.homes</a></li>
@@ -537,17 +537,9 @@
         <li>English &amp; 中文 spoken</li>
       </ul>
     </div>
-    <form class="cl-form" data-reveal="right" style="--d:.15s" novalidate>
-      <div class="cl-field cl-field--half"><label for="f-name">Name</label><input id="f-name" name="name" type="text" required></div>
-      <div class="cl-field cl-field--half"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel"></div>
-      <div class="cl-field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
-      <div class="cl-field"><label for="f-address">Property Address</label><input id="f-address" name="address" type="text"></div>
-      <div class="cl-field"><label for="f-message">Message</label><textarea id="f-message" name="message"></textarea></div>
-      <input class="cl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <p class="cl-form__note">Spam protected (reCAPTCHA / honeypot)</p>
-      <button type="submit" class="cl-btn cl-btn--gold">Request Free Analysis <span class="arr">→</span></button>
-      <p class="cl-form__ok" role="status">Thank you. We’ll be in touch within 2 business days.</p>
-    </form>
+    <div class="cl-book" id="booking" data-booking data-reveal="right" style="--d:.15s">
+      <noscript><p>Please enable JavaScript to pick a time, or call <a href="tel:6508890570">650 889 0570</a>.</p></noscript>
+    </div>
   </div>
 </section>
 
@@ -601,6 +593,11 @@
   </div>
 </footer>
 
+<script>
+  // To go live, paste your Calendly link here. The demo is then replaced by Calendly's real widget:
+  // window.CRESTLINE_CALENDLY_URL = 'https://calendly.com/your-name/free-rental-analysis';
+</script>
+<script src="assets/js/booking.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

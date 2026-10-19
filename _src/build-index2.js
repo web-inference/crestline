@@ -1,4 +1,5 @@
 /* Builds index2.html (homepage v2) from index.html.
+ * Also: the contact form is replaced by a Calendly-style booking demo (assets/js/booking.js).
  * Fixes: Mandarin visible on the homepage, area cards match the Service Areas page,
  * every card links somewhere real, "Also serving" list matches the archive.
  * Run from crestline/:  node _src/build-index2.js
@@ -43,6 +44,22 @@ const a = html.indexOf('    <div class="cl-areas">');
 const b = html.indexOf('    <p class="cl-areas__more"');
 if (a < 0 || b < 0) throw new Error('areas block not found');
 html = html.slice(0, a) + `    <div class="cl-areas cl-areas--6">\n${cards}\n    </div>\n` + html.slice(b);
+
+/* 6. Contact: replace the form with a Calendly-style booking widget (demo; swap in a real Calendly URL in the page) */
+swap('Tell us about your property and we’ll send a free rental analysis within 2 business days.',
+  'Pick a time that suits you and we’ll walk through a free rental analysis for your property on a short call.');
+const f0 = html.indexOf('    <form class="cl-form"');
+const f1 = html.indexOf('</form>', f0) + '</form>'.length;
+if (f0 < 0 || f1 < f0) throw new Error('contact form not found');
+html = html.slice(0, f0) + `    <div class="cl-book" id="booking" data-booking data-reveal="right" style="--d:.15s">
+      <noscript><p>Please enable JavaScript to pick a time, or call <a href="tel:6508890570">650 889 0570</a>.</p></noscript>
+    </div>` + html.slice(f1);
+swap('<script src="assets/js/main.js"></script>', `<script>
+  // To go live, paste your Calendly link here. The demo is then replaced by Calendly's real widget:
+  // window.CRESTLINE_CALENDLY_URL = 'https://calendly.com/your-name/free-rental-analysis';
+</script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/main.js"></script>`);
 
 /* 5. Also serving: same list as the archive; Los Altos is the home office (no page yet) */
 swap('Also serving: Los Altos Hills · Cupertino · Menlo Park · Saratoga',

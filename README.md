@@ -3,7 +3,7 @@
 ```
 crestline/
 ├── index.html                  ← Homepage preview (open via local server)
-├── index2.html                 ← Homepage v2: Mandarin shown, 6 matching area cards, real links (built by _src/build-index2.js)
+├── index2.html                 ← Homepage v2: Mandarin shown, 6 matching area cards, real links, booking demo instead of the form (built by _src/build-index2.js)
 ├── service-areas.html          ← Service Areas archive preview
 ├── location-template.html      ← Single location template preview ([Bracket] fields)
 ├── palo-alto.html              ← Palo Alto city page
@@ -13,6 +13,7 @@ crestline/
 ├── _src/                       ← page bodies + assemble.py (builds inner pages from index.html's header/footer)
 ├── assets/css/style.css
 ├── assets/js/main.js
+├── assets/js/booking.js        ← Calendly-style booking demo used on index2.html (set CRESTLINE_CALENDLY_URL to go live)
 ├── assets/icons/*.svg          ← line icons (gold) for Elementor SVG upload if wanted
 ├── DESIGN_SYSTEM.md            ← fonts, colours, spacing, classes — reuse for every new page
 └── elementor/
