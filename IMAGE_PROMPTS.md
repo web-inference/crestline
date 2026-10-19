@@ -2,7 +2,7 @@
 
 > Generated from `data/images.js` by `_src/apply-images.js`. Do not edit by hand; edit `data/images.js` and rebuild.
 
-**4 images are in the site. 14 still need to be made** (the location template is not counted; its images are fill-in examples).
+**4 images are in the site. 15 still need to be made** (the location template is not counted; its images are fill-in examples).
 
 ## How to add or replace an image
 1. Make the image with the prompt in the table (or use your own photo).
@@ -15,7 +15,7 @@
 - No readable text, no logos, no visible faces. Real photos of the client, team or office are better than AI people whenever they exist.
 - Ratio: the page crops to fit, so keep the subject in the middle. Save as JPG, about 200–400 KB, at the sizes below.
 
-## Needed now (14)
+## Needed now (15)
 
 ### Blog cards (homepage)
 
@@ -35,6 +35,7 @@
 | `city-san-jose.jpg` | San Jose card | 4:3 · 1600 × 1200 | Charming Willow Glen bungalow in San Jose with a deep front porch and mature trees, golden-hour light, editorial real-estate photography, photorealistic, no text |
 | `city-menlo-park.jpg` | Menlo Park card | 4:3 · 1600 × 1200 | Elegant shingle-style home in Menlo Park's Allied Arts neighborhood behind a low hedge and heritage oaks, dappled sunlight, editorial real-estate photography, photorealistic, no text |
 | `city-foster-city.jpg` | Foster City card | 4:3 · 1600 × 1200 | Waterfront townhomes along a calm Foster City lagoon with small boats docked, reflections on the water, soft evening light, editorial real-estate photography, photorealistic, no text |
+| `city-los-altos.jpg` | Los Altos card (original homepage only) | 4:3 · 1600 × 1200 | Village main street in Los Altos, California at golden hour, low-rise brick and stucco storefronts, mature street trees, planters and café umbrellas, a few pedestrians far in the distance, warm soft light, clear sky, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces |
 
 ### Service Areas page
 

@@ -69,6 +69,12 @@ for (const c of CITIES) {
   });
 }
 
+/* Los Altos is the home office. It has a card on the original homepage (index.html) but no city page yet. */
+add({
+  slot: 'city-los-altos', group: 'City cards (homepage + Service Areas)', where: 'Los Altos card (original homepage only)', ratio: '4:3', minSize: '1600 × 1200',
+  alt: 'Los Altos village street', prompt: `Village main street in Los Altos, California at golden hour, low-rise brick and stucco storefronts, mature street trees, planters and café umbrellas, a few pedestrians far in the distance, warm soft light, clear sky, ${STYLE_LINE}`,
+});
+
 /* ---------------- Service Areas page ---------------- */
 add({
   slot: 'areas-hero', group: 'Service Areas page', where: 'Hero, right side', ratio: '5:4', minSize: '1600 × 1280', parallax: true, eager: true,
