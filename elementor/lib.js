@@ -227,7 +227,7 @@ const contactSection = (o = {}) => section([
     eyebrow('Get in Touch', { dark: true }),
     heading(o.title || 'Ready to <em>maximize</em><br>your investment?', { color: C.white, cls: 'cl-h cl-h--light', mb: 28, delay: 100 }),
     text(`<p>${o.lead || 'Tell us about your property and we’ll send a free rental analysis within 2 business days.'}</p>`, { t: T.small, color: C.textLight, maxW: 440, mb: 44, delay: 200 }),
-    text('<p style="margin-bottom:14px"><a href="tel:6508890570" style="color:inherit">650 889 0570</a></p><p style="margin-bottom:14px"><a href="mailto:realtor@baliliu.homes" style="color:inherit">realtor@baliliu.homes</a></p><p>175 S San Antonio Rd, #100, Los Altos, CA</p>', { t: { family: SANS, size: 16, weight: 300, lh: 1.6 }, color: '#E6E9EE', delay: 300 }),
+    text('<p style="margin-bottom:14px"><a href="tel:6508890570" style="color:inherit">650 889 0570</a></p><p style="margin-bottom:14px"><a href="mailto:realtor@baliliu.homes" style="color:inherit">realtor@baliliu.homes</a></p><p>175 S San Antonio Rd, #100, Los Altos, CA</p>' + (o.extraLine ? `<p style="margin-top:14px">${o.extraLine}</p>` : ''), { t: { family: SANS, size: 16, weight: 300, lh: 1.6 }, color: '#E6E9EE', delay: 300 }),
   ], { width: 50 }),
   con([
     widget('form', {

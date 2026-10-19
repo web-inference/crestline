@@ -3,6 +3,7 @@
 ```
 crestline/
 ├── index.html                  ← Homepage preview (open via local server)
+├── index2.html                 ← Homepage v2: Mandarin shown, 6 matching area cards, real links (built by _src/build-index2.js)
 ├── service-areas.html          ← Service Areas archive preview
 ├── location-template.html      ← Single location template preview ([Bracket] fields)
 ├── palo-alto.html              ← Palo Alto city page

@@ -8,6 +8,10 @@ const {
   C, SERIF, SANS, id, px, pct, box, typo, T, anim, widget, con, section, heading, eyebrow, text, button, image, icon,
   headRow, centerHead, step, quote, contactSection, write,
 } = require('./lib');
+const fs = require('fs');
+const path = require('path');
+const CITIES = require('./locations-data');
+const cityBuilt = (slug) => fs.existsSync(path.join(__dirname, '..', 'data', 'cities', `${slug}.js`));
 
 
 /* =====================================================================
@@ -22,6 +26,7 @@ const hero = section([
       button('Get a Free Rental Analysis →', '#contact', 'gold', { delay: 400 }),
       button('Explore Our Services', '#services', 'outline', { delay: 500 }),
     ], { dir: 'row', gap: 14, wrap: true, dirM: 'column' }),
+    text('<p class="cl-hero__lang"><span class="cl-hero__langtag">EN</span><span class="cl-hero__langtag">中文</span>English &amp; Mandarin support for local, out-of-state and overseas owners</p>', { t: { family: SANS, size: 14, weight: 300, lh: 1.5 }, color: '#AEB6C3', delay: 650 }),
   ], { width: 54, justify: 'center' }),
   con([
     image('cl-r-1-1', { alt: 'Bay Area rental home', delay: 200 }),
@@ -73,7 +78,7 @@ const about = section([
   con([
     eyebrow('Who We Are'),
     heading('Local people,<br><em>personal service.</em>', { cls: 'cl-h', mb: 34, delay: 100 }),
-    text('<p>We are a boutique property management team based in Los Altos. For more than ten years we have helped Bay Area homeowners rent their properties with confidence, without the stress of handling tenants, repairs and paperwork on their own.</p><p>We keep our portfolio small on purpose. That way every owner gets personal attention, honest advice and a team that treats their home like its own.</p>', { maxW: 600, mb: 30, delay: 200 }),
+    text('<p>We are a boutique property management team based in Los Altos. For more than ten years we have helped Bay Area homeowners rent their properties with confidence, without the stress of handling tenants, repairs and paperwork on their own.</p><p>We keep our portfolio small on purpose. That way every owner gets personal attention, honest advice and a team that treats their home like its own.</p><p>We work with owners in English and Mandarin (中文), whether you live in the Bay Area, out of state or overseas.</p>', { maxW: 600, mb: 30, delay: 200 }),
     heading('More About Us →', { tag: 'div', t: { family: SANS, size: 13, weight: 400, lh: 1, ls: 2.9, transform: 'uppercase' }, color: C.goldDark, cls: 'cl-link', link: '/about-us/', delay: 300 }),
   ], { width: 50 }),
 ], { bg: C.cream, dir: 'row', dirT: 'column', gap: 90, align: 'center', extra: { _element_id: 'about' } });
@@ -216,8 +221,8 @@ const pricing = section([
   ], { grid: [3, 2, 1], gap: 28 }),
 ], { bg: C.white, extra: { _element_id: 'fees' } });
 
-const area = (name, href, delay) => con([
-  image('cl-r-area', { alt: `${name} rental home`, anim: false }),
+const area = (name, href, delay, prompt) => con([
+  image('cl-r-4-3', { alt: `${name} rental home`, anim: false, prompt }),
   con([
     heading(name, { tag: 'h3', t: { ...T.h3, size: 28 }, anim: false }),
     heading('→', { tag: 'div', t: { family: SANS, size: 20, weight: 300, lh: 1 }, color: C.goldDark, cls: 'cl-arrow', anim: false }),
@@ -230,12 +235,9 @@ const areas = section([
   headRow('Service Areas', 'Areas <em>We Serve</em>',
     text('<p>Each area links to its own page with local history and rental insights. New areas can be added any time.</p>', { maxW: 520, delay: 200 })),
   con([
-    area('Los Altos', '/los-altos/', 0),
-    area('Palo Alto', '/palo-alto/', 100),
-    area('Mountain View', '/mountain-view/', 200),
-    area('Sunnyvale', '/sunnyvale/', 300),
-  ], { grid: [4, 2, 1], gap: 24, rowGap: 36 }),
-  text('<p>Also serving: Los Altos Hills · Cupertino · Menlo Park · Saratoga</p>', { t: { family: SANS, size: 14, weight: 300, lh: 1.6 }, color: '#8E9198', delay: 100, extra: {} }),
+    ...CITIES.map((c, i) => area(c.name, cityBuilt(c.slug) ? `/service-areas/${c.slug}/` : '/service-areas/#cities', (i % 3) * 100, c.prompt)),
+  ], { grid: [3, 2, 1], gap: 28, rowGap: 40 }),
+  text(`<p>Our office is in Los Altos. Also serving: ${CITIES.ALSO_SERVING.filter((n) => n !== 'Los Altos').join(' · ')}</p>`, { t: { family: SANS, size: 14, weight: 300, lh: 1.6 }, color: '#8E9198', delay: 100, extra: {} }),
 ], { bg: C.cream, extra: { _element_id: 'areas', border_border: 'solid', border_width: box(1, 0, 0, 0), border_color: '#E7E1D6' } });
 // spacing above "Also serving"
 areas.elements[2].settings._margin = box(30, 0, 0, 0);
@@ -292,7 +294,7 @@ const faq = section([
 ], { bg: C.white, align: 'center' });
 
 
-const contact = contactSection();
+const contact = contactSection({ extraLine: 'English &amp; 中文 spoken' });
 
 const home = [hero, stats, about, why, services, approach, difference, values, process, pricing, areas, testimonials, blog, faq, contact];
 
