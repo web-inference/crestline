@@ -11,8 +11,8 @@ const run = (cmd, args) => {
 };
 
 run('node', ['_src/render-location.js']);   // city page bodies from data/cities/*.js
-run('python', ['_src/assemble.py']);        // service-areas.html, <city>.html, location-template.html
-run('node', ['_src/build-index2.js']);      // index2.html from index.html
+run('python', ['_src/assemble.py']);        // service-areas.html, <city>.html, location-template.html (shell from _src/home-source.html)
+run('node', ['_src/build-home.js']);        // index.html (main homepage), old-homepage.html, index2.html redirect
 run('node', ['_src/apply-images.js']);      // fill image slots + IMAGE_PROMPTS.md
 run('node', ['elementor/build-elementor.js']);  // home, header, footer JSON
 run('node', ['elementor/build-locations.js']);  // service areas + city page JSON

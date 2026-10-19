@@ -1,8 +1,8 @@
-"""Builds inner HTML pages from index.html's shell (head, header, contact, footer).
+"""Builds inner HTML pages from the shell (head, header, contact, footer) of _src/home-source.html.
 Run from crestline/: python _src/assemble.py"""
 import re, pathlib
 root = pathlib.Path(__file__).resolve().parent.parent
-idx = (root / 'index.html').read_text(encoding='utf-8')
+idx = (root / '_src' / 'home-source.html').read_text(encoding='utf-8')
 
 head = idx[:idx.index('<main>') + len('<main>')]
 contact = idx[idx.index('<!-- ============ CONTACT ============ -->'):idx.index('</main>')]

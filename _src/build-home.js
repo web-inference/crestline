@@ -1,8 +1,9 @@
-/* Builds index2.html (homepage v2) from index.html.
- * Also: the contact form is replaced by a Calendly-style booking demo (assets/js/booking.js).
- * Fixes: Mandarin visible on the homepage, area cards match the Service Areas page,
- * every card links somewhere real, "Also serving" list matches the archive.
- * Run from crestline/:  node _src/build-index2.js
+/* Builds the homepage files from _src/home-source.html (the original homepage markup):
+ *   index.html        the MAIN homepage (v2): Mandarin shown, six area cards matching the Service Areas page,
+ *                     every card linked, "Also serving" list matching the archive, booking demo instead of the form
+ *   old-homepage.html the original homepage (v1), kept for reference, hidden from search engines
+ *   index2.html       a small redirect to the home page, so old shared links keep working
+ * Run from crestline/:  node _src/build-home.js   (or everything: node _src/build-pages.js)
  */
 const fs = require('fs');
 const path = require('path');
@@ -10,8 +11,9 @@ const root = path.resolve(__dirname, '..');
 const CITIES = require(path.join(root, 'elementor', 'locations-data.js'));
 const built = (slug) => fs.existsSync(path.join(root, 'data', 'cities', `${slug}.js`));
 
-let html = fs.readFileSync(path.join(root, 'index.html'), 'utf8').split('\r\n').join('\n'); // tolerate CRLF
+let html = fs.readFileSync(path.join(root, '_src', 'home-source.html'), 'utf8').split('\r\n').join('\n'); // tolerate CRLF
 html = html.replace(/(assets\/(?:css|js)\/[A-Za-z0-9_-]+\.(?:css|js))\?v=[0-9a-f]+/g, '$1'); // version stamps are re-added by apply-images.js
+const original = html; // untouched copy, becomes old-homepage.html
 const swap = (from, to) => { if (!html.includes(from)) throw new Error('not found: ' + from.slice(0, 60)); html = html.replace(from, () => to); };
 
 /* 1. Mandarin: hero note */
@@ -65,5 +67,27 @@ swap('<script src="assets/js/main.js"></script>', `<script>
 swap('Also serving: Los Altos Hills · Cupertino · Menlo Park · Saratoga',
   `Our office is in Los Altos. Also serving: ${CITIES.ALSO_SERVING.filter((n) => n !== 'Los Altos').join(' · ')}`);
 
-fs.writeFileSync(path.join(root, 'index2.html'), html);
-console.log('wrote index2.html', (html.length / 1024).toFixed(1) + ' KB');
+fs.writeFileSync(path.join(root, 'index.html'), html);
+console.log('wrote index.html (main homepage)', (html.length / 1024).toFixed(1) + ' KB');
+
+const oldHome = original.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
+if (oldHome === original) throw new Error('could not add noindex to old homepage');
+fs.writeFileSync(path.join(root, 'old-homepage.html'), oldHome);
+console.log('wrote old-homepage.html');
+
+fs.writeFileSync(path.join(root, 'index2.html'), `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crestline Property Management | Bay Area Property Management</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://web-inference.github.io/crestline/">
+  <meta http-equiv="refresh" content="0; url=./">
+</head>
+<body>
+  <p>This page has moved to the <a href="./">home page</a>.</p>
+</body>
+</html>
+`);
+console.log('wrote index2.html (redirect)');

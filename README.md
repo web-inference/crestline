@@ -2,8 +2,9 @@
 
 ```
 crestline/
-├── index.html                  ← Homepage preview (open via local server)
-├── index2.html                 ← Homepage v2: Mandarin shown, 6 matching area cards, real links, booking demo instead of the form (built by _src/build-index2.js)
+├── index.html                  ← MAIN homepage (the version at the site root). Built by _src/build-home.js, do not edit by hand
+├── old-homepage.html           ← the original homepage (v1), kept for reference, hidden from search engines
+├── index2.html                 ← redirects to the home page, so old links keep working
 ├── service-areas.html          ← Service Areas archive preview
 ├── location-template.html      ← Single location template preview ([Bracket] fields)
 ├── palo-alto.html              ← Palo Alto city page
@@ -12,10 +13,10 @@ crestline/
 ├── IMAGE_PROMPTS.md            ← every image file name + AI prompt (generated from data/images.js; do not edit by hand)
 ├── data/images.js              ← image list: one slot per image, file name = assets/images/<slot>.jpg
 ├── assets/images/              ← photos. Drop a file here with the exact slot name, then run: node _src/build-pages.js
-├── _src/                       ← page bodies + assemble.py (builds inner pages from index.html's header/footer)
+├── _src/                       ← sources and build scripts. home-source.html = original homepage markup (edit this, not index.html); build-pages.js rebuilds everything
 ├── assets/css/style.css
 ├── assets/js/main.js
-├── assets/js/booking.js        ← Calendly-style booking demo used on index2.html (set CRESTLINE_CALENDLY_URL to go live)
+├── assets/js/booking.js        ← Calendly-style booking demo used on the main homepage (set CRESTLINE_CALENDLY_URL to go live)
 ├── assets/icons/*.svg          ← line icons (gold) for Elementor SVG upload if wanted
 ├── DESIGN_SYSTEM.md            ← fonts, colours, spacing, classes — reuse for every new page
 └── elementor/
