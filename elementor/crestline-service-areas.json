@@ -3,13 +3,13 @@
  "title": "Crestline — Service Areas",
  "type": "page",
  "page_settings": {
-  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\n\n/* FOCUS-START (generated from data/images.js) */\n.cl-focus-home-hero img{object-position:74% 50%}\n.cl-focus-home-about img{object-position:50% 40%}\n/* FOCUS-END */\n",
+  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\n\n/* FOCUS-START (generated from data/images.js) */\n.cl-focus-home-hero img{object-position:74% 50%}\n.cl-focus-home-about img{object-position:50% 40%}\n.cl-focus-palo-alto-services img{object-position:50% 70%}\n/* FOCUS-END */\n",
   "hide_title": "yes",
   "template": "elementor_header_footer"
  },
  "content": [
   {
-   "id": "9083649",
+   "id": "d4c2378",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -58,7 +58,7 @@
    },
    "elements": [
     {
-     "id": "14ff984",
+     "id": "1602271",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -98,7 +98,7 @@
      },
      "elements": [
       {
-       "id": "ce16170",
+       "id": "b83dfd0",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -124,7 +124,7 @@
        "elements": []
       },
       {
-       "id": "a4d5404",
+       "id": "af70b9d",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -167,7 +167,7 @@
        "elements": []
       },
       {
-       "id": "7370278",
+       "id": "3f6ce9a",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -214,7 +214,7 @@
        "elements": []
       },
       {
-       "id": "eb6c92b",
+       "id": "c7eb4bf",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -262,7 +262,7 @@
        "elements": []
       },
       {
-       "id": "6247215",
+       "id": "c0a84d4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -288,7 +288,7 @@
        },
        "elements": [
         {
-         "id": "1ef05d6",
+         "id": "c598cba",
          "elType": "widget",
          "isInner": false,
          "widgetType": "button",
@@ -357,7 +357,7 @@
          "elements": []
         },
         {
-         "id": "482e70e",
+         "id": "f7d2f98",
          "elType": "widget",
          "isInner": false,
          "widgetType": "button",
@@ -430,7 +430,7 @@
      ]
     },
     {
-     "id": "9d42511",
+     "id": "10c9ec5",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -482,13 +482,13 @@
      },
      "elements": [
       {
-       "id": "bbe2663",
+       "id": "895f063",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
        "settings": {
         "image": {
-         "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+         "url": "https://web-inference.github.io/crestline/assets/images/areas-hero.jpg",
          "id": "",
          "size": "",
          "alt": "Aerial view of a Silicon Valley neighborhood",
@@ -501,14 +501,14 @@
          "sizes": []
         },
         "_css_classes": "cl-img cl-r-5-4",
-        "_title": "IMG FILE areas-hero.jpg | PROMPT: Aerial view of a leafy Silicon Valley neighborhood at golden hour, tree-lined streets of single-family homes with rolling Santa Cruz foothills in the distance, warm soft light, slight haze, editorial real-estate photography, photorealistic, no text",
+        "_title": "IMG areas-hero.jpg (in site)",
         "_animation": "fadeIn",
         "_animation_delay": 200
        },
        "elements": []
       },
       {
-       "id": "a038699",
+       "id": "cbcf751",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -572,7 +572,7 @@
    ]
   },
   {
-   "id": "6fb2385",
+   "id": "8562098",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -619,7 +619,7 @@
    },
    "elements": [
     {
-     "id": "6b399e8",
+     "id": "05d26e8",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -671,7 +671,7 @@
      },
      "elements": [
       {
-       "id": "3ddf223",
+       "id": "2442ce6",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -738,7 +738,7 @@
        "elements": []
       },
       {
-       "id": "601e41e",
+       "id": "6b875f0",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -805,7 +805,7 @@
        "elements": []
       },
       {
-       "id": "d29129e",
+       "id": "e1178d7",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -872,7 +872,7 @@
        "elements": []
       },
       {
-       "id": "ee1ea6b",
+       "id": "9a45628",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -896,7 +896,7 @@
        },
        "elements": [
         {
-         "id": "86ab5c1",
+         "id": "1e061a9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -938,7 +938,7 @@
          "elements": []
         },
         {
-         "id": "3f0aec0",
+         "id": "f356af4",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -984,7 +984,7 @@
    ]
   },
   {
-   "id": "8a8b813",
+   "id": "be2a783",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1031,7 +1031,7 @@
    },
    "elements": [
     {
-     "id": "4697cc0",
+     "id": "8cd498d",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1074,7 +1074,7 @@
      },
      "elements": [
       {
-       "id": "f1bd574",
+       "id": "161aacb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1113,7 +1113,7 @@
        },
        "elements": [
         {
-         "id": "1188cf1",
+         "id": "29f39da",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1156,7 +1156,7 @@
          "elements": []
         },
         {
-         "id": "977b29e",
+         "id": "156cfe2",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1197,7 +1197,7 @@
        ]
       },
       {
-       "id": "b6b2553",
+       "id": "493ecd2",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -1239,7 +1239,7 @@
      ]
     },
     {
-     "id": "eeb2c2d",
+     "id": "dd96661",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1291,7 +1291,7 @@
      },
      "elements": [
       {
-       "id": "f75402e",
+       "id": "8c91755",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1338,7 +1338,7 @@
        },
        "elements": [
         {
-         "id": "6df46c8",
+         "id": "cb68b11",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -1357,7 +1357,7 @@
          "elements": []
         },
         {
-         "id": "6f36f92",
+         "id": "4c42885",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1402,7 +1402,7 @@
          "elements": []
         },
         {
-         "id": "2c9a61a",
+         "id": "819164a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -1430,7 +1430,7 @@
        ]
       },
       {
-       "id": "7a6f56d",
+       "id": "23d7ed2",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1477,7 +1477,7 @@
        },
        "elements": [
         {
-         "id": "d78b175",
+         "id": "22cd9f0",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -1496,7 +1496,7 @@
          "elements": []
         },
         {
-         "id": "b80ce60",
+         "id": "c15d251",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1541,7 +1541,7 @@
          "elements": []
         },
         {
-         "id": "a36213b",
+         "id": "5829ec1",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -1569,7 +1569,7 @@
        ]
       },
       {
-       "id": "703f0f5",
+       "id": "e6d8b3d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1616,7 +1616,7 @@
        },
        "elements": [
         {
-         "id": "7c25781",
+         "id": "208ecf2",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -1635,7 +1635,7 @@
          "elements": []
         },
         {
-         "id": "92b8213",
+         "id": "86945fd",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1680,7 +1680,7 @@
          "elements": []
         },
         {
-         "id": "94e0799",
+         "id": "478caeb",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -1708,7 +1708,7 @@
        ]
       },
       {
-       "id": "970160e",
+       "id": "017da42",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1755,7 +1755,7 @@
        },
        "elements": [
         {
-         "id": "325386e",
+         "id": "96b9601",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -1774,7 +1774,7 @@
          "elements": []
         },
         {
-         "id": "d371cd0",
+         "id": "bdc60b4",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1819,7 +1819,7 @@
          "elements": []
         },
         {
-         "id": "baf954b",
+         "id": "d8a4eb2",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -1851,7 +1851,7 @@
    ]
   },
   {
-   "id": "14503c3",
+   "id": "9c0375a",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1899,7 +1899,7 @@
    },
    "elements": [
     {
-     "id": "2a59243",
+     "id": "cc11ec9",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1942,7 +1942,7 @@
      },
      "elements": [
       {
-       "id": "8403349",
+       "id": "5b3b96a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1981,7 +1981,7 @@
        },
        "elements": [
         {
-         "id": "ded51ab",
+         "id": "9b7eb5d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2024,7 +2024,7 @@
          "elements": []
         },
         {
-         "id": "13660e1",
+         "id": "cff26ac",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2065,7 +2065,7 @@
        ]
       },
       {
-       "id": "4268eed",
+       "id": "cab892a",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -2107,7 +2107,7 @@
      ]
     },
     {
-     "id": "70b895e",
+     "id": "82f92c0",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2159,7 +2159,7 @@
      },
      "elements": [
       {
-       "id": "f873b04",
+       "id": "edb9d54",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2194,13 +2194,13 @@
        },
        "elements": [
         {
-         "id": "e786eae",
+         "id": "b3cfb15",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-palo-alto.jpg",
            "id": "",
            "size": "",
            "alt": "Palo Alto rental home",
@@ -2213,12 +2213,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-palo-alto.jpg | PROMPT: Tree-lined street in Palo Alto's Professorville with historic Craftsman homes, mature oaks, soft morning light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-palo-alto.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "40027f5",
+         "id": "cf1f113",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -2251,7 +2251,7 @@
          },
          "elements": [
           {
-           "id": "00cb4a3",
+           "id": "e0ca156",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -2292,7 +2292,7 @@
            "elements": []
           },
           {
-           "id": "04b9bb8",
+           "id": "71c1148",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -2337,7 +2337,7 @@
            "elements": []
           },
           {
-           "id": "a136b6c",
+           "id": "1251fa1",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -2371,7 +2371,7 @@
            "elements": []
           },
           {
-           "id": "329e56e",
+           "id": "88c6556",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -2441,7 +2441,7 @@
            },
            "elements": [
             {
-             "id": "8278323",
+             "id": "0ddbf68",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -2465,7 +2465,7 @@
              },
              "elements": [
               {
-               "id": "69786de",
+               "id": "7952491",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -2492,7 +2492,7 @@
                "elements": []
               },
               {
-               "id": "2b45548",
+               "id": "b341f8e",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -2535,7 +2535,7 @@
              ]
             },
             {
-             "id": "4dbe506",
+             "id": "39e5ce1",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -2569,7 +2569,7 @@
              },
              "elements": [
               {
-               "id": "c20e9b9",
+               "id": "8988eaf",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -2596,7 +2596,7 @@
                "elements": []
               },
               {
-               "id": "a3805e4",
+               "id": "8c18a41",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -2641,7 +2641,7 @@
            ]
           },
           {
-           "id": "e350a89",
+           "id": "d6b69bd",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -2672,7 +2672,7 @@
            "elements": []
           },
           {
-           "id": "0dcd425",
+           "id": "a676455",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -2717,7 +2717,7 @@
        ]
       },
       {
-       "id": "271e626",
+       "id": "379cd6e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2752,13 +2752,13 @@
        },
        "elements": [
         {
-         "id": "af12f23",
+         "id": "d2ded34",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-mountain-view.jpg",
            "id": "",
            "size": "",
            "alt": "Mountain View rental home",
@@ -2771,12 +2771,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-mountain-view.jpg | PROMPT: Castro Street in downtown Mountain View at dusk, outdoor café tables, warm string lights, low-rise storefronts, editorial lifestyle photography, photorealistic, no legible signage"
+          "_title": "IMG city-mountain-view.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "81ccfaf",
+         "id": "f1bf48d",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -2809,7 +2809,7 @@
          },
          "elements": [
           {
-           "id": "69180e9",
+           "id": "1900d68",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -2850,7 +2850,7 @@
            "elements": []
           },
           {
-           "id": "71d3614",
+           "id": "eaa7d34",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -2895,7 +2895,7 @@
            "elements": []
           },
           {
-           "id": "cb538c1",
+           "id": "370ad8b",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -2929,7 +2929,7 @@
            "elements": []
           },
           {
-           "id": "225fcbc",
+           "id": "df72e49",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -2999,7 +2999,7 @@
            },
            "elements": [
             {
-             "id": "9a5364d",
+             "id": "2753224",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -3023,7 +3023,7 @@
              },
              "elements": [
               {
-               "id": "d2c663d",
+               "id": "06e3ebe",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3050,7 +3050,7 @@
                "elements": []
               },
               {
-               "id": "dd828ac",
+               "id": "3406091",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3093,7 +3093,7 @@
              ]
             },
             {
-             "id": "c1d6371",
+             "id": "190c615",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -3127,7 +3127,7 @@
              },
              "elements": [
               {
-               "id": "892f23a",
+               "id": "819842e",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3154,7 +3154,7 @@
                "elements": []
               },
               {
-               "id": "a304b6d",
+               "id": "c348eca",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3199,7 +3199,7 @@
            ]
           },
           {
-           "id": "3fea46b",
+           "id": "708a235",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -3230,7 +3230,7 @@
            "elements": []
           },
           {
-           "id": "fb59b58",
+           "id": "4a99b48",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -3275,7 +3275,7 @@
        ]
       },
       {
-       "id": "0ee16bd",
+       "id": "09122d5",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3310,13 +3310,13 @@
        },
        "elements": [
         {
-         "id": "7b1ec54",
+         "id": "4654bc2",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-sunnyvale.jpg",
            "id": "",
            "size": "",
            "alt": "Sunnyvale rental home",
@@ -3329,12 +3329,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-sunnyvale.jpg | PROMPT: Bright mid-century ranch home in Sunnyvale's Cherry Chase neighborhood, manicured front yard, clear blue sky, late afternoon sun, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-sunnyvale.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "2cbdae0",
+         "id": "d87bd77",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -3367,7 +3367,7 @@
          },
          "elements": [
           {
-           "id": "7615546",
+           "id": "9d3d016",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -3408,7 +3408,7 @@
            "elements": []
           },
           {
-           "id": "1bd74ef",
+           "id": "3c5e1f8",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -3453,7 +3453,7 @@
            "elements": []
           },
           {
-           "id": "e18be13",
+           "id": "9d0cb4f",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -3487,7 +3487,7 @@
            "elements": []
           },
           {
-           "id": "dc14e05",
+           "id": "76caccf",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -3557,7 +3557,7 @@
            },
            "elements": [
             {
-             "id": "0b9f1f4",
+             "id": "9a1b6de",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -3581,7 +3581,7 @@
              },
              "elements": [
               {
-               "id": "e9ffc28",
+               "id": "da9cd5e",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3608,7 +3608,7 @@
                "elements": []
               },
               {
-               "id": "15bef13",
+               "id": "fbebcb9",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3651,7 +3651,7 @@
              ]
             },
             {
-             "id": "15aa7b7",
+             "id": "9e04bc2",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -3685,7 +3685,7 @@
              },
              "elements": [
               {
-               "id": "c9b47ca",
+               "id": "5d7e838",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3712,7 +3712,7 @@
                "elements": []
               },
               {
-               "id": "236d4d6",
+               "id": "80df2b9",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -3757,7 +3757,7 @@
            ]
           },
           {
-           "id": "672bf45",
+           "id": "2f73274",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -3788,7 +3788,7 @@
            "elements": []
           },
           {
-           "id": "c1fc9c3",
+           "id": "b6ef0ab",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -3833,7 +3833,7 @@
        ]
       },
       {
-       "id": "414c205",
+       "id": "28d6261",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3868,13 +3868,13 @@
        },
        "elements": [
         {
-         "id": "6c6a389",
+         "id": "0db1101",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-san-jose.jpg",
            "id": "",
            "size": "",
            "alt": "San Jose rental home",
@@ -3887,12 +3887,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-san-jose.jpg | PROMPT: Charming Willow Glen bungalow in San Jose with a deep front porch and mature trees, golden-hour light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-san-jose.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "2c32415",
+         "id": "bfcf47d",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -3925,7 +3925,7 @@
          },
          "elements": [
           {
-           "id": "343f489",
+           "id": "62e1e97",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -3966,7 +3966,7 @@
            "elements": []
           },
           {
-           "id": "89d3499",
+           "id": "5ba12ce",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -4011,7 +4011,7 @@
            "elements": []
           },
           {
-           "id": "19926a3",
+           "id": "a37a31d",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -4045,7 +4045,7 @@
            "elements": []
           },
           {
-           "id": "0ccf6d7",
+           "id": "afd2903",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -4115,7 +4115,7 @@
            },
            "elements": [
             {
-             "id": "2286c6f",
+             "id": "018dc22",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -4139,7 +4139,7 @@
              },
              "elements": [
               {
-               "id": "21f074b",
+               "id": "fc5b49b",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4166,7 +4166,7 @@
                "elements": []
               },
               {
-               "id": "6e7649c",
+               "id": "4ca3011",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4209,7 +4209,7 @@
              ]
             },
             {
-             "id": "5eebd8c",
+             "id": "fb3c934",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -4243,7 +4243,7 @@
              },
              "elements": [
               {
-               "id": "66cc89e",
+               "id": "e44f2fb",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4270,7 +4270,7 @@
                "elements": []
               },
               {
-               "id": "77bc809",
+               "id": "ac2fd9c",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4315,7 +4315,7 @@
            ]
           },
           {
-           "id": "3bffc10",
+           "id": "cb513da",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -4346,7 +4346,7 @@
            "elements": []
           },
           {
-           "id": "e99df95",
+           "id": "e8eef3c",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -4391,7 +4391,7 @@
        ]
       },
       {
-       "id": "5e7af31",
+       "id": "e9a3c3d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4426,13 +4426,13 @@
        },
        "elements": [
         {
-         "id": "8953ce1",
+         "id": "85b255a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-menlo-park.jpg",
            "id": "",
            "size": "",
            "alt": "Menlo Park rental home",
@@ -4445,12 +4445,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-menlo-park.jpg | PROMPT: Elegant shingle-style home in Menlo Park's Allied Arts neighborhood behind a low hedge and heritage oaks, dappled sunlight, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-menlo-park.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "b581dfb",
+         "id": "b0d7139",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -4483,7 +4483,7 @@
          },
          "elements": [
           {
-           "id": "95af5fe",
+           "id": "ef881e3",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -4524,7 +4524,7 @@
            "elements": []
           },
           {
-           "id": "49a4f2a",
+           "id": "ba1ee71",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -4569,7 +4569,7 @@
            "elements": []
           },
           {
-           "id": "98eb403",
+           "id": "0415cee",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -4603,7 +4603,7 @@
            "elements": []
           },
           {
-           "id": "6da353b",
+           "id": "d635cf1",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -4673,7 +4673,7 @@
            },
            "elements": [
             {
-             "id": "ee81c39",
+             "id": "696bf49",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -4697,7 +4697,7 @@
              },
              "elements": [
               {
-               "id": "2e641d0",
+               "id": "88a42c4",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4724,7 +4724,7 @@
                "elements": []
               },
               {
-               "id": "2ae8ebd",
+               "id": "f851e69",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4767,7 +4767,7 @@
              ]
             },
             {
-             "id": "bd86897",
+             "id": "3d94430",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -4801,7 +4801,7 @@
              },
              "elements": [
               {
-               "id": "d61b082",
+               "id": "4317122",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4828,7 +4828,7 @@
                "elements": []
               },
               {
-               "id": "f82e49c",
+               "id": "bcb5a45",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -4873,7 +4873,7 @@
            ]
           },
           {
-           "id": "80741bb",
+           "id": "3625e52",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -4904,7 +4904,7 @@
            "elements": []
           },
           {
-           "id": "a41e790",
+           "id": "3015c0a",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -4949,7 +4949,7 @@
        ]
       },
       {
-       "id": "8d280ea",
+       "id": "c91519b",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4984,13 +4984,13 @@
        },
        "elements": [
         {
-         "id": "f80cffb",
+         "id": "de5a3d8",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-foster-city.jpg",
            "id": "",
            "size": "",
            "alt": "Foster City rental home",
@@ -5003,12 +5003,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-foster-city.jpg | PROMPT: Waterfront townhomes along a calm Foster City lagoon with small boats docked, reflections on the water, soft evening light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-foster-city.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "db3b317",
+         "id": "bde38ec",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -5041,7 +5041,7 @@
          },
          "elements": [
           {
-           "id": "7ace287",
+           "id": "a262e03",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -5082,7 +5082,7 @@
            "elements": []
           },
           {
-           "id": "f776151",
+           "id": "2a5b988",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -5127,7 +5127,7 @@
            "elements": []
           },
           {
-           "id": "5a49fe2",
+           "id": "84d7518",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -5161,7 +5161,7 @@
            "elements": []
           },
           {
-           "id": "cb4fa7f",
+           "id": "236fbdb",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -5231,7 +5231,7 @@
            },
            "elements": [
             {
-             "id": "79cb14b",
+             "id": "2f789c3",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -5255,7 +5255,7 @@
              },
              "elements": [
               {
-               "id": "6fc3698",
+               "id": "bc76845",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -5282,7 +5282,7 @@
                "elements": []
               },
               {
-               "id": "48e9be3",
+               "id": "7753019",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -5325,7 +5325,7 @@
              ]
             },
             {
-             "id": "711279d",
+             "id": "87bb9a9",
              "elType": "container",
              "isInner": true,
              "settings": {
@@ -5359,7 +5359,7 @@
              },
              "elements": [
               {
-               "id": "b468146",
+               "id": "176034b",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -5386,7 +5386,7 @@
                "elements": []
               },
               {
-               "id": "986c22f",
+               "id": "45f5499",
                "elType": "widget",
                "isInner": false,
                "widgetType": "heading",
@@ -5431,7 +5431,7 @@
            ]
           },
           {
-           "id": "3848481",
+           "id": "750b861",
            "elType": "widget",
            "isInner": false,
            "widgetType": "text-editor",
@@ -5462,7 +5462,7 @@
            "elements": []
           },
           {
-           "id": "a5733b3",
+           "id": "208e1ee",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -5511,7 +5511,7 @@
    ]
   },
   {
-   "id": "804d4c0",
+   "id": "14c3af7",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -5558,7 +5558,7 @@
    },
    "elements": [
     {
-     "id": "f4b2aed",
+     "id": "769109d",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -5591,7 +5591,7 @@
      },
      "elements": [
       {
-       "id": "5e524aa",
+       "id": "18ec0ea",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5634,7 +5634,7 @@
        "elements": []
       },
       {
-       "id": "e203685",
+       "id": "00f215f",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5673,7 +5673,7 @@
        "elements": []
       },
       {
-       "id": "0bfa0d6",
+       "id": "f58ed2f",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -5708,7 +5708,7 @@
      ]
     },
     {
-     "id": "016fa04",
+     "id": "4869c2b",
      "elType": "widget",
      "isInner": false,
      "widgetType": "text-editor",
@@ -5738,7 +5738,7 @@
    ]
   },
   {
-   "id": "4aa0367",
+   "id": "3154083",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -5787,7 +5787,7 @@
    },
    "elements": [
     {
-     "id": "9f52b3a",
+     "id": "d382bdb",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -5826,7 +5826,7 @@
      },
      "elements": [
       {
-       "id": "9b66107",
+       "id": "b6e79c3",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5869,7 +5869,7 @@
        "elements": []
       },
       {
-       "id": "082b407",
+       "id": "74c380b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5916,7 +5916,7 @@
        "elements": []
       },
       {
-       "id": "365a020",
+       "id": "3ab7e1c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -5959,13 +5959,13 @@
        "elements": []
       },
       {
-       "id": "e701b5a",
+       "id": "9d58cd1",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
        "settings": {
         "image": {
-         "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+         "url": "https://web-inference.github.io/crestline/assets/images/areas-process.jpg",
          "id": "",
          "size": "",
          "alt": "Handing over house keys",
@@ -5978,7 +5978,7 @@
          "sizes": []
         },
         "_css_classes": "cl-img cl-r-5-3",
-        "_title": "IMG FILE areas-process.jpg | PROMPT: Property manager handing a set of house keys to a homeowner on the front steps of a modern Bay Area home, hands and keys in focus, warm natural light, editorial lifestyle photography, photorealistic, no faces",
+        "_title": "IMG areas-process.jpg (in site)",
         "_margin": {
          "unit": "px",
          "top": "0",
@@ -5993,7 +5993,7 @@
        "elements": []
       },
       {
-       "id": "132a1de",
+       "id": "83a58ea",
        "elType": "widget",
        "isInner": false,
        "widgetType": "button",
@@ -6064,7 +6064,7 @@
      ]
     },
     {
-     "id": "ac67973",
+     "id": "e79a198",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6112,7 +6112,7 @@
      },
      "elements": [
       {
-       "id": "b351eb0",
+       "id": "cf63fd4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6139,7 +6139,7 @@
        },
        "elements": [
         {
-         "id": "7e13acb",
+         "id": "97b7776",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6173,7 +6173,7 @@
          },
          "elements": [
           {
-           "id": "591ba69",
+           "id": "af9480b",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6201,7 +6201,7 @@
            "elements": []
           },
           {
-           "id": "11de7d7",
+           "id": "ec10f46",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6240,7 +6240,7 @@
          ]
         },
         {
-         "id": "6f0ebd0",
+         "id": "488988e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6274,7 +6274,7 @@
          "elements": []
         },
         {
-         "id": "57e464e",
+         "id": "6b69347",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6309,7 +6309,7 @@
        ]
       },
       {
-       "id": "a31eb80",
+       "id": "a01a125",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6336,7 +6336,7 @@
        },
        "elements": [
         {
-         "id": "ca509b6",
+         "id": "00a6574",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6370,7 +6370,7 @@
          },
          "elements": [
           {
-           "id": "2fecedd",
+           "id": "8ba4478",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6398,7 +6398,7 @@
            "elements": []
           },
           {
-           "id": "8187fea",
+           "id": "756599f",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6437,7 +6437,7 @@
          ]
         },
         {
-         "id": "c10d129",
+         "id": "0acb267",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6471,7 +6471,7 @@
          "elements": []
         },
         {
-         "id": "f2e3aed",
+         "id": "1f1f435",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6506,7 +6506,7 @@
        ]
       },
       {
-       "id": "09fd80a",
+       "id": "47a2ec4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6533,7 +6533,7 @@
        },
        "elements": [
         {
-         "id": "db4c05a",
+         "id": "b7bc833",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6567,7 +6567,7 @@
          },
          "elements": [
           {
-           "id": "dad4762",
+           "id": "7632265",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6595,7 +6595,7 @@
            "elements": []
           },
           {
-           "id": "22e0bdc",
+           "id": "c38809e",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6634,7 +6634,7 @@
          ]
         },
         {
-         "id": "700e20a",
+         "id": "ec8ac7d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6668,7 +6668,7 @@
          "elements": []
         },
         {
-         "id": "9cafc39",
+         "id": "ebc7911",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6703,7 +6703,7 @@
        ]
       },
       {
-       "id": "4009bb4",
+       "id": "7771667",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6730,7 +6730,7 @@
        },
        "elements": [
         {
-         "id": "50ef464",
+         "id": "d773e5d",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6764,7 +6764,7 @@
          },
          "elements": [
           {
-           "id": "9f2214a",
+           "id": "a7ca81c",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6792,7 +6792,7 @@
            "elements": []
           },
           {
-           "id": "b11c1dd",
+           "id": "05a3fc3",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6831,7 +6831,7 @@
          ]
         },
         {
-         "id": "bc8f1f2",
+         "id": "26b13af",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6865,7 +6865,7 @@
          "elements": []
         },
         {
-         "id": "39e0a28",
+         "id": "9ebc18d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6904,7 +6904,7 @@
    ]
   },
   {
-   "id": "218d005",
+   "id": "e903d66",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -6953,7 +6953,7 @@
    },
    "elements": [
     {
-     "id": "32ec804",
+     "id": "8758d2c",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6992,7 +6992,7 @@
      },
      "elements": [
       {
-       "id": "c5653f6",
+       "id": "6aacad8",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -7035,7 +7035,7 @@
        "elements": []
       },
       {
-       "id": "d4fc5fb",
+       "id": "c7d2741",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -7082,7 +7082,7 @@
        "elements": []
       },
       {
-       "id": "2312c31",
+       "id": "995fd18",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7130,7 +7130,7 @@
        "elements": []
       },
       {
-       "id": "406ecac",
+       "id": "d87c836",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -7172,7 +7172,7 @@
      ]
     },
     {
-     "id": "6a2709b",
+     "id": "43496e6",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -7213,7 +7213,7 @@
      },
      "elements": [
       {
-       "id": "589a42a",
+       "id": "25d038d",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7248,7 +7248,7 @@
    ]
   },
   {
-   "id": "97d6a82",
+   "id": "746c6d3",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -7298,7 +7298,7 @@
    },
    "elements": [
     {
-     "id": "524e974",
+     "id": "6ac8c12",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -7337,7 +7337,7 @@
      },
      "elements": [
       {
-       "id": "82cec42",
+       "id": "4bcd2bf",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -7380,7 +7380,7 @@
        "elements": []
       },
       {
-       "id": "c2ab989",
+       "id": "f29a7ba",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -7427,7 +7427,7 @@
        "elements": []
       },
       {
-       "id": "dbc01b0",
+       "id": "a58277d",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7470,7 +7470,7 @@
        "elements": []
       },
       {
-       "id": "974c0c7",
+       "id": "e4099a7",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7500,7 +7500,7 @@
      ]
     },
     {
-     "id": "30feb00",
+     "id": "5bbeabd",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -7551,7 +7551,7 @@
      },
      "elements": [
       {
-       "id": "70527e9",
+       "id": "90ff1d3",
        "elType": "widget",
        "isInner": false,
        "widgetType": "form",
@@ -7559,7 +7559,7 @@
         "form_name": "Free Rental Analysis",
         "form_fields": [
          {
-          "_id": "84f73d5",
+          "_id": "d0de714",
           "placeholder": "",
           "custom_id": "name",
           "field_type": "text",
@@ -7568,7 +7568,7 @@
           "required": "true"
          },
          {
-          "_id": "7039747",
+          "_id": "6df5a5e",
           "placeholder": "",
           "custom_id": "phone",
           "field_type": "tel",
@@ -7576,7 +7576,7 @@
           "width": "50"
          },
          {
-          "_id": "43614a4",
+          "_id": "3233a56",
           "placeholder": "",
           "custom_id": "email",
           "field_type": "email",
@@ -7585,7 +7585,7 @@
           "required": "true"
          },
          {
-          "_id": "6f9ef62",
+          "_id": "7145fef",
           "placeholder": "",
           "custom_id": "address",
           "field_type": "text",
@@ -7593,7 +7593,7 @@
           "width": "100"
          },
          {
-          "_id": "e3ee557",
+          "_id": "837b512",
           "placeholder": "",
           "custom_id": "message",
           "field_type": "textarea",
@@ -7602,7 +7602,7 @@
           "rows": 4
          },
          {
-          "_id": "ac75d15",
+          "_id": "fb92feb",
           "placeholder": "",
           "custom_id": "hp",
           "field_type": "honeypot",
@@ -7610,7 +7610,7 @@
           "width": "100"
          },
          {
-          "_id": "9a8c8e2",
+          "_id": "3e8538e",
           "placeholder": "",
           "custom_id": "note",
           "field_type": "html",

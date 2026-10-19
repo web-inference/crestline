@@ -12,6 +12,7 @@ const IM = require(path.join(ROOT, 'data', 'images.js'));
 const entries = IM.all();
 const bySlot = Object.fromEntries(entries.map((e) => [e.slot, e]));
 
+const assetVersion = (rel) => require('crypto').createHash('md5').update(fs.readFileSync(path.join(ROOT, rel))).digest('hex').slice(0, 8);
 const attr = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const text = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
@@ -34,12 +35,14 @@ let filled = 0, placeholders = 0;
 for (const f of pages) {
   const p = path.join(ROOT, f);
   const src = fs.readFileSync(p, 'utf8');
-  const out = src.replace(RE, (m, open, slot) => {
+  let out = src.replace(RE, (m, open, slot) => {
     const e = bySlot[slot];
     if (!e) { unknown.add(`${f}: ${slot}`); return m; }
     e.file ? filled++ : placeholders++;
     return `${open}<!--img-->${inner(e)}<!--/img-->`;
   });
+  // Version stamp on CSS/JS links so browsers never keep serving an old copy after an update
+  out = out.replace(/(assets\/(?:css|js)\/[A-Za-z0-9_-]+\.(?:css|js))(\?v=[0-9a-f]+)?(?=")/g, (m, p) => `${p}?v=${assetVersion(p)}`);
   if (out !== src) fs.writeFileSync(p, out);
 }
 if (unknown.size) { console.error('Unknown image slots:\n  ' + [...unknown].join('\n  ')); process.exit(1); }

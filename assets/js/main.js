@@ -12,6 +12,14 @@
 
   /* ---------- Scroll reveal ---------- */
   var revealEls = document.querySelectorAll('[data-reveal]');
+  var wipes = [];
+  function checkWipes() {
+    var vh = window.innerHeight;
+    for (var i = wipes.length - 1; i >= 0; i--) {
+      var r = wipes[i].getBoundingClientRect(); // the layout box is unaffected by clip-path
+      if (r.top < vh * 0.9 && r.bottom > 0) { wipes[i].classList.add('is-in'); wipes.splice(i, 1); }
+    }
+  }
   if ('IntersectionObserver' in window && !reduceMotion) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -20,7 +28,15 @@
         io.unobserve(e.target);
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function (el) { io.observe(el); });
+    revealEls.forEach(function (el) {
+      // "wipe" elements are fully clipped (clip-path) until revealed, and browsers report a fully clipped element as
+      // never intersecting, so an IntersectionObserver would never fire for them. Reveal them by position instead.
+      if (el.getAttribute('data-reveal') === 'wipe') wipes.push(el); else io.observe(el);
+    });
+    checkWipes();
+    window.addEventListener('scroll', checkWipes, { passive: true });
+    window.addEventListener('resize', checkWipes);
+    window.addEventListener('load', checkWipes);
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }

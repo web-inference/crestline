@@ -99,6 +99,10 @@ for (const f of fs.readdirSync(CITY_DIR).filter((x) => x.endsWith('.js')).sort()
   add({ slot: `${c.slug}-services`, group, where: `How we manage ${N} homes, left image`, ratio: '5:3', minSize: '1500 × 900', alt: `${N} rental home interior`, prompt: c.services.prompt });
 }
 
+/* Per-photo crop focus (object-position) where the default centre crop cuts the subject */
+const FOCUS = { 'palo-alto-services': '50% 70%' };
+for (const s of slots) if (FOCUS[s.slot]) s.focus = FOCUS[s.slot];
+
 /* ---------------- helpers ---------------- */
 function findFile(slot) {
   for (const ext of EXTS) {

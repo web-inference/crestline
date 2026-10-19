@@ -3,13 +3,13 @@
  "title": "Crestline — Home",
  "type": "page",
  "page_settings": {
-  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\n\n/* FOCUS-START (generated from data/images.js) */\n.cl-focus-home-hero img{object-position:74% 50%}\n.cl-focus-home-about img{object-position:50% 40%}\n/* FOCUS-END */\n",
+  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\n\n/* FOCUS-START (generated from data/images.js) */\n.cl-focus-home-hero img{object-position:74% 50%}\n.cl-focus-home-about img{object-position:50% 40%}\n.cl-focus-palo-alto-services img{object-position:50% 70%}\n/* FOCUS-END */\n",
   "hide_title": "yes",
   "template": "elementor_header_footer"
  },
  "content": [
   {
-   "id": "16702b9",
+   "id": "ea42d75",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -58,7 +58,7 @@
    },
    "elements": [
     {
-     "id": "ea3514a",
+     "id": "c25fb24",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -98,7 +98,7 @@
      },
      "elements": [
       {
-       "id": "d268b88",
+       "id": "9da43b0",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -141,7 +141,7 @@
        "elements": []
       },
       {
-       "id": "77a448d",
+       "id": "fcab3c5",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -188,7 +188,7 @@
        "elements": []
       },
       {
-       "id": "b4a32d3",
+       "id": "ff29241",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -236,7 +236,7 @@
        "elements": []
       },
       {
-       "id": "3dbe436",
+       "id": "a68cfc2",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -262,7 +262,7 @@
        },
        "elements": [
         {
-         "id": "074b798",
+         "id": "daa42dd",
          "elType": "widget",
          "isInner": false,
          "widgetType": "button",
@@ -331,7 +331,7 @@
          "elements": []
         },
         {
-         "id": "8065b51",
+         "id": "ee28293",
          "elType": "widget",
          "isInner": false,
          "widgetType": "button",
@@ -402,7 +402,7 @@
        ]
       },
       {
-       "id": "d15ce1b",
+       "id": "67c0ea3",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -432,7 +432,7 @@
      ]
     },
     {
-     "id": "aefa94f",
+     "id": "f093de1",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -484,7 +484,7 @@
      },
      "elements": [
       {
-       "id": "8538d9f",
+       "id": "93d35dc",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
@@ -510,7 +510,7 @@
        "elements": []
       },
       {
-       "id": "e8695b8",
+       "id": "f140eb0",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -574,7 +574,7 @@
    ]
   },
   {
-   "id": "1b93c54",
+   "id": "7feb353",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -621,7 +621,7 @@
    },
    "elements": [
     {
-     "id": "6137836",
+     "id": "734ba7f",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -673,7 +673,7 @@
      },
      "elements": [
       {
-       "id": "0f8f8b3",
+       "id": "4f8bea9",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -740,7 +740,7 @@
        "elements": []
       },
       {
-       "id": "66121db",
+       "id": "a2746da",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -807,7 +807,7 @@
        "elements": []
       },
       {
-       "id": "f3f90a6",
+       "id": "3cdad4c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -874,7 +874,7 @@
        "elements": []
       },
       {
-       "id": "53bbc91",
+       "id": "2675263",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -898,7 +898,7 @@
        },
        "elements": [
         {
-         "id": "d80da4c",
+         "id": "9538974",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -940,7 +940,7 @@
          "elements": []
         },
         {
-         "id": "bb2be47",
+         "id": "bf49977",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -986,7 +986,7 @@
    ]
   },
   {
-   "id": "ae7909c",
+   "id": "7671c61",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1036,7 +1036,7 @@
    },
    "elements": [
     {
-     "id": "258edf1",
+     "id": "bb9b17d",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1076,7 +1076,7 @@
      },
      "elements": [
       {
-       "id": "6eb2549",
+       "id": "f75b91d",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
@@ -1102,7 +1102,7 @@
        "elements": []
       },
       {
-       "id": "628e2f2",
+       "id": "a8f5aaa",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1139,7 +1139,7 @@
        },
        "elements": [
         {
-         "id": "326e4ff",
+         "id": "a24d549",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1179,7 +1179,7 @@
          "elements": []
         },
         {
-         "id": "c9c1b70",
+         "id": "92321e0",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1221,7 +1221,7 @@
      ]
     },
     {
-     "id": "02ffa49",
+     "id": "d748b6e",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1260,7 +1260,7 @@
      },
      "elements": [
       {
-       "id": "1f0ec37",
+       "id": "3b801a5",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1303,7 +1303,7 @@
        "elements": []
       },
       {
-       "id": "25420dc",
+       "id": "38bbd2e",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1350,7 +1350,7 @@
        "elements": []
       },
       {
-       "id": "8ebffbd",
+       "id": "41b1c23",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -1398,7 +1398,7 @@
        "elements": []
       },
       {
-       "id": "67cadd3",
+       "id": "8249202",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1442,7 +1442,7 @@
    ]
   },
   {
-   "id": "96da726",
+   "id": "dd73acc",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1491,7 +1491,7 @@
    },
    "elements": [
     {
-     "id": "3ae4ce9",
+     "id": "1cce696",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1530,7 +1530,7 @@
      },
      "elements": [
       {
-       "id": "26d410e",
+       "id": "098f198",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1573,7 +1573,7 @@
        "elements": []
       },
       {
-       "id": "91898d7",
+       "id": "4c3388c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1620,7 +1620,7 @@
        "elements": []
       },
       {
-       "id": "2084d09",
+       "id": "a5f1381",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -1668,7 +1668,7 @@
        "elements": []
       },
       {
-       "id": "b7c6dcf",
+       "id": "748a13b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "button",
@@ -1739,7 +1739,7 @@
      ]
     },
     {
-     "id": "aadd2a9",
+     "id": "fcd1060",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1806,7 +1806,7 @@
      },
      "elements": [
       {
-       "id": "72540c4",
+       "id": "a83580f",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1850,7 +1850,7 @@
        },
        "elements": [
         {
-         "id": "7c84729",
+         "id": "ee86c28",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1886,7 +1886,7 @@
          "elements": []
         },
         {
-         "id": "31554e4",
+         "id": "9a9a4b7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1931,7 +1931,7 @@
          "elements": []
         },
         {
-         "id": "a812e7f",
+         "id": "8cf4bb7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -1959,7 +1959,7 @@
        ]
       },
       {
-       "id": "639db72",
+       "id": "44efe18",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2003,7 +2003,7 @@
        },
        "elements": [
         {
-         "id": "a619a0f",
+         "id": "7dd816c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2039,7 +2039,7 @@
          "elements": []
         },
         {
-         "id": "8096faa",
+         "id": "391e232",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2084,7 +2084,7 @@
          "elements": []
         },
         {
-         "id": "e8f0690",
+         "id": "cecd5e4",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2112,7 +2112,7 @@
        ]
       },
       {
-       "id": "d0d253a",
+       "id": "13fa235",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2156,7 +2156,7 @@
        },
        "elements": [
         {
-         "id": "ad94230",
+         "id": "d7d7668",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2192,7 +2192,7 @@
          "elements": []
         },
         {
-         "id": "ca6a787",
+         "id": "0641962",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2237,7 +2237,7 @@
          "elements": []
         },
         {
-         "id": "ab80f78",
+         "id": "176ec11",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2265,7 +2265,7 @@
        ]
       },
       {
-       "id": "65aad4b",
+       "id": "ab6d056",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2309,7 +2309,7 @@
        },
        "elements": [
         {
-         "id": "8045b88",
+         "id": "1a2125a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2345,7 +2345,7 @@
          "elements": []
         },
         {
-         "id": "2c4efa0",
+         "id": "552262b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2390,7 +2390,7 @@
          "elements": []
         },
         {
-         "id": "365fb99",
+         "id": "78c883e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2422,7 +2422,7 @@
    ]
   },
   {
-   "id": "92c8373",
+   "id": "a8e53dc",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -2470,7 +2470,7 @@
    },
    "elements": [
     {
-     "id": "4f40534",
+     "id": "4124cbd",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2513,7 +2513,7 @@
      },
      "elements": [
       {
-       "id": "a4bf07c",
+       "id": "be022df",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2552,7 +2552,7 @@
        },
        "elements": [
         {
-         "id": "45d4a98",
+         "id": "35c4960",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2595,7 +2595,7 @@
          "elements": []
         },
         {
-         "id": "74d98e8",
+         "id": "1988a61",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2636,7 +2636,7 @@
        ]
       },
       {
-       "id": "703a000",
+       "id": "44adbe0",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -2678,7 +2678,7 @@
      ]
     },
     {
-     "id": "14c3d9b",
+     "id": "f55cf0c",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2731,7 +2731,7 @@
      },
      "elements": [
       {
-       "id": "a2b6989",
+       "id": "6564bd4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2766,7 +2766,7 @@
        },
        "elements": [
         {
-         "id": "77021a4",
+         "id": "3cea27b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -2785,7 +2785,7 @@
          "elements": []
         },
         {
-         "id": "c39b682",
+         "id": "2d59b8b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2830,7 +2830,7 @@
          "elements": []
         },
         {
-         "id": "1bcb832",
+         "id": "08c65f9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2858,7 +2858,7 @@
        ]
       },
       {
-       "id": "619a0f4",
+       "id": "fadf7ed",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2893,7 +2893,7 @@
        },
        "elements": [
         {
-         "id": "4674f41",
+         "id": "260b129",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -2912,7 +2912,7 @@
          "elements": []
         },
         {
-         "id": "7321cc2",
+         "id": "680b24c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2957,7 +2957,7 @@
          "elements": []
         },
         {
-         "id": "8a46c40",
+         "id": "0932695",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2985,7 +2985,7 @@
        ]
       },
       {
-       "id": "1b245e7",
+       "id": "482b26f",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3020,7 +3020,7 @@
        },
        "elements": [
         {
-         "id": "a79bcfc",
+         "id": "c31e6bb",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3039,7 +3039,7 @@
          "elements": []
         },
         {
-         "id": "6e45ffe",
+         "id": "7c875ce",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3084,7 +3084,7 @@
          "elements": []
         },
         {
-         "id": "4a5fc3c",
+         "id": "a24e8b4",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3112,7 +3112,7 @@
        ]
       },
       {
-       "id": "3c9e97c",
+       "id": "1e41e91",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3147,7 +3147,7 @@
        },
        "elements": [
         {
-         "id": "ce06ddb",
+         "id": "a26947d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3166,7 +3166,7 @@
          "elements": []
         },
         {
-         "id": "5db2d8b",
+         "id": "f185ec4",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3211,7 +3211,7 @@
          "elements": []
         },
         {
-         "id": "3702909",
+         "id": "a77c47a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3239,7 +3239,7 @@
        ]
       },
       {
-       "id": "a9a200a",
+       "id": "ac2386b",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3274,7 +3274,7 @@
        },
        "elements": [
         {
-         "id": "80a91b9",
+         "id": "c0ee1df",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3293,7 +3293,7 @@
          "elements": []
         },
         {
-         "id": "0309172",
+         "id": "8192935",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3338,7 +3338,7 @@
          "elements": []
         },
         {
-         "id": "1c42845",
+         "id": "62072e3",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3366,7 +3366,7 @@
        ]
       },
       {
-       "id": "c3f3fb6",
+       "id": "854f06e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3401,7 +3401,7 @@
        },
        "elements": [
         {
-         "id": "6372da7",
+         "id": "094b334",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3420,7 +3420,7 @@
          "elements": []
         },
         {
-         "id": "ac30137",
+         "id": "3ea1252",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3465,7 +3465,7 @@
          "elements": []
         },
         {
-         "id": "3b5f1c4",
+         "id": "c9a1562",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3497,7 +3497,7 @@
    ]
   },
   {
-   "id": "07f8363",
+   "id": "b265635",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -3544,7 +3544,7 @@
    },
    "elements": [
     {
-     "id": "853acd7",
+     "id": "b03c699",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -3587,7 +3587,7 @@
      },
      "elements": [
       {
-       "id": "05e0d7b",
+       "id": "bb2dd7e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3626,7 +3626,7 @@
        },
        "elements": [
         {
-         "id": "45ab73a",
+         "id": "17e4469",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3669,7 +3669,7 @@
          "elements": []
         },
         {
-         "id": "0d18c00",
+         "id": "c2fb758",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3710,7 +3710,7 @@
        ]
       },
       {
-       "id": "96eabeb",
+       "id": "320bef9",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -3754,7 +3754,7 @@
      ]
     },
     {
-     "id": "e8f5d46",
+     "id": "d76e851",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -3806,7 +3806,7 @@
      },
      "elements": [
       {
-       "id": "a480d62",
+       "id": "0fc1c83",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3853,7 +3853,7 @@
        },
        "elements": [
         {
-         "id": "8b87af7",
+         "id": "ea31d56",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3872,7 +3872,7 @@
          "elements": []
         },
         {
-         "id": "f66c4cc",
+         "id": "216d800",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3917,7 +3917,7 @@
          "elements": []
         },
         {
-         "id": "87b4993",
+         "id": "7a04a49",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3945,7 +3945,7 @@
        ]
       },
       {
-       "id": "d968085",
+       "id": "baff8cf",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3992,7 +3992,7 @@
        },
        "elements": [
         {
-         "id": "0ac4ecd",
+         "id": "ef37e50",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4011,7 +4011,7 @@
          "elements": []
         },
         {
-         "id": "a3332ab",
+         "id": "dc0c760",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4056,7 +4056,7 @@
          "elements": []
         },
         {
-         "id": "a0eb5d9",
+         "id": "f6546b3",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4084,7 +4084,7 @@
        ]
       },
       {
-       "id": "db6716a",
+       "id": "545bde9",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4131,7 +4131,7 @@
        },
        "elements": [
         {
-         "id": "a187c89",
+         "id": "98b7c06",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4150,7 +4150,7 @@
          "elements": []
         },
         {
-         "id": "09f80f6",
+         "id": "198c8a9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4195,7 +4195,7 @@
          "elements": []
         },
         {
-         "id": "de1d244",
+         "id": "2bdf528",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4227,7 +4227,7 @@
    ]
   },
   {
-   "id": "eb7c6e5",
+   "id": "ea3dd3e",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -4274,7 +4274,7 @@
    },
    "elements": [
     {
-     "id": "1b21bd6",
+     "id": "0e16c75",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -4307,7 +4307,7 @@
      },
      "elements": [
       {
-       "id": "7f82aaa",
+       "id": "f94ed21",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -4350,7 +4350,7 @@
        "elements": []
       },
       {
-       "id": "f063bd1",
+       "id": "08f31aa",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -4389,7 +4389,7 @@
        "elements": []
       },
       {
-       "id": "0fcbf43",
+       "id": "537e67b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -4424,7 +4424,7 @@
      ]
     },
     {
-     "id": "4542e93",
+     "id": "7fe295e",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -4484,7 +4484,7 @@
      },
      "elements": [
       {
-       "id": "b22d9d3",
+       "id": "221b79e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4532,7 +4532,7 @@
        },
        "elements": [
         {
-         "id": "2851ca1",
+         "id": "26fce75",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4551,7 +4551,7 @@
          "elements": []
         },
         {
-         "id": "edb0c53",
+         "id": "f6db526",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4596,7 +4596,7 @@
          "elements": []
         },
         {
-         "id": "3fe72f3",
+         "id": "52fb02e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4624,7 +4624,7 @@
        ]
       },
       {
-       "id": "2c968ff",
+       "id": "ea52ab2",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4672,7 +4672,7 @@
        },
        "elements": [
         {
-         "id": "2bb3c24",
+         "id": "b7fe6b5",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4691,7 +4691,7 @@
          "elements": []
         },
         {
-         "id": "1d2144e",
+         "id": "bec4b80",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4736,7 +4736,7 @@
          "elements": []
         },
         {
-         "id": "417e5b7",
+         "id": "5267f9b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4764,7 +4764,7 @@
        ]
       },
       {
-       "id": "4258702",
+       "id": "3e7adaa",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4812,7 +4812,7 @@
        },
        "elements": [
         {
-         "id": "8faaaa9",
+         "id": "5255316",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4831,7 +4831,7 @@
          "elements": []
         },
         {
-         "id": "60bab6c",
+         "id": "8a70dbe",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4876,7 +4876,7 @@
          "elements": []
         },
         {
-         "id": "176224a",
+         "id": "7d6f997",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4908,7 +4908,7 @@
    ]
   },
   {
-   "id": "2a7ecf8",
+   "id": "20a28d2",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -4957,7 +4957,7 @@
    },
    "elements": [
     {
-     "id": "f1c4637",
+     "id": "3812d1f",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -4996,7 +4996,7 @@
      },
      "elements": [
       {
-       "id": "677fff2",
+       "id": "1ee468e",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5039,7 +5039,7 @@
        "elements": []
       },
       {
-       "id": "0a7f63b",
+       "id": "b59517f",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5086,7 +5086,7 @@
        "elements": []
       },
       {
-       "id": "fe4787f",
+       "id": "8040119",
        "elType": "widget",
        "isInner": false,
        "widgetType": "divider",
@@ -5122,7 +5122,7 @@
        "elements": []
       },
       {
-       "id": "123d9f4",
+       "id": "348811d",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5165,7 +5165,7 @@
        "elements": []
       },
       {
-       "id": "13421be",
+       "id": "070fd93",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
@@ -5193,7 +5193,7 @@
      ]
     },
     {
-     "id": "eadd1d1",
+     "id": "099606b",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -5260,7 +5260,7 @@
      },
      "elements": [
       {
-       "id": "8613e80",
+       "id": "52f519a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5296,7 +5296,7 @@
        },
        "elements": [
         {
-         "id": "fa6a426",
+         "id": "77373b5",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5341,7 +5341,7 @@
          "elements": []
         },
         {
-         "id": "dd77611",
+         "id": "43d72e3",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5369,7 +5369,7 @@
        ]
       },
       {
-       "id": "c3976fe",
+       "id": "6a9d0b7",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5405,7 +5405,7 @@
        },
        "elements": [
         {
-         "id": "eb6616b",
+         "id": "7cedfcf",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5450,7 +5450,7 @@
          "elements": []
         },
         {
-         "id": "62fd7bc",
+         "id": "8702cbe",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5478,7 +5478,7 @@
        ]
       },
       {
-       "id": "4577233",
+       "id": "5197c23",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5514,7 +5514,7 @@
        },
        "elements": [
         {
-         "id": "7552943",
+         "id": "71d8a26",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5559,7 +5559,7 @@
          "elements": []
         },
         {
-         "id": "6b7b0c5",
+         "id": "f023e76",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5587,7 +5587,7 @@
        ]
       },
       {
-       "id": "75115fd",
+       "id": "b2eb99a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5623,7 +5623,7 @@
        },
        "elements": [
         {
-         "id": "bd947d7",
+         "id": "4b62cd2",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5668,7 +5668,7 @@
          "elements": []
         },
         {
-         "id": "80ae3ac",
+         "id": "75a6765",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5700,7 +5700,7 @@
    ]
   },
   {
-   "id": "d4fe388",
+   "id": "11c1c67",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -5749,7 +5749,7 @@
    },
    "elements": [
     {
-     "id": "dba6b64",
+     "id": "7b61e8a",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -5788,7 +5788,7 @@
      },
      "elements": [
       {
-       "id": "f39ebb1",
+       "id": "ace117c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5831,7 +5831,7 @@
        "elements": []
       },
       {
-       "id": "5b18227",
+       "id": "594d35d",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5878,7 +5878,7 @@
        "elements": []
       },
       {
-       "id": "06c96ae",
+       "id": "bae86fa",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -5921,7 +5921,7 @@
        "elements": []
       },
       {
-       "id": "f5f5f2b",
+       "id": "3bfff92",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
@@ -5955,7 +5955,7 @@
        "elements": []
       },
       {
-       "id": "48e4698",
+       "id": "5f20c3e",
        "elType": "widget",
        "isInner": false,
        "widgetType": "button",
@@ -6026,7 +6026,7 @@
      ]
     },
     {
-     "id": "773646b",
+     "id": "ae7e0dd",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6074,7 +6074,7 @@
      },
      "elements": [
       {
-       "id": "f1acbf0",
+       "id": "70ca6e6",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6101,7 +6101,7 @@
        },
        "elements": [
         {
-         "id": "1d64dcd",
+         "id": "6aa8892",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6135,7 +6135,7 @@
          },
          "elements": [
           {
-           "id": "5d59e73",
+           "id": "68f3e1e",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6163,7 +6163,7 @@
            "elements": []
           },
           {
-           "id": "0b68c9a",
+           "id": "51cf0d8",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6202,7 +6202,7 @@
          ]
         },
         {
-         "id": "dcbc9c1",
+         "id": "2780992",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6236,7 +6236,7 @@
          "elements": []
         },
         {
-         "id": "8293a4f",
+         "id": "5a61cfe",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6271,7 +6271,7 @@
        ]
       },
       {
-       "id": "5ac7847",
+       "id": "6100599",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6298,7 +6298,7 @@
        },
        "elements": [
         {
-         "id": "d6daf91",
+         "id": "342c1f2",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6332,7 +6332,7 @@
          },
          "elements": [
           {
-           "id": "0123ba4",
+           "id": "536b6b6",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6360,7 +6360,7 @@
            "elements": []
           },
           {
-           "id": "8f6a1f6",
+           "id": "1e741a3",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6399,7 +6399,7 @@
          ]
         },
         {
-         "id": "c9cca06",
+         "id": "635d4e2",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6433,7 +6433,7 @@
          "elements": []
         },
         {
-         "id": "e7b5309",
+         "id": "c0b3d53",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6468,7 +6468,7 @@
        ]
       },
       {
-       "id": "e593932",
+       "id": "b9d819b",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6495,7 +6495,7 @@
        },
        "elements": [
         {
-         "id": "c0a39c6",
+         "id": "8b9e246",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6529,7 +6529,7 @@
          },
          "elements": [
           {
-           "id": "590928d",
+           "id": "6e484fa",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6557,7 +6557,7 @@
            "elements": []
           },
           {
-           "id": "678ce9b",
+           "id": "4f8f1cf",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6596,7 +6596,7 @@
          ]
         },
         {
-         "id": "75ba0ce",
+         "id": "2d1ba81",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6630,7 +6630,7 @@
          "elements": []
         },
         {
-         "id": "9b2ebe9",
+         "id": "3d72928",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6665,7 +6665,7 @@
        ]
       },
       {
-       "id": "cdfd22a",
+       "id": "6295a22",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6692,7 +6692,7 @@
        },
        "elements": [
         {
-         "id": "10f42a2",
+         "id": "5ba5002",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6726,7 +6726,7 @@
          },
          "elements": [
           {
-           "id": "5c3f69a",
+           "id": "162952b",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6754,7 +6754,7 @@
            "elements": []
           },
           {
-           "id": "d237690",
+           "id": "7c14214",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6793,7 +6793,7 @@
          ]
         },
         {
-         "id": "27b8bce",
+         "id": "ca4e3b1",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6827,7 +6827,7 @@
          "elements": []
         },
         {
-         "id": "356e2e4",
+         "id": "9087c39",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6866,7 +6866,7 @@
    ]
   },
   {
-   "id": "2473066",
+   "id": "6d84184",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -6914,7 +6914,7 @@
    },
    "elements": [
     {
-     "id": "9471c0f",
+     "id": "3f7b3bb",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6947,7 +6947,7 @@
      },
      "elements": [
       {
-       "id": "c81d3d0",
+       "id": "ddbe058",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -6990,7 +6990,7 @@
        "elements": []
       },
       {
-       "id": "d0e1e69",
+       "id": "736a193",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -7029,7 +7029,7 @@
        "elements": []
       },
       {
-       "id": "f61f27f",
+       "id": "4dc7c00",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7064,7 +7064,7 @@
      ]
     },
     {
-     "id": "2485e93",
+     "id": "7935fff",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -7116,7 +7116,7 @@
      },
      "elements": [
       {
-       "id": "eaa4be3",
+       "id": "3d6709e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7155,7 +7155,7 @@
        },
        "elements": [
         {
-         "id": "43d2c90",
+         "id": "cc2bacc",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7196,7 +7196,7 @@
          "elements": []
         },
         {
-         "id": "ecb0bf5",
+         "id": "97773a6",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7236,7 +7236,7 @@
          "elements": []
         },
         {
-         "id": "0028d51",
+         "id": "25ddaf3",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7263,7 +7263,7 @@
          "elements": []
         },
         {
-         "id": "8be56b8",
+         "id": "193d254",
          "elType": "widget",
          "isInner": false,
          "widgetType": "divider",
@@ -7291,7 +7291,7 @@
          "elements": []
         },
         {
-         "id": "fd14b45",
+         "id": "0567365",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -7319,7 +7319,7 @@
        ]
       },
       {
-       "id": "96ce06b",
+       "id": "9df6b55",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7358,7 +7358,7 @@
        },
        "elements": [
         {
-         "id": "d46d5d0",
+         "id": "752bf20",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7399,7 +7399,7 @@
          "elements": []
         },
         {
-         "id": "1692e9f",
+         "id": "9945c08",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7439,7 +7439,7 @@
          "elements": []
         },
         {
-         "id": "ad26ca5",
+         "id": "5f26a57",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7466,7 +7466,7 @@
          "elements": []
         },
         {
-         "id": "30f20b2",
+         "id": "0b48674",
          "elType": "widget",
          "isInner": false,
          "widgetType": "divider",
@@ -7494,7 +7494,7 @@
          "elements": []
         },
         {
-         "id": "cf27223",
+         "id": "ead00ca",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -7522,7 +7522,7 @@
        ]
       },
       {
-       "id": "fe759d6",
+       "id": "f1f84c8",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7561,7 +7561,7 @@
        },
        "elements": [
         {
-         "id": "fde5f69",
+         "id": "836733f",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7602,7 +7602,7 @@
          "elements": []
         },
         {
-         "id": "2caa43e",
+         "id": "c52061b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7642,7 +7642,7 @@
          "elements": []
         },
         {
-         "id": "2876237",
+         "id": "01c2734",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7669,7 +7669,7 @@
          "elements": []
         },
         {
-         "id": "eecedec",
+         "id": "13d361c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "divider",
@@ -7697,7 +7697,7 @@
          "elements": []
         },
         {
-         "id": "d9943b7",
+         "id": "7dfa64f",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -7729,7 +7729,7 @@
    ]
   },
   {
-   "id": "747dcd2",
+   "id": "1e3e8f6",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -7787,7 +7787,7 @@
    },
    "elements": [
     {
-     "id": "44f0e37",
+     "id": "fe4a7a9",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -7830,7 +7830,7 @@
      },
      "elements": [
       {
-       "id": "e9d5f75",
+       "id": "35c1852",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7869,7 +7869,7 @@
        },
        "elements": [
         {
-         "id": "bd8f872",
+         "id": "6ec6044",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7912,7 +7912,7 @@
          "elements": []
         },
         {
-         "id": "bea099b",
+         "id": "819ee71",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7953,7 +7953,7 @@
        ]
       },
       {
-       "id": "9da1914",
+       "id": "6cffbff",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7995,7 +7995,7 @@
      ]
     },
     {
-     "id": "89791f3",
+     "id": "0187a9d",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -8047,7 +8047,7 @@
      },
      "elements": [
       {
-       "id": "230c373",
+       "id": "0dff76a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8080,13 +8080,13 @@
        },
        "elements": [
         {
-         "id": "3a10e3d",
+         "id": "f68c8f9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-palo-alto.jpg",
            "id": "",
            "size": "",
            "alt": "Palo Alto rental home",
@@ -8099,12 +8099,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-palo-alto.jpg | PROMPT: Tree-lined street in Palo Alto's Professorville with historic Craftsman homes, mature oaks, soft morning light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-palo-alto.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "1e3f347",
+         "id": "33a8612",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8142,7 +8142,7 @@
          },
          "elements": [
           {
-           "id": "620886c",
+           "id": "a0f0261",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8179,7 +8179,7 @@
            "elements": []
           },
           {
-           "id": "a77789d",
+           "id": "5e71691",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8210,7 +8210,7 @@
        ]
       },
       {
-       "id": "a5c7933",
+       "id": "9b26393",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8243,13 +8243,13 @@
        },
        "elements": [
         {
-         "id": "92eb529",
+         "id": "b407789",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-mountain-view.jpg",
            "id": "",
            "size": "",
            "alt": "Mountain View rental home",
@@ -8262,12 +8262,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-mountain-view.jpg | PROMPT: Castro Street in downtown Mountain View at dusk, outdoor café tables, warm string lights, low-rise storefronts, editorial lifestyle photography, photorealistic, no legible signage"
+          "_title": "IMG city-mountain-view.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "285414d",
+         "id": "06d4ff5",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8305,7 +8305,7 @@
          },
          "elements": [
           {
-           "id": "b47c089",
+           "id": "6068575",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8342,7 +8342,7 @@
            "elements": []
           },
           {
-           "id": "9c2b973",
+           "id": "700d6da",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8373,7 +8373,7 @@
        ]
       },
       {
-       "id": "481ee70",
+       "id": "95c2180",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8406,13 +8406,13 @@
        },
        "elements": [
         {
-         "id": "d3737a5",
+         "id": "db91afb",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-sunnyvale.jpg",
            "id": "",
            "size": "",
            "alt": "Sunnyvale rental home",
@@ -8425,12 +8425,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-sunnyvale.jpg | PROMPT: Bright mid-century ranch home in Sunnyvale's Cherry Chase neighborhood, manicured front yard, clear blue sky, late afternoon sun, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-sunnyvale.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "a10a70c",
+         "id": "ef6f073",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8468,7 +8468,7 @@
          },
          "elements": [
           {
-           "id": "5641637",
+           "id": "cf497e0",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8505,7 +8505,7 @@
            "elements": []
           },
           {
-           "id": "695b99f",
+           "id": "f31a850",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8536,7 +8536,7 @@
        ]
       },
       {
-       "id": "ba4f169",
+       "id": "b3eecd4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8569,13 +8569,13 @@
        },
        "elements": [
         {
-         "id": "6930882",
+         "id": "bc3baec",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-san-jose.jpg",
            "id": "",
            "size": "",
            "alt": "San Jose rental home",
@@ -8588,12 +8588,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-san-jose.jpg | PROMPT: Charming Willow Glen bungalow in San Jose with a deep front porch and mature trees, golden-hour light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-san-jose.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "9c5220f",
+         "id": "7dee6c1",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8631,7 +8631,7 @@
          },
          "elements": [
           {
-           "id": "ef086a2",
+           "id": "bef801f",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8668,7 +8668,7 @@
            "elements": []
           },
           {
-           "id": "d272eda",
+           "id": "73a8769",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8699,7 +8699,7 @@
        ]
       },
       {
-       "id": "5b474fe",
+       "id": "c2b8afd",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8732,13 +8732,13 @@
        },
        "elements": [
         {
-         "id": "fde7fab",
+         "id": "cb3f97e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-menlo-park.jpg",
            "id": "",
            "size": "",
            "alt": "Menlo Park rental home",
@@ -8751,12 +8751,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-menlo-park.jpg | PROMPT: Elegant shingle-style home in Menlo Park's Allied Arts neighborhood behind a low hedge and heritage oaks, dappled sunlight, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-menlo-park.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "2a75ad0",
+         "id": "4626799",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8794,7 +8794,7 @@
          },
          "elements": [
           {
-           "id": "1345e33",
+           "id": "91a675a",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8831,7 +8831,7 @@
            "elements": []
           },
           {
-           "id": "053f7fe",
+           "id": "5d0254d",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8862,7 +8862,7 @@
        ]
       },
       {
-       "id": "1ccbe49",
+       "id": "f455c71",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8895,13 +8895,13 @@
        },
        "elements": [
         {
-         "id": "2e402c1",
+         "id": "cc07851",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/city-foster-city.jpg",
            "id": "",
            "size": "",
            "alt": "Foster City rental home",
@@ -8914,12 +8914,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG FILE city-foster-city.jpg | PROMPT: Waterfront townhomes along a calm Foster City lagoon with small boats docked, reflections on the water, soft evening light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG city-foster-city.jpg (in site)"
          },
          "elements": []
         },
         {
-         "id": "3bae50a",
+         "id": "227a309",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8957,7 +8957,7 @@
          },
          "elements": [
           {
-           "id": "fdbbdfb",
+           "id": "b59a115",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8994,7 +8994,7 @@
            "elements": []
           },
           {
-           "id": "a63bc7c",
+           "id": "fbb21f4",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9027,7 +9027,7 @@
      ]
     },
     {
-     "id": "4381f54",
+     "id": "388dd59",
      "elType": "widget",
      "isInner": false,
      "widgetType": "text-editor",
@@ -9065,7 +9065,7 @@
    ]
   },
   {
-   "id": "6103b00",
+   "id": "f998107",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -9112,7 +9112,7 @@
    },
    "elements": [
     {
-     "id": "1af3e21",
+     "id": "ad754a0",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -9145,7 +9145,7 @@
      },
      "elements": [
       {
-       "id": "b9f3b86",
+       "id": "0cdcacd",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -9188,7 +9188,7 @@
        "elements": []
       },
       {
-       "id": "7e6fa73",
+       "id": "bff3c29",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -9229,7 +9229,7 @@
      ]
     },
     {
-     "id": "61d8c00",
+     "id": "afc4e39",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -9281,7 +9281,7 @@
      },
      "elements": [
       {
-       "id": "d81181b",
+       "id": "cb43a9e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9311,7 +9311,7 @@
        },
        "elements": [
         {
-         "id": "94c421b",
+         "id": "ab851d9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -9346,7 +9346,7 @@
          "elements": []
         },
         {
-         "id": "dfc238e",
+         "id": "ba8d6e6",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -9386,7 +9386,7 @@
          "elements": []
         },
         {
-         "id": "d707272",
+         "id": "0ef4abc",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9420,7 +9420,7 @@
          },
          "elements": [
           {
-           "id": "25c487c",
+           "id": "36f1744",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9447,7 +9447,7 @@
            "elements": []
           },
           {
-           "id": "20605ac",
+           "id": "e85233b",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9484,7 +9484,7 @@
        ]
       },
       {
-       "id": "3bfe6ed",
+       "id": "3c842eb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9514,7 +9514,7 @@
        },
        "elements": [
         {
-         "id": "0d9df81",
+         "id": "6d6a96d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -9549,7 +9549,7 @@
          "elements": []
         },
         {
-         "id": "047e84a",
+         "id": "e11334e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -9589,7 +9589,7 @@
          "elements": []
         },
         {
-         "id": "2d98084",
+         "id": "1861219",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9623,7 +9623,7 @@
          },
          "elements": [
           {
-           "id": "b0241c9",
+           "id": "964e1c2",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9650,7 +9650,7 @@
            "elements": []
           },
           {
-           "id": "42dbee4",
+           "id": "ad5bdd7",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9687,7 +9687,7 @@
        ]
       },
       {
-       "id": "2fc9c82",
+       "id": "5f38d6b",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9717,7 +9717,7 @@
        },
        "elements": [
         {
-         "id": "ab72868",
+         "id": "d4c7a16",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -9752,7 +9752,7 @@
          "elements": []
         },
         {
-         "id": "2d6b996",
+         "id": "a0a4b26",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -9792,7 +9792,7 @@
          "elements": []
         },
         {
-         "id": "abb9039",
+         "id": "a2ba7cc",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9826,7 +9826,7 @@
          },
          "elements": [
           {
-           "id": "fb76bc2",
+           "id": "eb522a1",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9853,7 +9853,7 @@
            "elements": []
           },
           {
-           "id": "5883c35",
+           "id": "58b0d9a",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9894,7 +9894,7 @@
    ]
   },
   {
-   "id": "8169278",
+   "id": "7abc09f",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -9942,7 +9942,7 @@
    },
    "elements": [
     {
-     "id": "95c7860",
+     "id": "1675ee6",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -9985,7 +9985,7 @@
      },
      "elements": [
       {
-       "id": "765d9c8",
+       "id": "ecf6f65",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10024,7 +10024,7 @@
        },
        "elements": [
         {
-         "id": "0d338a8",
+         "id": "260126b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10067,7 +10067,7 @@
          "elements": []
         },
         {
-         "id": "b66349a",
+         "id": "b10bf3f",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10108,7 +10108,7 @@
        ]
       },
       {
-       "id": "1723c09",
+       "id": "73fc43c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -10150,7 +10150,7 @@
      ]
     },
     {
-     "id": "8a3928f",
+     "id": "e64659e",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -10202,7 +10202,7 @@
      },
      "elements": [
       {
-       "id": "d7652fc",
+       "id": "dd8cd0b",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10235,13 +10235,13 @@
        },
        "elements": [
         {
-         "id": "63c074f",
+         "id": "0222fc0",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/blog-tenant-risk.jpg",
            "id": "",
            "size": "",
            "alt": "Rental application paperwork with reading glasses and a pen on a desk",
@@ -10254,7 +10254,7 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-post",
-          "_title": "IMG FILE blog-tenant-risk.jpg | PROMPT: A rental application checklist on a clean desk with reading glasses, a pen and a laptop showing a blurred report, soft window light, shallow depth of field, form text blurred and unreadable, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces",
+          "_title": "IMG blog-tenant-risk.jpg (in site)",
           "_margin": {
            "unit": "px",
            "top": "0",
@@ -10267,7 +10267,7 @@
          "elements": []
         },
         {
-         "id": "75e94aa",
+         "id": "0067f70",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10308,7 +10308,7 @@
          "elements": []
         },
         {
-         "id": "b8e6a6d",
+         "id": "8d4c336",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10348,7 +10348,7 @@
          "elements": []
         },
         {
-         "id": "52cc7f4",
+         "id": "07c46d7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -10376,7 +10376,7 @@
        ]
       },
       {
-       "id": "e73e76d",
+       "id": "d4d52e5",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10409,13 +10409,13 @@
        },
        "elements": [
         {
-         "id": "5e74141",
+         "id": "1fee575",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/blog-owner-tips.jpg",
            "id": "",
            "size": "",
            "alt": "Freshly painted living room with paint swatches and a roller tray",
@@ -10428,7 +10428,7 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-post",
-          "_title": "IMG FILE blog-owner-tips.jpg | PROMPT: Bright freshly refreshed living room in a Bay Area home, new light-grey paint, a few paint swatches and a small roller tray in the foreground, hardwood floors, large window, soft daylight, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces",
+          "_title": "IMG blog-owner-tips.jpg (in site)",
           "_margin": {
            "unit": "px",
            "top": "0",
@@ -10441,7 +10441,7 @@
          "elements": []
         },
         {
-         "id": "91faecd",
+         "id": "eefebec",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10482,7 +10482,7 @@
          "elements": []
         },
         {
-         "id": "3faafd5",
+         "id": "1b4a0d5",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10522,7 +10522,7 @@
          "elements": []
         },
         {
-         "id": "b13000d",
+         "id": "7331189",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -10550,7 +10550,7 @@
        ]
       },
       {
-       "id": "efd3121",
+       "id": "3810d27",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10583,13 +10583,13 @@
        },
        "elements": [
         {
-         "id": "dd3d881",
+         "id": "7af5b78",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
          "settings": {
           "image": {
-           "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+           "url": "https://web-inference.github.io/crestline/assets/images/blog-market-update.jpg",
            "id": "",
            "size": "",
            "alt": "Quiet Bay Area street in autumn with tidy single-family homes",
@@ -10602,7 +10602,7 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-post",
-          "_title": "IMG FILE blog-market-update.jpg | PROMPT: Quiet Bay Area residential street in early autumn, golden and orange leaves on the trees and sidewalk, tidy single-family homes with porches, soft late-afternoon light, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces",
+          "_title": "IMG blog-market-update.jpg (in site)",
           "_margin": {
            "unit": "px",
            "top": "0",
@@ -10615,7 +10615,7 @@
          "elements": []
         },
         {
-         "id": "a5585e9",
+         "id": "4f17418",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10656,7 +10656,7 @@
          "elements": []
         },
         {
-         "id": "88b373d",
+         "id": "2229cbf",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10696,7 +10696,7 @@
          "elements": []
         },
         {
-         "id": "844d4b1",
+         "id": "9f73ee3",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -10728,7 +10728,7 @@
    ]
   },
   {
-   "id": "84fe2be",
+   "id": "0b4b1b2",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -10776,7 +10776,7 @@
    },
    "elements": [
     {
-     "id": "ce0f14f",
+     "id": "9fc6471",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -10809,7 +10809,7 @@
      },
      "elements": [
       {
-       "id": "5bb232d",
+       "id": "c07dcbb",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -10852,7 +10852,7 @@
        "elements": []
       },
       {
-       "id": "4bd678c",
+       "id": "c1fcc9c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -10893,7 +10893,7 @@
      ]
     },
     {
-     "id": "0e45f58",
+     "id": "57702c4",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -10927,29 +10927,29 @@
      },
      "elements": [
       {
-       "id": "c86e36d",
+       "id": "1c939c2",
        "elType": "widget",
        "isInner": false,
        "widgetType": "accordion",
        "settings": {
         "tabs": [
          {
-          "_id": "715d021",
+          "_id": "b34c6d7",
           "tab_title": "How much does property management cost?",
           "tab_content": "<p>Full management is 8% of the monthly rent collected, and leasing only is 75% of the first month’s rent. There are no hidden fees and no markup on maintenance.</p>"
          },
          {
-          "_id": "7b81916",
+          "_id": "5ea54e4",
           "tab_title": "How do you screen tenants?",
           "tab_content": "<p>Every applicant goes through credit, background, income and rental history checks. We verify employment and speak with previous landlords before recommending anyone to you.</p>"
          },
          {
-          "_id": "4a6ce39",
+          "_id": "2a13f4a",
           "tab_title": "How quickly can you rent my home?",
           "tab_content": "<p>Most homes rent within two to three weeks. Smart pricing, professional photos and quick showings keep vacant days to a minimum.</p>"
          },
          {
-          "_id": "d1ffa3d",
+          "_id": "7fb2340",
           "tab_title": "What happens with the security deposit?",
           "tab_content": "<p>We collect and hold the deposit in line with California law, document the home at move-in and move-out, and handle any deductions with a clear, itemized statement.</p>"
          }
@@ -11025,7 +11025,7 @@
    ]
   },
   {
-   "id": "d94a4a8",
+   "id": "bc7d025",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -11075,7 +11075,7 @@
    },
    "elements": [
     {
-     "id": "77dd630",
+     "id": "bca6c87",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -11114,7 +11114,7 @@
      },
      "elements": [
       {
-       "id": "f86dd51",
+       "id": "6c80dab",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -11157,7 +11157,7 @@
        "elements": []
       },
       {
-       "id": "46f4f58",
+       "id": "680481a",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -11204,7 +11204,7 @@
        "elements": []
       },
       {
-       "id": "1084ab6",
+       "id": "83374ab",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -11247,7 +11247,7 @@
        "elements": []
       },
       {
-       "id": "6f316c8",
+       "id": "bb1fe44",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -11277,7 +11277,7 @@
      ]
     },
     {
-     "id": "52764fe",
+     "id": "16f4882",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -11328,7 +11328,7 @@
      },
      "elements": [
       {
-       "id": "8eda7a1",
+       "id": "9ad5c23",
        "elType": "widget",
        "isInner": false,
        "widgetType": "form",
@@ -11336,7 +11336,7 @@
         "form_name": "Free Rental Analysis",
         "form_fields": [
          {
-          "_id": "af31ab1",
+          "_id": "900afbc",
           "placeholder": "",
           "custom_id": "name",
           "field_type": "text",
@@ -11345,7 +11345,7 @@
           "required": "true"
          },
          {
-          "_id": "35f2b36",
+          "_id": "9ff7eea",
           "placeholder": "",
           "custom_id": "phone",
           "field_type": "tel",
@@ -11353,7 +11353,7 @@
           "width": "50"
          },
          {
-          "_id": "ae0105e",
+          "_id": "1a60567",
           "placeholder": "",
           "custom_id": "email",
           "field_type": "email",
@@ -11362,7 +11362,7 @@
           "required": "true"
          },
          {
-          "_id": "3be4731",
+          "_id": "56fe492",
           "placeholder": "",
           "custom_id": "address",
           "field_type": "text",
@@ -11370,7 +11370,7 @@
           "width": "100"
          },
          {
-          "_id": "9f48891",
+          "_id": "660e028",
           "placeholder": "",
           "custom_id": "message",
           "field_type": "textarea",
@@ -11379,7 +11379,7 @@
           "rows": 4
          },
          {
-          "_id": "4cabd07",
+          "_id": "b22ab1b",
           "placeholder": "",
           "custom_id": "hp",
           "field_type": "honeypot",
@@ -11387,7 +11387,7 @@
           "width": "100"
          },
          {
-          "_id": "706b6db",
+          "_id": "5c4d229",
           "placeholder": "",
           "custom_id": "note",
           "field_type": "html",
