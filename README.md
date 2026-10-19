@@ -9,7 +9,9 @@ crestline/
 ├── palo-alto.html              ← Palo Alto city page
 ├── data/cities/*.js            ← one data file per city (drives HTML + Elementor)
 ├── LOCATION_TEMPLATE.md        ← all locations, section map, how to make a city page
-├── IMAGE_PROMPTS.md            ← AI image prompt for every placeholder
+├── IMAGE_PROMPTS.md            ← every image file name + AI prompt (generated from data/images.js; do not edit by hand)
+├── data/images.js              ← image list: one slot per image, file name = assets/images/<slot>.jpg
+├── assets/images/              ← photos. Drop a file here with the exact slot name, then run: node _src/build-pages.js
 ├── _src/                       ← page bodies + assemble.py (builds inner pages from index.html's header/footer)
 ├── assets/css/style.css
 ├── assets/js/main.js

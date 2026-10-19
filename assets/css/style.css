@@ -862,6 +862,11 @@ a.cl-chip:hover .arr { transform: translateX(4px); color: var(--gold); }
   .cl-slots__grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* Photos placed into image slots (see data/images.js) */
+.cl-ph__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease); }
+.cl-ph__img--parallax { inset: -8% 0; height: 116%; transition: none; }
+.cl-zoom:hover .cl-ph__img { transform: scale(1.06); }
+
 /* ==========================================================================
    Motion
    ========================================================================== */

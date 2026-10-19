@@ -3,11 +3,11 @@
  "title": "Crestline — Footer",
  "type": "footer",
  "page_settings": {
-  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\r\n"
+  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\n\n/* FOCUS-START (generated from data/images.js) */\n.cl-focus-home-hero img{object-position:74% 50%}\n.cl-focus-home-about img{object-position:50% 40%}\n/* FOCUS-END */\n"
  },
  "content": [
   {
-   "id": "44c29dd",
+   "id": "4e551ad",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -74,7 +74,7 @@
    },
    "elements": [
     {
-     "id": "03ac902",
+     "id": "e7d24d8",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -98,7 +98,7 @@
      },
      "elements": [
       {
-       "id": "8e6863d",
+       "id": "193eb0d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -126,7 +126,7 @@
        },
        "elements": [
         {
-         "id": "20bfffa",
+         "id": "0ca0c63",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -163,7 +163,7 @@
          "elements": []
         },
         {
-         "id": "deaa7f5",
+         "id": "e5d734c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -206,7 +206,7 @@
        ]
       },
       {
-       "id": "848ffb7",
+       "id": "3332e3e",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -249,7 +249,7 @@
      ]
     },
     {
-     "id": "bf01cd6",
+     "id": "f2359cd",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -273,7 +273,7 @@
      },
      "elements": [
       {
-       "id": "4f12e06",
+       "id": "a6e8bc3",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -314,7 +314,7 @@
        "elements": []
       },
       {
-       "id": "2770454",
+       "id": "b704919",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -342,7 +342,7 @@
      ]
     },
     {
-     "id": "c575e89",
+     "id": "bd23db8",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -366,7 +366,7 @@
      },
      "elements": [
       {
-       "id": "ab174d5",
+       "id": "9da6dec",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -407,7 +407,7 @@
        "elements": []
       },
       {
-       "id": "78b9540",
+       "id": "b4ac4fe",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -435,7 +435,7 @@
      ]
     },
     {
-     "id": "3368f42",
+     "id": "ac3dc2f",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -459,7 +459,7 @@
      },
      "elements": [
       {
-       "id": "daee8ba",
+       "id": "4f274c8",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -500,7 +500,7 @@
        "elements": []
       },
       {
-       "id": "836aabd",
+       "id": "7e9e7ba",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -530,7 +530,7 @@
    ]
   },
   {
-   "id": "3714cb9",
+   "id": "bea47dd",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -569,7 +569,7 @@
    },
    "elements": [
     {
-     "id": "b16c9d0",
+     "id": "2eabef4",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -605,7 +605,7 @@
      },
      "elements": [
       {
-       "id": "61b9981",
+       "id": "2ee065b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -631,7 +631,7 @@
        "elements": []
       },
       {
-       "id": "8003650",
+       "id": "0e47432",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",

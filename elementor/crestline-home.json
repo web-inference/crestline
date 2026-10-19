@@ -3,13 +3,13 @@
  "title": "Crestline — Home",
  "type": "page",
  "page_settings": {
-  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\r\n",
+  "custom_css": "/* =====================================================================\r\n   Crestline — Global CSS for Elementor\r\n   Paste ONCE into: Elementor > Site Settings > Custom CSS\r\n   (also embedded in each template's Page Settings > Custom CSS)\r\n   Class names match DESIGN_SYSTEM.md and the HTML preview.\r\n   ===================================================================== */\r\n\r\n:root{--cl-navy:#0f1d33;--cl-deep:#0a1424;--cl-card:#132340;--cl-gold:#c4a467;--cl-gold-dark:#8b6a35;--cl-gold-soft:#b89a5e;--cl-cream:#f7f4ee;--cl-sand:#efe8dc;--cl-line:#e6decf;--cl-text:#6b6f78;--cl-ease:cubic-bezier(.2,.7,.2,1)}\r\n\r\n/* Softer entrance animation than Elementor's default fadeInUp */\r\n@keyframes clFadeUp{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeRight{from{opacity:0;transform:translate3d(36px,0,0)}to{opacity:1;transform:none}}\r\n@keyframes clFadeLeft{from{opacity:0;transform:translate3d(-36px,0,0)}to{opacity:1;transform:none}}\r\n.elementor-element.animated.fadeInUp{animation-name:clFadeUp;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInRight{animation-name:clFadeRight;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated.fadeInLeft{animation-name:clFadeLeft;animation-timing-function:var(--cl-ease)}\r\n.elementor-element.animated{animation-duration:.95s}\r\n\r\n/* Headings: <em> = gold italic accent */\r\n.cl-h .elementor-heading-title em{font-style:italic;color:var(--cl-gold-dark)}\r\n.cl-h--light .elementor-heading-title em{color:var(--cl-gold)}\r\n\r\n/* Eyebrow with gold line(s) */\r\n.cl-eyebrow .elementor-heading-title{display:inline-flex;align-items:center;gap:18px}\r\n.cl-eyebrow .elementor-heading-title::before,.cl-eyebrow--center .elementor-heading-title::after{content:\"\";width:36px;height:1px;background:currentColor;flex:none}\r\n\r\n/* Buttons: arrow nudge */\r\n.cl-btn .elementor-button{transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-btn .elementor-button-text{display:inline-block;transition:transform .35s var(--cl-ease)}\r\n.cl-btn .elementor-button:hover .elementor-button-text{transform:translateX(3px)}\r\n\r\n/* Text link with underline */\r\n.cl-link .elementor-heading-title a,.cl-link .elementor-heading-title{display:inline-block;padding-bottom:8px;border-bottom:1px solid currentColor;transition:letter-spacing .4s var(--cl-ease)}\r\n.cl-link:hover .elementor-heading-title{letter-spacing:.26em}\r\n\r\n/* Image placeholders / images keep their ratio */\r\n.cl-img{overflow:hidden}\r\n.cl-img img{width:100%!important;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--cl-ease);background:#e4ddd0}\r\n.cl-zoom:hover .cl-img img,.cl-img:hover img{transform:scale(1.05)}\r\n.cl-r-1-1 img{aspect-ratio:1/1}\r\n.cl-r-9-8 img{aspect-ratio:9/8}\r\n.cl-r-17-10 img{aspect-ratio:17/10}\r\n.cl-r-5-3 img{aspect-ratio:5/3}\r\n.cl-r-area img{aspect-ratio:281/220}\r\n.cl-r-post img{aspect-ratio:375/240}\r\n\r\n/* Hero frame + caption tag */\r\n.cl-hero-frame{position:relative}\r\n.cl-hero-tag{position:absolute!important;left:38px;bottom:38px;width:auto!important;backdrop-filter:blur(4px);z-index:2}\r\n@media(max-width:767px){.cl-hero-tag{left:26px;bottom:26px}}\r\n\r\n/* About badge over image */\r\n.cl-about-media{position:relative}\r\n.cl-about-badge{position:absolute!important;right:0;bottom:0;width:auto!important;min-width:300px;z-index:2}\r\n@media(max-width:767px){.cl-about-badge{min-width:0}}\r\n\r\n/* Cards hover */\r\n.cl-card{transition:transform .5s var(--cl-ease),box-shadow .5s var(--cl-ease),border-color .5s var(--cl-ease)}\r\n.cl-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,29,51,.25)}\r\n.cl-card--dark:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(196,164,103,.45)!important}\r\n.cl-icon svg{width:32px;height:32px;color:var(--cl-gold-dark);display:block;transition:transform .5s var(--cl-ease)}\r\n.cl-card--dark .cl-icon svg{width:40px;height:40px;color:var(--cl-gold);margin:0 auto}\r\n.cl-card:hover .cl-icon svg,.cl-service:hover .cl-icon svg{transform:translateY(-4px)}\r\n\r\n/* Services grid (shared borders) */\r\n.cl-services{border:1px solid var(--cl-line)}\r\n.cl-service{position:relative;border-right:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line);transition:background-color .45s var(--cl-ease)}\r\n.cl-service:nth-child(3n){border-right:0}\r\n.cl-service:nth-last-child(-n+3){border-bottom:0}\r\n.cl-service::before{content:\"\";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--cl-gold-dark);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--cl-ease)}\r\n.cl-service:hover{background:var(--cl-cream)}\r\n.cl-service:hover::before{transform:scaleX(1)}\r\n@media(max-width:1024px){.cl-service:nth-child(3n){border-right:1px solid var(--cl-line)}.cl-service:nth-child(2n){border-right:0}.cl-service:nth-last-child(-n+3){border-bottom:1px solid var(--cl-line)}.cl-service:nth-last-child(-n+2){border-bottom:0}}\r\n@media(max-width:767px){.cl-service{border-right:0!important;border-bottom:1px solid var(--cl-line)!important}.cl-service:last-child{border-bottom:0!important}}\r\n\r\n/* Timeline */\r\n.cl-timeline{position:relative}\r\n.cl-timeline::before{content:\"\";position:absolute;left:0;top:0;bottom:0;width:1px;background:#d8cbb0}\r\n.cl-step{position:relative}\r\n.cl-step::before{content:\"\";position:absolute;left:-55px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--cl-gold-dark);transition:transform .4s var(--cl-ease);z-index:1}\r\n.cl-step:hover::before{transform:scale(1.4)}\r\n.cl-step--last::before{background:var(--cl-navy);box-shadow:0 0 0 4px var(--cl-cream),0 0 0 5px var(--cl-gold-dark);left:-56px;width:13px;height:13px}\r\n@media(max-width:767px){.cl-step::before{left:-41px}.cl-step--last::before{left:-42px}}\r\n\r\n/* Pricing list */\r\n.cl-price-list ul{list-style:none;margin:0;padding:0}\r\n.cl-price-list li{padding:6px 0}\r\n\r\n/* Area card row */\r\n.cl-area-row{transition:border-color .4s var(--cl-ease)}\r\n.cl-area:hover .cl-area-row{border-color:var(--cl-gold-dark)!important}\r\n.cl-arrow .elementor-heading-title{transition:transform .4s var(--cl-ease)}\r\n.cl-area:hover .cl-arrow .elementor-heading-title{transform:translateX(6px)}\r\n\r\n/* Avatar */\r\n.cl-avatar .elementor-heading-title{width:44px;height:44px;border-radius:50%;background:var(--cl-navy);display:flex;align-items:center;justify-content:center}\r\n\r\n/* Blog card */\r\n.cl-post:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-post-title .elementor-heading-title{transition:color .3s var(--cl-ease)}\r\n\r\n/* FAQ (Accordion widget) */\r\n.cl-faq .elementor-accordion-item{border-width:0 0 1px 0!important;border-color:#dedad3!important}\r\n.cl-faq .elementor-accordion{border-top:1px solid #dedad3}\r\n.cl-faq .elementor-tab-title{padding:30px 0!important}\r\n.cl-faq .elementor-tab-content{padding:0 0 28px!important;border:0!important}\r\n.cl-faq .elementor-accordion-icon{font-size:12px}\r\n\r\n/* Form (Elementor Pro Form widget) */\r\n.cl-form .elementor-field-group{margin-bottom:26px}\r\n.cl-form .elementor-field-textual{border-width:0 0 1px 0!important;border-radius:0!important;padding:22px 0 10px!important;background:transparent!important}\r\n.cl-form .elementor-field-textual:focus{border-color:var(--cl-gold-dark)!important;box-shadow:none!important}\r\n.cl-form textarea.elementor-field-textual{min-height:112px}\r\n.cl-form .cl-form__note{font-size:12px;color:#9a9ea6;margin:-6px 0 0}\r\n.cl-form .elementor-field-type-submit{justify-content:flex-start}\r\n\r\n/* Header nav underline + footer links */\r\n.cl-nav .elementor-nav-menu--main .elementor-item{letter-spacing:.13em}\r\n.cl-footer-links ul{list-style:none;margin:0;padding:0}\r\n.cl-footer-links li{margin-bottom:12px;line-height:1.5}\r\n.cl-footer-links a{color:inherit;transition:color .3s var(--cl-ease)}\r\n.cl-footer-links a:hover{color:var(--cl-gold)}\r\n.cl-sticky-header.elementor-sticky--effects{box-shadow:0 10px 30px rgba(5,10,20,.35)}\r\n\r\n@media (prefers-reduced-motion:reduce){.elementor-element.animated{animation:none!important;opacity:1!important}.cl-card,.cl-card:hover{transform:none!important}}\r\n\r\n/* =====================================================================\r\n   Inner pages — Service Areas archive + Location template\r\n   ===================================================================== */\r\n.cl-r-5-4 img{aspect-ratio:5/4}\r\n.cl-r-4-3 img{aspect-ratio:4/3}\r\n\r\n/* Breadcrumb */\r\n.cl-crumbs{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8d96a6;margin-bottom:30px}\r\n.cl-crumbs a{color:#c3c9d3;transition:color .3s var(--cl-ease)}\r\n.cl-crumbs a:hover{color:var(--cl-gold)}\r\n.cl-crumbs span[aria-hidden]{color:var(--cl-gold-soft)}\r\n\r\n/* Location cards */\r\n.cl-loc{display:flex;flex-direction:column;height:100%}\r\n.cl-loc:hover .cl-post-title .elementor-heading-title{color:var(--cl-gold-dark)}\r\n.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}\r\n.cl-tag{font-size:12px;line-height:1;padding:8px 11px;border:1px solid #e0d6c2;color:#6a5a3c;background:var(--cl-cream)}\r\n\r\n/* Chips */\r\n.cl-chips{display:flex;flex-wrap:wrap;gap:12px}\r\n.cl-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid #d8cdb6;font-family:\"Cormorant Garamond\",serif;font-size:20px;line-height:1;color:#14213a;transition:background-color .35s var(--cl-ease),color .35s var(--cl-ease),border-color .35s var(--cl-ease)}\r\n.cl-chip small{font-family:Jost,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a8874f}\r\na.cl-chip:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}\r\n.cl-chip .arr{color:var(--cl-gold-dark);font-family:Jost,sans-serif;font-size:15px;transition:transform .35s var(--cl-ease)}\r\na.cl-chip:hover .arr{transform:translateX(4px);color:var(--cl-gold)}\r\n@media(max-width:767px){.cl-chip{font-size:18px;padding:12px 16px}}\r\n\r\n/* Comparison table (inside a Text Editor widget) */\r\n.cl-table-wrap{overflow-x:auto;border:1px solid var(--cl-line);-webkit-overflow-scrolling:touch}\r\n.cl-table{width:100%;min-width:860px;border-collapse:collapse;font-size:15px;margin:0}\r\n.cl-table th,.cl-table td{text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--cl-line);vertical-align:top;line-height:1.55;background:transparent}\r\n.cl-table thead th{background:var(--cl-navy);color:#e6e9ee;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}\r\n.cl-table tbody th{font-family:\"Cormorant Garamond\",serif;font-size:22px;font-weight:500;color:#14213a;white-space:nowrap}\r\n.cl-table tbody th a{color:inherit}\r\n.cl-table tbody th a:hover{color:var(--cl-gold-dark)}\r\n.cl-table tbody tr{transition:background-color .3s var(--cl-ease)}\r\n.cl-table tbody tr:hover{background:var(--cl-cream)}\r\n.cl-table tbody tr:last-child th,.cl-table tbody tr:last-child td{border-bottom:0}\r\n.cl-table tbody tr:nth-child(odd)>td,.cl-table tbody tr:nth-child(odd)>th{background:transparent}\r\n.cl-yes{color:var(--cl-gold-dark)}\r\n.cl-note{font-size:13px;color:#8e9198;margin-top:18px;line-height:1.6}\r\n\r\n/* Market tiles */\r\n.cl-tile{transition:background-color .45s var(--cl-ease)}\r\n.cl-tile:hover{background:rgba(255,255,255,.03)}\r\n\r\n/* Rules sidebar */\r\n.cl-aside{position:sticky!important;top:110px}\r\n@media(max-width:1024px){.cl-aside{position:relative!important;top:auto}}\r\n\r\n/* Homepage v2: language note in hero */\r\n.cl-hero__lang{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:38px 0 0;font-size:14px;line-height:1.5;color:#aeb6c3}\r\n.cl-hero__langtag{font-size:11px;letter-spacing:.14em;line-height:1;padding:7px 10px;border:1px solid rgba(255,255,255,.22);color:#e9ecf0}\r\n.cl-hero__langtag:nth-of-type(2){margin-right:6px}\n\n/* FOCUS-START (generated from data/images.js) */\n.cl-focus-home-hero img{object-position:74% 50%}\n.cl-focus-home-about img{object-position:50% 40%}\n/* FOCUS-END */\n",
   "hide_title": "yes",
   "template": "elementor_header_footer"
  },
  "content": [
   {
-   "id": "b7a134f",
+   "id": "34279e6",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -58,7 +58,7 @@
    },
    "elements": [
     {
-     "id": "2735d43",
+     "id": "7746fd5",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -98,7 +98,7 @@
      },
      "elements": [
       {
-       "id": "f65bf22",
+       "id": "d45d346",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -141,7 +141,7 @@
        "elements": []
       },
       {
-       "id": "044e8af",
+       "id": "ecbb785",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -188,7 +188,7 @@
        "elements": []
       },
       {
-       "id": "1035e59",
+       "id": "9002414",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -236,7 +236,7 @@
        "elements": []
       },
       {
-       "id": "f0eccf3",
+       "id": "f02bff8",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -262,7 +262,7 @@
        },
        "elements": [
         {
-         "id": "d5a9d98",
+         "id": "47d804b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "button",
@@ -331,7 +331,7 @@
          "elements": []
         },
         {
-         "id": "6eadb7f",
+         "id": "e09d735",
          "elType": "widget",
          "isInner": false,
          "widgetType": "button",
@@ -402,7 +402,7 @@
        ]
       },
       {
-       "id": "01baa91",
+       "id": "fee7661",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -432,7 +432,7 @@
      ]
     },
     {
-     "id": "9a38c45",
+     "id": "3a15056",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -484,16 +484,16 @@
      },
      "elements": [
       {
-       "id": "a01949f",
+       "id": "c714150",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
        "settings": {
         "image": {
-         "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+         "url": "https://web-inference.github.io/crestline/assets/images/home-hero.jpg",
          "id": "",
          "size": "",
-         "alt": "Bay Area rental home",
+         "alt": "Modern glass-walled home glowing at dusk beside a pool",
          "source": "library"
         },
         "image_size": "full",
@@ -502,14 +502,15 @@
          "size": 100,
          "sizes": []
         },
-        "_css_classes": "cl-img cl-r-1-1",
+        "_css_classes": "cl-img cl-r-1-1 cl-focus-home-hero",
+        "_title": "IMG home-hero.jpg (in site)",
         "_animation": "fadeIn",
         "_animation_delay": 200
        },
        "elements": []
       },
       {
-       "id": "87bdb61",
+       "id": "24d02b0",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -573,7 +574,7 @@
    ]
   },
   {
-   "id": "3a79da1",
+   "id": "a49cbd5",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -620,7 +621,7 @@
    },
    "elements": [
     {
-     "id": "b07bdf3",
+     "id": "9615d10",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -672,7 +673,7 @@
      },
      "elements": [
       {
-       "id": "b3eb1ce",
+       "id": "ac70ad7",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -739,7 +740,7 @@
        "elements": []
       },
       {
-       "id": "5da5597",
+       "id": "8c6af53",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -806,7 +807,7 @@
        "elements": []
       },
       {
-       "id": "0150402",
+       "id": "bd58689",
        "elType": "widget",
        "isInner": false,
        "widgetType": "counter",
@@ -873,7 +874,7 @@
        "elements": []
       },
       {
-       "id": "c4f648a",
+       "id": "f30cd42",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -897,7 +898,7 @@
        },
        "elements": [
         {
-         "id": "402b774",
+         "id": "5e1a6a1",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -939,7 +940,7 @@
          "elements": []
         },
         {
-         "id": "9e91c53",
+         "id": "c040cac",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -985,7 +986,7 @@
    ]
   },
   {
-   "id": "b84df72",
+   "id": "2d69909",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1035,7 +1036,7 @@
    },
    "elements": [
     {
-     "id": "a194943",
+     "id": "f75310c",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1075,16 +1076,16 @@
      },
      "elements": [
       {
-       "id": "d4660e5",
+       "id": "9c546eb",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
        "settings": {
         "image": {
-         "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+         "url": "https://web-inference.github.io/crestline/assets/images/home-about.jpg",
          "id": "",
          "size": "",
-         "alt": "Crestline team in Los Altos",
+         "alt": "Styled living room with a navy wall, brass mirror and mustard throw",
          "source": "library"
         },
         "image_size": "full",
@@ -1093,14 +1094,15 @@
          "size": 100,
          "sizes": []
         },
-        "_css_classes": "cl-img cl-r-9-8",
+        "_css_classes": "cl-img cl-r-9-8 cl-focus-home-about",
+        "_title": "IMG home-about.jpg (in site)",
         "_animation": "fadeInLeft",
         "_animation_delay": 0
        },
        "elements": []
       },
       {
-       "id": "e42ef68",
+       "id": "cf3c8f9",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1137,7 +1139,7 @@
        },
        "elements": [
         {
-         "id": "695802a",
+         "id": "7adf0a7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1177,7 +1179,7 @@
          "elements": []
         },
         {
-         "id": "3e15fa7",
+         "id": "a75a306",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1219,7 +1221,7 @@
      ]
     },
     {
-     "id": "82d7a97",
+     "id": "c410249",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1258,7 +1260,7 @@
      },
      "elements": [
       {
-       "id": "26182ae",
+       "id": "1f7a7f5",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1301,7 +1303,7 @@
        "elements": []
       },
       {
-       "id": "43455ff",
+       "id": "5d644cf",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1348,7 +1350,7 @@
        "elements": []
       },
       {
-       "id": "d094878",
+       "id": "6dbdd7b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -1396,7 +1398,7 @@
        "elements": []
       },
       {
-       "id": "4e806b4",
+       "id": "389c782",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1440,7 +1442,7 @@
    ]
   },
   {
-   "id": "aa5ee0b",
+   "id": "7e944ed",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1489,7 +1491,7 @@
    },
    "elements": [
     {
-     "id": "3c370f7",
+     "id": "817a745",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1528,7 +1530,7 @@
      },
      "elements": [
       {
-       "id": "b9f6c4b",
+       "id": "cf72e5c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1571,7 +1573,7 @@
        "elements": []
       },
       {
-       "id": "72e6a89",
+       "id": "4ffb19e",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -1618,7 +1620,7 @@
        "elements": []
       },
       {
-       "id": "82f932a",
+       "id": "fe44cf2",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -1666,7 +1668,7 @@
        "elements": []
       },
       {
-       "id": "5c0f239",
+       "id": "09ec05b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "button",
@@ -1737,7 +1739,7 @@
      ]
     },
     {
-     "id": "e6c9592",
+     "id": "0d93cee",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1804,7 +1806,7 @@
      },
      "elements": [
       {
-       "id": "4726caa",
+       "id": "8178d10",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1848,7 +1850,7 @@
        },
        "elements": [
         {
-         "id": "6ac4f6b",
+         "id": "2674b52",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1884,7 +1886,7 @@
          "elements": []
         },
         {
-         "id": "2f0fb80",
+         "id": "306336e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -1929,7 +1931,7 @@
          "elements": []
         },
         {
-         "id": "cd99268",
+         "id": "df3b2a7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -1957,7 +1959,7 @@
        ]
       },
       {
-       "id": "4cf2eff",
+       "id": "c2add99",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2001,7 +2003,7 @@
        },
        "elements": [
         {
-         "id": "4ad1afb",
+         "id": "c031268",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2037,7 +2039,7 @@
          "elements": []
         },
         {
-         "id": "015524a",
+         "id": "637264b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2082,7 +2084,7 @@
          "elements": []
         },
         {
-         "id": "fe04c46",
+         "id": "cf865f9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2110,7 +2112,7 @@
        ]
       },
       {
-       "id": "4a737e7",
+       "id": "2f5a9fd",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2154,7 +2156,7 @@
        },
        "elements": [
         {
-         "id": "a8f5ed4",
+         "id": "c826be4",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2190,7 +2192,7 @@
          "elements": []
         },
         {
-         "id": "d0613ce",
+         "id": "5e97d51",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2235,7 +2237,7 @@
          "elements": []
         },
         {
-         "id": "33af2fd",
+         "id": "5795f60",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2263,7 +2265,7 @@
        ]
       },
       {
-       "id": "e8dba17",
+       "id": "a7c597a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2307,7 +2309,7 @@
        },
        "elements": [
         {
-         "id": "65c9ebf",
+         "id": "d97d0a1",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2343,7 +2345,7 @@
          "elements": []
         },
         {
-         "id": "dcc9ddf",
+         "id": "6e9af1d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2388,7 +2390,7 @@
          "elements": []
         },
         {
-         "id": "fe0abd6",
+         "id": "c7c4640",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2420,7 +2422,7 @@
    ]
   },
   {
-   "id": "617f391",
+   "id": "b91fa79",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -2468,7 +2470,7 @@
    },
    "elements": [
     {
-     "id": "019b07a",
+     "id": "607c7d7",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2511,7 +2513,7 @@
      },
      "elements": [
       {
-       "id": "a645f41",
+       "id": "24f40cf",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2550,7 +2552,7 @@
        },
        "elements": [
         {
-         "id": "5d06fed",
+         "id": "cd16b4c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2593,7 +2595,7 @@
          "elements": []
         },
         {
-         "id": "c5f1cdf",
+         "id": "d1ad07e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2634,7 +2636,7 @@
        ]
       },
       {
-       "id": "5eff044",
+       "id": "a7a2a5b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -2676,7 +2678,7 @@
      ]
     },
     {
-     "id": "84af606",
+     "id": "7db6aea",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2729,7 +2731,7 @@
      },
      "elements": [
       {
-       "id": "e844254",
+       "id": "c78ae35",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2764,7 +2766,7 @@
        },
        "elements": [
         {
-         "id": "9466558",
+         "id": "bc5961b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -2783,7 +2785,7 @@
          "elements": []
         },
         {
-         "id": "875caf4",
+         "id": "ae42161",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2828,7 +2830,7 @@
          "elements": []
         },
         {
-         "id": "2b21ba3",
+         "id": "bafa3d7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2856,7 +2858,7 @@
        ]
       },
       {
-       "id": "8fa3216",
+       "id": "b8b83b2",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2891,7 +2893,7 @@
        },
        "elements": [
         {
-         "id": "1ca34b3",
+         "id": "1140fbb",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -2910,7 +2912,7 @@
          "elements": []
         },
         {
-         "id": "7f173ae",
+         "id": "2a0d34a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -2955,7 +2957,7 @@
          "elements": []
         },
         {
-         "id": "bd9708f",
+         "id": "909eb09",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -2983,7 +2985,7 @@
        ]
       },
       {
-       "id": "2cfc84b",
+       "id": "6b4b0db",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3018,7 +3020,7 @@
        },
        "elements": [
         {
-         "id": "c3a8f3b",
+         "id": "9dbd0ae",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3037,7 +3039,7 @@
          "elements": []
         },
         {
-         "id": "00f800a",
+         "id": "589a8db",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3082,7 +3084,7 @@
          "elements": []
         },
         {
-         "id": "5664af9",
+         "id": "ad83528",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3110,7 +3112,7 @@
        ]
       },
       {
-       "id": "73c39d6",
+       "id": "ef3fcbd",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3145,7 +3147,7 @@
        },
        "elements": [
         {
-         "id": "8b81906",
+         "id": "93a7559",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3164,7 +3166,7 @@
          "elements": []
         },
         {
-         "id": "9e37c41",
+         "id": "382ce2b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3209,7 +3211,7 @@
          "elements": []
         },
         {
-         "id": "0975dcc",
+         "id": "ebb84c6",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3237,7 +3239,7 @@
        ]
       },
       {
-       "id": "4e8c0a3",
+       "id": "e5559e6",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3272,7 +3274,7 @@
        },
        "elements": [
         {
-         "id": "816ba9e",
+         "id": "aa72067",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3291,7 +3293,7 @@
          "elements": []
         },
         {
-         "id": "98e6cf7",
+         "id": "cef85db",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3336,7 +3338,7 @@
          "elements": []
         },
         {
-         "id": "fd674ac",
+         "id": "73b1f84",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3364,7 +3366,7 @@
        ]
       },
       {
-       "id": "4e6b6eb",
+       "id": "d941508",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3399,7 +3401,7 @@
        },
        "elements": [
         {
-         "id": "a7fb7e0",
+         "id": "b9e328b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3418,7 +3420,7 @@
          "elements": []
         },
         {
-         "id": "ee5b81c",
+         "id": "01a8810",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3463,7 +3465,7 @@
          "elements": []
         },
         {
-         "id": "c5e4724",
+         "id": "19a01e8",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3495,7 +3497,7 @@
    ]
   },
   {
-   "id": "9557bea",
+   "id": "f7e6999",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -3542,7 +3544,7 @@
    },
    "elements": [
     {
-     "id": "2a57d76",
+     "id": "978782f",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -3585,7 +3587,7 @@
      },
      "elements": [
       {
-       "id": "8728f9e",
+       "id": "313cbdb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3624,7 +3626,7 @@
        },
        "elements": [
         {
-         "id": "b096bc0",
+         "id": "75a1a5f",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3667,7 +3669,7 @@
          "elements": []
         },
         {
-         "id": "04d6a32",
+         "id": "f8f9560",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3708,7 +3710,7 @@
        ]
       },
       {
-       "id": "5fda1ca",
+       "id": "664efee",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -3752,7 +3754,7 @@
      ]
     },
     {
-     "id": "3fbea7b",
+     "id": "06d5f83",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -3804,7 +3806,7 @@
      },
      "elements": [
       {
-       "id": "093dc67",
+       "id": "a82b1e0",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3851,7 +3853,7 @@
        },
        "elements": [
         {
-         "id": "a71fe85",
+         "id": "65aef0c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -3870,7 +3872,7 @@
          "elements": []
         },
         {
-         "id": "0dfb397",
+         "id": "9a71c2b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -3915,7 +3917,7 @@
          "elements": []
         },
         {
-         "id": "26ac08a",
+         "id": "24d65e5",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -3943,7 +3945,7 @@
        ]
       },
       {
-       "id": "fc5002a",
+       "id": "553e07e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3990,7 +3992,7 @@
        },
        "elements": [
         {
-         "id": "fde4544",
+         "id": "b2b147c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4009,7 +4011,7 @@
          "elements": []
         },
         {
-         "id": "f5cc3d4",
+         "id": "e961114",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4054,7 +4056,7 @@
          "elements": []
         },
         {
-         "id": "48592f6",
+         "id": "2437d30",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4082,7 +4084,7 @@
        ]
       },
       {
-       "id": "ee59d08",
+       "id": "fd60d20",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4129,7 +4131,7 @@
        },
        "elements": [
         {
-         "id": "d918705",
+         "id": "6ae5180",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4148,7 +4150,7 @@
          "elements": []
         },
         {
-         "id": "1d32a57",
+         "id": "d0742c1",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4193,7 +4195,7 @@
          "elements": []
         },
         {
-         "id": "8e24695",
+         "id": "435aa09",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4225,7 +4227,7 @@
    ]
   },
   {
-   "id": "7c5b86c",
+   "id": "208e2ef",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -4272,7 +4274,7 @@
    },
    "elements": [
     {
-     "id": "dbb4eb0",
+     "id": "60cccc6",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -4305,7 +4307,7 @@
      },
      "elements": [
       {
-       "id": "6b6b025",
+       "id": "0a9ef80",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -4348,7 +4350,7 @@
        "elements": []
       },
       {
-       "id": "3811cbc",
+       "id": "bb25b6b",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -4387,7 +4389,7 @@
        "elements": []
       },
       {
-       "id": "450e49a",
+       "id": "ca191c4",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -4422,7 +4424,7 @@
      ]
     },
     {
-     "id": "9a60222",
+     "id": "4b1d32d",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -4482,7 +4484,7 @@
      },
      "elements": [
       {
-       "id": "86390bf",
+       "id": "96754ac",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4530,7 +4532,7 @@
        },
        "elements": [
         {
-         "id": "b8e9334",
+         "id": "bb625b4",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4549,7 +4551,7 @@
          "elements": []
         },
         {
-         "id": "59d4f6f",
+         "id": "e892993",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4594,7 +4596,7 @@
          "elements": []
         },
         {
-         "id": "7ba7d14",
+         "id": "13f8bee",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4622,7 +4624,7 @@
        ]
       },
       {
-       "id": "6627433",
+       "id": "0a775b7",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4670,7 +4672,7 @@
        },
        "elements": [
         {
-         "id": "5a2446c",
+         "id": "19b91e5",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4689,7 +4691,7 @@
          "elements": []
         },
         {
-         "id": "a9498d5",
+         "id": "0b641a3",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4734,7 +4736,7 @@
          "elements": []
         },
         {
-         "id": "a0d08b6",
+         "id": "05b912d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4762,7 +4764,7 @@
        ]
       },
       {
-       "id": "234f4c5",
+       "id": "cb1fc85",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4810,7 +4812,7 @@
        },
        "elements": [
         {
-         "id": "a1d039b",
+         "id": "cbc2d6a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "html",
@@ -4829,7 +4831,7 @@
          "elements": []
         },
         {
-         "id": "cb519ab",
+         "id": "08d25b7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -4874,7 +4876,7 @@
          "elements": []
         },
         {
-         "id": "dbd56f1",
+         "id": "f02e7aa",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -4906,7 +4908,7 @@
    ]
   },
   {
-   "id": "9dc3464",
+   "id": "d79ba8d",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -4955,7 +4957,7 @@
    },
    "elements": [
     {
-     "id": "0c3fbc6",
+     "id": "d38720e",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -4994,7 +4996,7 @@
      },
      "elements": [
       {
-       "id": "8bd2507",
+       "id": "b820989",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5037,7 +5039,7 @@
        "elements": []
       },
       {
-       "id": "598b97e",
+       "id": "8733a98",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5084,7 +5086,7 @@
        "elements": []
       },
       {
-       "id": "1928d81",
+       "id": "2d1f479",
        "elType": "widget",
        "isInner": false,
        "widgetType": "divider",
@@ -5120,7 +5122,7 @@
        "elements": []
       },
       {
-       "id": "978d6a2",
+       "id": "c7b9921",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5163,16 +5165,16 @@
        "elements": []
       },
       {
-       "id": "8edbbcc",
+       "id": "5ed8470",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
        "settings": {
         "image": {
-         "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+         "url": "https://web-inference.github.io/crestline/assets/images/home-values.jpg",
          "id": "",
          "size": "",
-         "alt": "Modern Bay Area home",
+         "alt": "Modern two-storey home with a glass balcony among tall pines",
          "source": "library"
         },
         "image_size": "full",
@@ -5182,6 +5184,7 @@
          "sizes": []
         },
         "_css_classes": "cl-img cl-r-17-10",
+        "_title": "IMG home-values.jpg (in site)",
         "_animation": "fadeIn",
         "_animation_delay": 200
        },
@@ -5190,7 +5193,7 @@
      ]
     },
     {
-     "id": "8837eaa",
+     "id": "a6cef19",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -5257,7 +5260,7 @@
      },
      "elements": [
       {
-       "id": "ce12724",
+       "id": "410c9bd",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5293,7 +5296,7 @@
        },
        "elements": [
         {
-         "id": "a06a1e6",
+         "id": "c44c632",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5338,7 +5341,7 @@
          "elements": []
         },
         {
-         "id": "be54e3b",
+         "id": "f43c976",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5366,7 +5369,7 @@
        ]
       },
       {
-       "id": "fcb2818",
+       "id": "ae61ec6",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5402,7 +5405,7 @@
        },
        "elements": [
         {
-         "id": "1debafb",
+         "id": "c92a0b9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5447,7 +5450,7 @@
          "elements": []
         },
         {
-         "id": "827048b",
+         "id": "5bc0242",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5475,7 +5478,7 @@
        ]
       },
       {
-       "id": "17fdbd6",
+       "id": "f3de678",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5511,7 +5514,7 @@
        },
        "elements": [
         {
-         "id": "f368781",
+         "id": "2713e4f",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5556,7 +5559,7 @@
          "elements": []
         },
         {
-         "id": "f83ae02",
+         "id": "2afe892",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5584,7 +5587,7 @@
        ]
       },
       {
-       "id": "8bb010c",
+       "id": "23986c4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5620,7 +5623,7 @@
        },
        "elements": [
         {
-         "id": "932ec5c",
+         "id": "4c3bd1c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -5665,7 +5668,7 @@
          "elements": []
         },
         {
-         "id": "f924952",
+         "id": "10519a8",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -5697,7 +5700,7 @@
    ]
   },
   {
-   "id": "031a85a",
+   "id": "b5e73e9",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -5746,7 +5749,7 @@
    },
    "elements": [
     {
-     "id": "9c12250",
+     "id": "b2b6771",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -5785,7 +5788,7 @@
      },
      "elements": [
       {
-       "id": "082f477",
+       "id": "38431af",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5828,7 +5831,7 @@
        "elements": []
       },
       {
-       "id": "2330429",
+       "id": "668ee69",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -5875,7 +5878,7 @@
        "elements": []
       },
       {
-       "id": "9193338",
+       "id": "61a66bb",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -5918,16 +5921,16 @@
        "elements": []
       },
       {
-       "id": "6a252e9",
+       "id": "366d4e1",
        "elType": "widget",
        "isInner": false,
        "widgetType": "image",
        "settings": {
         "image": {
-         "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
+         "url": "https://web-inference.github.io/crestline/assets/images/home-process.jpg",
          "id": "",
          "size": "",
-         "alt": "Bright living room",
+         "alt": "Bright living room with cream sofas and a brick archway",
          "source": "library"
         },
         "image_size": "full",
@@ -5937,6 +5940,7 @@
          "sizes": []
         },
         "_css_classes": "cl-img cl-r-5-3",
+        "_title": "IMG home-process.jpg (in site)",
         "_margin": {
          "unit": "px",
          "top": "0",
@@ -5951,7 +5955,7 @@
        "elements": []
       },
       {
-       "id": "b630086",
+       "id": "ac56d27",
        "elType": "widget",
        "isInner": false,
        "widgetType": "button",
@@ -6022,7 +6026,7 @@
      ]
     },
     {
-     "id": "ce4bd23",
+     "id": "4bd3a65",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6070,7 +6074,7 @@
      },
      "elements": [
       {
-       "id": "2c34d12",
+       "id": "8b48e3d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6097,7 +6101,7 @@
        },
        "elements": [
         {
-         "id": "7af8c48",
+         "id": "64fbb85",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6131,7 +6135,7 @@
          },
          "elements": [
           {
-           "id": "6c89aed",
+           "id": "0fb596e",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6159,7 +6163,7 @@
            "elements": []
           },
           {
-           "id": "e7ec863",
+           "id": "55247dd",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6198,7 +6202,7 @@
          ]
         },
         {
-         "id": "598a68f",
+         "id": "b46a4ea",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6232,7 +6236,7 @@
          "elements": []
         },
         {
-         "id": "725ea0e",
+         "id": "65c01f9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6267,7 +6271,7 @@
        ]
       },
       {
-       "id": "28d6c81",
+       "id": "a6841c7",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6294,7 +6298,7 @@
        },
        "elements": [
         {
-         "id": "1453b4f",
+         "id": "cc9edca",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6328,7 +6332,7 @@
          },
          "elements": [
           {
-           "id": "522c5d6",
+           "id": "8bc8ce7",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6356,7 +6360,7 @@
            "elements": []
           },
           {
-           "id": "60a7c5c",
+           "id": "913e6ca",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6395,7 +6399,7 @@
          ]
         },
         {
-         "id": "dbbc6b3",
+         "id": "b27a99b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6429,7 +6433,7 @@
          "elements": []
         },
         {
-         "id": "a1f2e3d",
+         "id": "8cba52e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6464,7 +6468,7 @@
        ]
       },
       {
-       "id": "60181f4",
+       "id": "8067f2e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6491,7 +6495,7 @@
        },
        "elements": [
         {
-         "id": "d011d34",
+         "id": "48f39b0",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6525,7 +6529,7 @@
          },
          "elements": [
           {
-           "id": "4d10f50",
+           "id": "7cf7bf1",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6553,7 +6557,7 @@
            "elements": []
           },
           {
-           "id": "af9a71a",
+           "id": "ed55080",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6592,7 +6596,7 @@
          ]
         },
         {
-         "id": "949e0bd",
+         "id": "34ffe06",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6626,7 +6630,7 @@
          "elements": []
         },
         {
-         "id": "41f0f0e",
+         "id": "d762753",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6661,7 +6665,7 @@
        ]
       },
       {
-       "id": "69b993e",
+       "id": "79e10dc",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6688,7 +6692,7 @@
        },
        "elements": [
         {
-         "id": "4147718",
+         "id": "6fb31bb",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -6722,7 +6726,7 @@
          },
          "elements": [
           {
-           "id": "f8dbb41",
+           "id": "6316a86",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6750,7 +6754,7 @@
            "elements": []
           },
           {
-           "id": "3d5b3e6",
+           "id": "d5d3409",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -6789,7 +6793,7 @@
          ]
         },
         {
-         "id": "ed1e67e",
+         "id": "1dee740",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -6823,7 +6827,7 @@
          "elements": []
         },
         {
-         "id": "00e2244",
+         "id": "2d0a016",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -6862,7 +6866,7 @@
    ]
   },
   {
-   "id": "643771d",
+   "id": "362e18c",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -6910,7 +6914,7 @@
    },
    "elements": [
     {
-     "id": "94c49e3",
+     "id": "2cfa561",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6943,7 +6947,7 @@
      },
      "elements": [
       {
-       "id": "55f4a8f",
+       "id": "563e244",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -6986,7 +6990,7 @@
        "elements": []
       },
       {
-       "id": "99b5e85",
+       "id": "6c131e0",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -7025,7 +7029,7 @@
        "elements": []
       },
       {
-       "id": "1688dd8",
+       "id": "3c0f3a4",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7060,7 +7064,7 @@
      ]
     },
     {
-     "id": "021986b",
+     "id": "b8e77fd",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -7112,7 +7116,7 @@
      },
      "elements": [
       {
-       "id": "060145d",
+       "id": "6b37770",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7151,7 +7155,7 @@
        },
        "elements": [
         {
-         "id": "60f64a5",
+         "id": "7e5b66d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7192,7 +7196,7 @@
          "elements": []
         },
         {
-         "id": "bde1cf0",
+         "id": "d8e6fd0",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7232,7 +7236,7 @@
          "elements": []
         },
         {
-         "id": "94de968",
+         "id": "f7dac26",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7259,7 +7263,7 @@
          "elements": []
         },
         {
-         "id": "f15fe26",
+         "id": "8eb23a8",
          "elType": "widget",
          "isInner": false,
          "widgetType": "divider",
@@ -7287,7 +7291,7 @@
          "elements": []
         },
         {
-         "id": "7f4482a",
+         "id": "568ffc1",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -7315,7 +7319,7 @@
        ]
       },
       {
-       "id": "34bf731",
+       "id": "89efef0",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7354,7 +7358,7 @@
        },
        "elements": [
         {
-         "id": "c4f8d1c",
+         "id": "3411707",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7395,7 +7399,7 @@
          "elements": []
         },
         {
-         "id": "9e171b1",
+         "id": "0451b7d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7435,7 +7439,7 @@
          "elements": []
         },
         {
-         "id": "560842d",
+         "id": "7e71a1b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7462,7 +7466,7 @@
          "elements": []
         },
         {
-         "id": "e616650",
+         "id": "92c073e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "divider",
@@ -7490,7 +7494,7 @@
          "elements": []
         },
         {
-         "id": "0bbffe7",
+         "id": "b8692a7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -7518,7 +7522,7 @@
        ]
       },
       {
-       "id": "3ace2cb",
+       "id": "4a5c23b",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7557,7 +7561,7 @@
        },
        "elements": [
         {
-         "id": "f960ea0",
+         "id": "6da753e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7598,7 +7602,7 @@
          "elements": []
         },
         {
-         "id": "dd602d7",
+         "id": "0b5dcfd",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7638,7 +7642,7 @@
          "elements": []
         },
         {
-         "id": "2c64ae7",
+         "id": "99b5be2",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7665,7 +7669,7 @@
          "elements": []
         },
         {
-         "id": "d43e49a",
+         "id": "f25dbca",
          "elType": "widget",
          "isInner": false,
          "widgetType": "divider",
@@ -7693,7 +7697,7 @@
          "elements": []
         },
         {
-         "id": "87a7d2d",
+         "id": "e2f3e08",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -7725,7 +7729,7 @@
    ]
   },
   {
-   "id": "3a1db38",
+   "id": "80832b9",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -7783,7 +7787,7 @@
    },
    "elements": [
     {
-     "id": "be6e976",
+     "id": "08f8330",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -7826,7 +7830,7 @@
      },
      "elements": [
       {
-       "id": "4d3e56d",
+       "id": "602e871",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7865,7 +7869,7 @@
        },
        "elements": [
         {
-         "id": "4f26d7a",
+         "id": "3fea848",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7908,7 +7912,7 @@
          "elements": []
         },
         {
-         "id": "85d225f",
+         "id": "5aa0d3b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -7949,7 +7953,7 @@
        ]
       },
       {
-       "id": "8d4e42b",
+       "id": "b21a38c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -7991,7 +7995,7 @@
      ]
     },
     {
-     "id": "24bff1f",
+     "id": "c59a3da",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -8043,7 +8047,7 @@
      },
      "elements": [
       {
-       "id": "73b4a36",
+       "id": "18886b9",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8076,7 +8080,7 @@
        },
        "elements": [
         {
-         "id": "0e921e5",
+         "id": "0cade9c",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -8095,12 +8099,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG PROMPT: Tree-lined street in Palo Alto's Professorville with historic Craftsman homes, mature oaks, soft morning light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG FILE city-palo-alto.jpg | PROMPT: Tree-lined street in Palo Alto's Professorville with historic Craftsman homes, mature oaks, soft morning light, editorial real-estate photography, photorealistic, no text"
          },
          "elements": []
         },
         {
-         "id": "e863cf0",
+         "id": "fa07327",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8138,7 +8142,7 @@
          },
          "elements": [
           {
-           "id": "5676b38",
+           "id": "3c6a61f",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8175,7 +8179,7 @@
            "elements": []
           },
           {
-           "id": "1427a8b",
+           "id": "c6bc726",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8206,7 +8210,7 @@
        ]
       },
       {
-       "id": "8fe4b02",
+       "id": "25d34e6",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8239,7 +8243,7 @@
        },
        "elements": [
         {
-         "id": "eee53e8",
+         "id": "01fbbbf",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -8258,12 +8262,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG PROMPT: Castro Street in downtown Mountain View at dusk, outdoor café tables, warm string lights, low-rise storefronts, editorial lifestyle photography, photorealistic, no legible signage"
+          "_title": "IMG FILE city-mountain-view.jpg | PROMPT: Castro Street in downtown Mountain View at dusk, outdoor café tables, warm string lights, low-rise storefronts, editorial lifestyle photography, photorealistic, no legible signage"
          },
          "elements": []
         },
         {
-         "id": "f8229dc",
+         "id": "abd5370",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8301,7 +8305,7 @@
          },
          "elements": [
           {
-           "id": "44de811",
+           "id": "6d4a17e",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8338,7 +8342,7 @@
            "elements": []
           },
           {
-           "id": "945de8c",
+           "id": "0cf77dd",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8369,7 +8373,7 @@
        ]
       },
       {
-       "id": "6383689",
+       "id": "b5a740d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8402,7 +8406,7 @@
        },
        "elements": [
         {
-         "id": "ff74e4d",
+         "id": "93bc758",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -8421,12 +8425,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG PROMPT: Bright mid-century ranch home in Sunnyvale's Cherry Chase neighborhood, manicured front yard, clear blue sky, late afternoon sun, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG FILE city-sunnyvale.jpg | PROMPT: Bright mid-century ranch home in Sunnyvale's Cherry Chase neighborhood, manicured front yard, clear blue sky, late afternoon sun, editorial real-estate photography, photorealistic, no text"
          },
          "elements": []
         },
         {
-         "id": "b32da08",
+         "id": "41e9138",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8464,7 +8468,7 @@
          },
          "elements": [
           {
-           "id": "25613c6",
+           "id": "71567f9",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8501,7 +8505,7 @@
            "elements": []
           },
           {
-           "id": "3093202",
+           "id": "182e88a",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8532,7 +8536,7 @@
        ]
       },
       {
-       "id": "23e3bb2",
+       "id": "789962a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8565,7 +8569,7 @@
        },
        "elements": [
         {
-         "id": "d70a0cf",
+         "id": "3f0102a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -8584,12 +8588,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG PROMPT: Charming Willow Glen bungalow in San Jose with a deep front porch and mature trees, golden-hour light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG FILE city-san-jose.jpg | PROMPT: Charming Willow Glen bungalow in San Jose with a deep front porch and mature trees, golden-hour light, editorial real-estate photography, photorealistic, no text"
          },
          "elements": []
         },
         {
-         "id": "ba8a0a6",
+         "id": "ccb6a5f",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8627,7 +8631,7 @@
          },
          "elements": [
           {
-           "id": "93a09e6",
+           "id": "d81f160",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8664,7 +8668,7 @@
            "elements": []
           },
           {
-           "id": "d80a050",
+           "id": "14be97b",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8695,7 +8699,7 @@
        ]
       },
       {
-       "id": "0438f48",
+       "id": "4eb072d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8728,7 +8732,7 @@
        },
        "elements": [
         {
-         "id": "ce51e3f",
+         "id": "fbb700a",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -8747,12 +8751,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG PROMPT: Elegant shingle-style home in Menlo Park's Allied Arts neighborhood behind a low hedge and heritage oaks, dappled sunlight, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG FILE city-menlo-park.jpg | PROMPT: Elegant shingle-style home in Menlo Park's Allied Arts neighborhood behind a low hedge and heritage oaks, dappled sunlight, editorial real-estate photography, photorealistic, no text"
          },
          "elements": []
         },
         {
-         "id": "53653d4",
+         "id": "4909bb2",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8790,7 +8794,7 @@
          },
          "elements": [
           {
-           "id": "12c4aa0",
+           "id": "4682dc3",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8827,7 +8831,7 @@
            "elements": []
           },
           {
-           "id": "e53213f",
+           "id": "6617e77",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8858,7 +8862,7 @@
        ]
       },
       {
-       "id": "dc9b174",
+       "id": "7b53bb1",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8891,7 +8895,7 @@
        },
        "elements": [
         {
-         "id": "3440fb5",
+         "id": "9525234",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -8910,12 +8914,12 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-4-3",
-          "_title": "IMG PROMPT: Waterfront townhomes along a calm Foster City lagoon with small boats docked, reflections on the water, soft evening light, editorial real-estate photography, photorealistic, no text"
+          "_title": "IMG FILE city-foster-city.jpg | PROMPT: Waterfront townhomes along a calm Foster City lagoon with small boats docked, reflections on the water, soft evening light, editorial real-estate photography, photorealistic, no text"
          },
          "elements": []
         },
         {
-         "id": "31e9f02",
+         "id": "6854391",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8953,7 +8957,7 @@
          },
          "elements": [
           {
-           "id": "cbc3a4b",
+           "id": "facbaff",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -8990,7 +8994,7 @@
            "elements": []
           },
           {
-           "id": "025ce0c",
+           "id": "e848d2e",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9023,7 +9027,7 @@
      ]
     },
     {
-     "id": "ec21a5f",
+     "id": "ad65d2c",
      "elType": "widget",
      "isInner": false,
      "widgetType": "text-editor",
@@ -9061,7 +9065,7 @@
    ]
   },
   {
-   "id": "aeae32c",
+   "id": "5fd3855",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -9108,7 +9112,7 @@
    },
    "elements": [
     {
-     "id": "15ea7ac",
+     "id": "e81f292",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -9141,7 +9145,7 @@
      },
      "elements": [
       {
-       "id": "70200f5",
+       "id": "3ad64bc",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -9184,7 +9188,7 @@
        "elements": []
       },
       {
-       "id": "d77543d",
+       "id": "0c0c205",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -9225,7 +9229,7 @@
      ]
     },
     {
-     "id": "733c163",
+     "id": "5510dca",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -9277,7 +9281,7 @@
      },
      "elements": [
       {
-       "id": "820d3f6",
+       "id": "dae92b4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9307,7 +9311,7 @@
        },
        "elements": [
         {
-         "id": "8073b57",
+         "id": "5b79197",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -9342,7 +9346,7 @@
          "elements": []
         },
         {
-         "id": "bd8a4c9",
+         "id": "b762e2f",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -9382,7 +9386,7 @@
          "elements": []
         },
         {
-         "id": "2aed5c5",
+         "id": "d486cdb",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9416,7 +9420,7 @@
          },
          "elements": [
           {
-           "id": "978696f",
+           "id": "9680d9c",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9443,7 +9447,7 @@
            "elements": []
           },
           {
-           "id": "cbd4b46",
+           "id": "723dd8a",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9480,7 +9484,7 @@
        ]
       },
       {
-       "id": "9cc4c9f",
+       "id": "127eafb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9510,7 +9514,7 @@
        },
        "elements": [
         {
-         "id": "6d2d2d7",
+         "id": "963f802",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -9545,7 +9549,7 @@
          "elements": []
         },
         {
-         "id": "7613f38",
+         "id": "d872a69",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -9585,7 +9589,7 @@
          "elements": []
         },
         {
-         "id": "f8dcaaa",
+         "id": "d1a0b50",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9619,7 +9623,7 @@
          },
          "elements": [
           {
-           "id": "0ebfcc7",
+           "id": "cec0356",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9646,7 +9650,7 @@
            "elements": []
           },
           {
-           "id": "a0ace4f",
+           "id": "db79977",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9683,7 +9687,7 @@
        ]
       },
       {
-       "id": "0c78919",
+       "id": "7370611",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9713,7 +9717,7 @@
        },
        "elements": [
         {
-         "id": "e417b9d",
+         "id": "6df5ed1",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -9748,7 +9752,7 @@
          "elements": []
         },
         {
-         "id": "f798e46",
+         "id": "c92f45e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -9788,7 +9792,7 @@
          "elements": []
         },
         {
-         "id": "a9c252b",
+         "id": "f68155f",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9822,7 +9826,7 @@
          },
          "elements": [
           {
-           "id": "cc822bd",
+           "id": "164b815",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9849,7 +9853,7 @@
            "elements": []
           },
           {
-           "id": "1d7530c",
+           "id": "131dc6e",
            "elType": "widget",
            "isInner": false,
            "widgetType": "heading",
@@ -9890,7 +9894,7 @@
    ]
   },
   {
-   "id": "0cacb99",
+   "id": "d54a0d0",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -9938,7 +9942,7 @@
    },
    "elements": [
     {
-     "id": "85936d6",
+     "id": "b4190a8",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -9981,7 +9985,7 @@
      },
      "elements": [
       {
-       "id": "3f587db",
+       "id": "3d1feb1",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10020,7 +10024,7 @@
        },
        "elements": [
         {
-         "id": "2968ec1",
+         "id": "32cd839",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10063,7 +10067,7 @@
          "elements": []
         },
         {
-         "id": "2f00696",
+         "id": "c624740",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10104,7 +10108,7 @@
        ]
       },
       {
-       "id": "97a3e78",
+       "id": "4d9d2de",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -10146,7 +10150,7 @@
      ]
     },
     {
-     "id": "270fe5b",
+     "id": "32d12ec",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -10198,7 +10202,7 @@
      },
      "elements": [
       {
-       "id": "6da2665",
+       "id": "f9d3578",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10231,7 +10235,7 @@
        },
        "elements": [
         {
-         "id": "4e9a2ef",
+         "id": "736ba9d",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -10240,7 +10244,7 @@
            "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
            "id": "",
            "size": "",
-           "alt": "5 warning signs of a bad tenant, and how to spot them early",
+           "alt": "Rental application paperwork with reading glasses and a pen on a desk",
            "source": "library"
           },
           "image_size": "full",
@@ -10250,6 +10254,7 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-post",
+          "_title": "IMG FILE blog-tenant-risk.jpg | PROMPT: A rental application checklist on a clean desk with reading glasses, a pen and a laptop showing a blurred report, soft window light, shallow depth of field, form text blurred and unreadable, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces",
           "_margin": {
            "unit": "px",
            "top": "0",
@@ -10262,7 +10267,7 @@
          "elements": []
         },
         {
-         "id": "8261e73",
+         "id": "31514d5",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10303,7 +10308,7 @@
          "elements": []
         },
         {
-         "id": "b919f07",
+         "id": "f4073db",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10343,7 +10348,7 @@
          "elements": []
         },
         {
-         "id": "78f9a7a",
+         "id": "14b3b74",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -10371,7 +10376,7 @@
        ]
       },
       {
-       "id": "430f3c6",
+       "id": "879b589",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10404,7 +10409,7 @@
        },
        "elements": [
         {
-         "id": "4d54f3a",
+         "id": "2bbb80b",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -10413,7 +10418,7 @@
            "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
            "id": "",
            "size": "",
-           "alt": "How to prepare your home for a higher rent",
+           "alt": "Freshly painted living room with paint swatches and a roller tray",
            "source": "library"
           },
           "image_size": "full",
@@ -10423,6 +10428,7 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-post",
+          "_title": "IMG FILE blog-owner-tips.jpg | PROMPT: Bright freshly refreshed living room in a Bay Area home, new light-grey paint, a few paint swatches and a small roller tray in the foreground, hardwood floors, large window, soft daylight, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces",
           "_margin": {
            "unit": "px",
            "top": "0",
@@ -10435,7 +10441,7 @@
          "elements": []
         },
         {
-         "id": "3f9ebbb",
+         "id": "4515019",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10476,7 +10482,7 @@
          "elements": []
         },
         {
-         "id": "6d6c9f4",
+         "id": "d8628cc",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10516,7 +10522,7 @@
          "elements": []
         },
         {
-         "id": "b130eda",
+         "id": "af0a1fa",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -10544,7 +10550,7 @@
        ]
       },
       {
-       "id": "fdd17f2",
+       "id": "ce49551",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -10577,7 +10583,7 @@
        },
        "elements": [
         {
-         "id": "603f1d1",
+         "id": "29fcabd",
          "elType": "widget",
          "isInner": false,
          "widgetType": "image",
@@ -10586,7 +10592,7 @@
            "url": "/wp-content/plugins/elementor/assets/images/placeholder.png",
            "id": "",
            "size": "",
-           "alt": "Bay Area rental market update: fall 2026",
+           "alt": "Quiet Bay Area street in autumn with tidy single-family homes",
            "source": "library"
           },
           "image_size": "full",
@@ -10596,6 +10602,7 @@
            "sizes": []
           },
           "_css_classes": "cl-img cl-r-post",
+          "_title": "IMG FILE blog-market-update.jpg | PROMPT: Quiet Bay Area residential street in early autumn, golden and orange leaves on the trees and sidewalk, tidy single-family homes with porches, soft late-afternoon light, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces",
           "_margin": {
            "unit": "px",
            "top": "0",
@@ -10608,7 +10615,7 @@
          "elements": []
         },
         {
-         "id": "9cadfb8",
+         "id": "b60397e",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10649,7 +10656,7 @@
          "elements": []
         },
         {
-         "id": "8927a80",
+         "id": "fb12fb9",
          "elType": "widget",
          "isInner": false,
          "widgetType": "heading",
@@ -10689,7 +10696,7 @@
          "elements": []
         },
         {
-         "id": "e1ba995",
+         "id": "20b7eb7",
          "elType": "widget",
          "isInner": false,
          "widgetType": "text-editor",
@@ -10721,7 +10728,7 @@
    ]
   },
   {
-   "id": "ecba0d5",
+   "id": "6f68b25",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -10769,7 +10776,7 @@
    },
    "elements": [
     {
-     "id": "1b56123",
+     "id": "99eb772",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -10802,7 +10809,7 @@
      },
      "elements": [
       {
-       "id": "4659f64",
+       "id": "cd22436",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -10845,7 +10852,7 @@
        "elements": []
       },
       {
-       "id": "4184c01",
+       "id": "e066dc7",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -10886,7 +10893,7 @@
      ]
     },
     {
-     "id": "e366a78",
+     "id": "891fc54",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -10920,29 +10927,29 @@
      },
      "elements": [
       {
-       "id": "431f436",
+       "id": "f17a7fe",
        "elType": "widget",
        "isInner": false,
        "widgetType": "accordion",
        "settings": {
         "tabs": [
          {
-          "_id": "cf9c55c",
+          "_id": "8ffa89b",
           "tab_title": "How much does property management cost?",
           "tab_content": "<p>Full management is 8% of the monthly rent collected, and leasing only is 75% of the first month’s rent. There are no hidden fees and no markup on maintenance.</p>"
          },
          {
-          "_id": "836bda5",
+          "_id": "a7054d9",
           "tab_title": "How do you screen tenants?",
           "tab_content": "<p>Every applicant goes through credit, background, income and rental history checks. We verify employment and speak with previous landlords before recommending anyone to you.</p>"
          },
          {
-          "_id": "fce4dd5",
+          "_id": "21fd916",
           "tab_title": "How quickly can you rent my home?",
           "tab_content": "<p>Most homes rent within two to three weeks. Smart pricing, professional photos and quick showings keep vacant days to a minimum.</p>"
          },
          {
-          "_id": "034cf97",
+          "_id": "7ee9bdc",
           "tab_title": "What happens with the security deposit?",
           "tab_content": "<p>We collect and hold the deposit in line with California law, document the home at move-in and move-out, and handle any deductions with a clear, itemized statement.</p>"
          }
@@ -11018,7 +11025,7 @@
    ]
   },
   {
-   "id": "f464f58",
+   "id": "98f4307",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -11068,7 +11075,7 @@
    },
    "elements": [
     {
-     "id": "9159dfb",
+     "id": "0bbf72a",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -11107,7 +11114,7 @@
      },
      "elements": [
       {
-       "id": "e3c070a",
+       "id": "cfa836c",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -11150,7 +11157,7 @@
        "elements": []
       },
       {
-       "id": "b130cdc",
+       "id": "8eb6d99",
        "elType": "widget",
        "isInner": false,
        "widgetType": "heading",
@@ -11197,7 +11204,7 @@
        "elements": []
       },
       {
-       "id": "94dff2d",
+       "id": "359cceb",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -11240,7 +11247,7 @@
        "elements": []
       },
       {
-       "id": "c635084",
+       "id": "a231f86",
        "elType": "widget",
        "isInner": false,
        "widgetType": "text-editor",
@@ -11270,7 +11277,7 @@
      ]
     },
     {
-     "id": "fa6eaea",
+     "id": "1502a45",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -11321,7 +11328,7 @@
      },
      "elements": [
       {
-       "id": "b184fa7",
+       "id": "893dba3",
        "elType": "widget",
        "isInner": false,
        "widgetType": "form",
@@ -11329,7 +11336,7 @@
         "form_name": "Free Rental Analysis",
         "form_fields": [
          {
-          "_id": "43c6ca0",
+          "_id": "e08f0f4",
           "placeholder": "",
           "custom_id": "name",
           "field_type": "text",
@@ -11338,7 +11345,7 @@
           "required": "true"
          },
          {
-          "_id": "7d82d09",
+          "_id": "7df3c17",
           "placeholder": "",
           "custom_id": "phone",
           "field_type": "tel",
@@ -11346,7 +11353,7 @@
           "width": "50"
          },
          {
-          "_id": "c477c5d",
+          "_id": "3af0671",
           "placeholder": "",
           "custom_id": "email",
           "field_type": "email",
@@ -11355,7 +11362,7 @@
           "required": "true"
          },
          {
-          "_id": "3e15ecd",
+          "_id": "73570bf",
           "placeholder": "",
           "custom_id": "address",
           "field_type": "text",
@@ -11363,7 +11370,7 @@
           "width": "100"
          },
          {
-          "_id": "a6ae92e",
+          "_id": "9bedab5",
           "placeholder": "",
           "custom_id": "message",
           "field_type": "textarea",
@@ -11372,7 +11379,7 @@
           "rows": 4
          },
          {
-          "_id": "e8bab13",
+          "_id": "eda80cb",
           "placeholder": "",
           "custom_id": "hp",
           "field_type": "honeypot",
@@ -11380,7 +11387,7 @@
           "width": "100"
          },
          {
-          "_id": "e9d3a5b",
+          "_id": "38387a1",
           "placeholder": "",
           "custom_id": "note",
           "field_type": "html",

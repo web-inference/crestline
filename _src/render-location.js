@@ -14,8 +14,6 @@ const built = new Set(cities.map((c) => c.slug));
 const slugOf = (name) => name.toLowerCase().replace(/&amp;|&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const pageHref = (name) => (built.has(slugOf(name)) ? `${slugOf(name)}.html` : 'service-areas.html#cities');
 const d = (i, step = 0.1) => (i ? ` style="--d:${String(+(i * step).toFixed(2)).replace(/^0/, '')}s"` : '');
-const ph = (label, prompt, cls = '') => `<div class="cl-ph${cls}"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>${label}
-        <span class="cl-ph__prompt">${prompt}</span></div></div>`;
 
 function render(c) {
   const s = [];
@@ -40,11 +38,7 @@ function render(c) {
       </div>
     </div>
     <div class="cl-hero__frame" data-reveal="fade" style="--d:.2s">
-      <div class="cl-ph cl-ph--dark" data-reveal="wipe" style="--d:.3s">
-        <div class="cl-ph__inner cl-parallax" data-speed="0.06"><svg><use href="#i-image"/></svg>${c.name} hero · 5:4
-          <span class="cl-ph__prompt">${c.hero.prompt}</span>
-        </div>
-      </div>
+      <div class="cl-ph cl-ph--dark" data-img="${c.slug}-hero" data-reveal="wipe" style="--d:.3s"><!--img--><!--/img--></div>
       <div class="cl-hero__tag" data-reveal style="--d:.9s">${c.hero.tag}</div>
     </div>
   </div>
@@ -69,7 +63,7 @@ ${c.takeaways.map(([ic, t, p], i) => `    <div class="cl-take" data-reveal${d(i)
 <section class="cl-section bg-cream cl-about">
   <div class="cl-container cl-split">
     <div class="cl-about__media" data-reveal="left">
-      ${ph(`About ${c.name} · 9:8`, c.about.prompt, ' cl-zoom')}
+      <div class="cl-ph cl-zoom" data-img="${c.slug}-about"><!--img--><!--/img--></div>
       <div class="cl-about__badge" data-reveal style="--d:.35s">
         <div class="cl-h">${c.name}</div>
         <span>${c.county}</span>
@@ -139,8 +133,7 @@ ${c.renters.map(([ic, t, p], i) => `      <div class="cl-card cl-card--top" data
       <div class="cl-eyebrow" data-reveal>Our Services</div>
       <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">How we manage<br><em>${c.name} homes.</em></h2>
       <p class="cl-process__intro" data-reveal style="--d:.2s">${c.services.intro}</p>
-      <div class="cl-ph cl-zoom" data-reveal="wipe" style="--d:.2s"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Services image · 5:3
-        <span class="cl-ph__prompt">${c.services.prompt}</span></div></div>
+      <div class="cl-ph cl-zoom" data-img="${c.slug}-services" data-reveal="wipe" style="--d:.2s"><!--img--><!--/img--></div>
       <a href="#contact" class="cl-btn cl-btn--navy" data-reveal>Get a Free Rental Analysis <span class="arr">→</span></a>
     </div>
     <div class="cl-timeline">

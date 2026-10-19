@@ -10,7 +10,7 @@ const root = path.resolve(__dirname, '..');
 const CITIES = require(path.join(root, 'elementor', 'locations-data.js'));
 const built = (slug) => fs.existsSync(path.join(root, 'data', 'cities', `${slug}.js`));
 
-let html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+let html = fs.readFileSync(path.join(root, 'index.html'), 'utf8').split('\r\n').join('\n'); // tolerate CRLF
 const swap = (from, to) => { if (!html.includes(from)) throw new Error('not found: ' + from.slice(0, 60)); html = html.replace(from, () => to); };
 
 /* 1. Mandarin: hero note */
@@ -36,8 +36,7 @@ swap(`        <li>175 S San Antonio Rd, #100, Los Altos, CA</li>
 /* 4. Areas: same six cities as the Service Areas page, real links */
 const d = (i) => (i ? ` style="--d:.${i}s"` : '');
 const cards = CITIES.map((c, i) => `      <a href="${built(c.slug) ? c.slug + '.html' : 'service-areas.html#cities'}" class="cl-area cl-zoom" data-reveal${d(i % 3)}>
-        <div class="cl-ph cl-ph--sm"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>${c.name} · 4:3
-          <span class="cl-ph__prompt">${c.prompt}</span></div></div>
+        <div class="cl-ph cl-ph--sm" data-img="city-${c.slug}"><!--img--><!--/img--></div>
         <div class="cl-area__row"><h3 class="cl-h cl-h3">${c.name}</h3><span class="arr">→</span></div>
       </a>`).join('\n');
 const a = html.indexOf('    <div class="cl-areas">');

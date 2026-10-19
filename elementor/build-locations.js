@@ -27,7 +27,7 @@ const pageHero = (o) => section([
     ], { dir: 'row', gap: 14, wrap: true, dirM: 'column' }),
   ], { width: 54, justify: 'center' }),
   con([
-    image('cl-r-5-4', { alt: o.alt, delay: 200, prompt: o.prompt }),
+    image('cl-r-5-4', { slot: o.slot, alt: o.alt, delay: 200, prompt: o.prompt }),
     heading(o.tag, {
       tag: 'div', t: { family: SANS, size: 12, sizeM: 10, weight: 400, lh: 1, ls: 1.9, transform: 'uppercase' }, color: '#E9ECF0',
       cls: 'cl-hero-tag', delay: 700, extra: {
@@ -64,7 +64,7 @@ const processSection = (o) => section([
     eyebrow(o.eyebrow),
     heading(o.title, { cls: 'cl-h', mb: 30, delay: 100 }),
     text(`<p>${o.intro}</p>`, { t: T.small, maxW: 420, mb: 52, delay: 200 }),
-    image('cl-r-5-3', { alt: o.alt, mb: 36, delay: 200, prompt: o.prompt }),
+    image('cl-r-5-3', { slot: o.slot, alt: o.alt, mb: 36, delay: 200, prompt: o.prompt }),
     button(o.btn, '#contact', 'navy', { pad: box(22, 28, 22, 28) }),
   ], { width: 42 }),
   con(o.steps.map((s, i) => step(String(i + 1).padStart(2, '0'), s[0], s[1], s[2], i * 100, i === o.steps.length - 1)),
@@ -93,6 +93,7 @@ const chipsHtml = (items) => text(`<div class="cl-chips">${items.join('')}</div>
    SERVICE AREAS — ARCHIVE
    ===================================================================== */
 const saHero = pageHero({
+  slot: 'areas-hero',
   crumbs: [['Home', '/'], ['Service Areas']],
   eyebrow: 'Peninsula &amp; Silicon Valley',
   title: 'Areas<br><em>We Serve</em>',
@@ -142,7 +143,7 @@ const locStat = (val, label, first) => con([
   ...(first ? {} : { border: { border_border: 'solid', border_width: box(0, 0, 0, 1), border_color: C.line } }),
 });
 const locCard = (c, i) => con([
-  image('cl-r-4-3', { alt: `${c.name} rental home`, anim: false, prompt: c.prompt }),
+  image('cl-r-4-3', { slot: `city-${c.slug}`, alt: `${c.name} rental home`, anim: false, prompt: c.prompt }),
   con([
     heading(c.county, { tag: 'div', t: T.meta, color: C.eyebrowLight, mb: 10, anim: false }),
     heading(c.name, { tag: 'h3', t: { ...T.h3, size: 32, sizeM: 28 }, cls: 'cl-post-title', mb: 12, anim: false }),
@@ -172,6 +173,7 @@ const saTable = section([
 ], { bg: C.white });
 
 const saProcess = processSection({
+  slot: 'areas-process',
   eyebrow: 'Getting Started',
   title: 'Wherever you own,<br><em>four simple steps.</em>',
   intro: 'Local or overseas, the process is the same. One conversation, one clear agreement, and we take care of the rest.',
@@ -250,6 +252,7 @@ function locationPage(c) {
   const out = [];
 
   out.push(pageHero({
+    slot: `${c.slug}-hero`,
     crumbs: [['Home', '/'], ['Service Areas', '/service-areas/'], [N]],
     eyebrow: `${c.county} · Service Area`,
     title: `${N}<br><em>Property Management</em>`,
@@ -264,7 +267,7 @@ function locationPage(c) {
 
   out.push(section([
     con([
-      image('cl-r-9-8', { alt: `About ${N}`, animType: 'fadeInLeft', prompt: c.about.prompt }),
+      image('cl-r-9-8', { slot: `${c.slug}-about`, alt: `About ${N}`, animType: 'fadeInLeft', prompt: c.about.prompt }),
       con([
         heading(N, { tag: 'div', t: { family: SERIF, size: 40, sizeM: 30, weight: 400, lh: 1 }, color: C.gold, mb: 16, anim: false }),
         heading(c.county, { tag: 'div', t: { family: SANS, size: 13, sizeM: 11, weight: 400, lh: 1, ls: 2.9, transform: 'uppercase' }, color: '#E9ECF0', anim: false }),
@@ -297,6 +300,7 @@ function locationPage(c) {
   ], { bg: C.sand }));
 
   out.push(processSection({
+    slot: `${c.slug}-services`,
     bg: C.white, eyebrow: 'Our Services',
     title: `How we manage<br><em>${N} homes.</em>`,
     intro: c.services.intro, alt: `${N} rental home interior`, btn: 'Get a Free Rental Analysis →',

@@ -83,9 +83,7 @@
       </div>
     </div>
     <div class="cl-hero__frame" data-reveal="fade" style="--d:.2s">
-      <div class="cl-ph cl-ph--dark" data-reveal="wipe" style="--d:.3s">
-        <div class="cl-ph__inner cl-parallax" data-speed="0.06"><svg><use href="#i-image"/></svg>Hero image · 1:1</div>
-      </div>
+      <div class="cl-ph cl-ph--dark" data-img="home-hero" data-reveal="wipe" style="--d:.3s"><!--img--><img class="cl-ph__img cl-ph__img--parallax cl-parallax" src="assets/images/home-hero.jpg" alt="Modern glass-walled home glowing at dusk beside a pool" style="object-position:74% 50%" data-speed="0.06" fetchpriority="high" decoding="async"><!--/img--></div>
       <div class="cl-hero__tag" data-reveal style="--d:.9s">Los Altos · Palo Alto · Mountain View</div>
     </div>
   </div>
@@ -117,7 +115,7 @@
 <section class="cl-section bg-cream cl-about" id="about">
   <div class="cl-container cl-split">
     <div class="cl-about__media" data-reveal="left">
-      <div class="cl-ph cl-zoom"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>About image · 9:8</div></div>
+      <div class="cl-ph cl-zoom" data-img="home-about"><!--img--><img class="cl-ph__img" src="assets/images/home-about.jpg" alt="Styled living room with a navy wall, brass mirror and mustard throw" style="object-position:50% 40%" loading="lazy" decoding="async"><!--/img--></div>
       <div class="cl-about__badge" data-reveal style="--d:.35s">
         <div class="cl-h">Los Altos</div>
         <span>Local, Boutique Team</span>
@@ -280,7 +278,7 @@
       <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">Our core values,<br><em>your peace of mind.</em></h2>
       <div class="cl-rule" data-reveal style="--d:.2s"></div>
       <p class="cl-values__sub" data-reveal style="--d:.25s">Everything we do is built around you.</p>
-      <div class="cl-ph cl-zoom" data-reveal="wipe" style="--d:.2s"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Values image · 17:10</div></div>
+      <div class="cl-ph cl-zoom" data-img="home-values" data-reveal="wipe" style="--d:.2s"><!--img--><img class="cl-ph__img" src="assets/images/home-values.jpg" alt="Modern two-storey home with a glass balcony among tall pines" loading="lazy" decoding="async"><!--/img--></div>
     </div>
     <div class="cl-values__grid">
       <div class="cl-value" data-reveal>
@@ -310,7 +308,7 @@
       <div class="cl-eyebrow" data-reveal>Getting Started</div>
       <h2 class="cl-h cl-h2" data-reveal style="--d:.1s">From first call<br>to <em>fully managed.</em></h2>
       <p class="cl-process__intro" data-reveal style="--d:.2s">Handing over your property should feel easy. Four calm, clear steps, and we take care of the rest.</p>
-      <div class="cl-ph cl-zoom" data-reveal="wipe" style="--d:.2s"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Process image · 5:3</div></div>
+      <div class="cl-ph cl-zoom" data-img="home-process" data-reveal="wipe" style="--d:.2s"><!--img--><img class="cl-ph__img" src="assets/images/home-process.jpg" alt="Bright living room with cream sofas and a brick archway" loading="lazy" decoding="async"><!--/img--></div>
       <a href="#contact" class="cl-btn cl-btn--navy" data-reveal>Book a Free Consultation <span class="arr">→</span></a>
     </div>
     <div class="cl-timeline">
@@ -403,15 +401,18 @@
         <div class="cl-area__row"><h3 class="cl-h cl-h3">Los Altos</h3><span class="arr">→</span></div>
       </a>
       <a href="palo-alto.html" class="cl-area cl-zoom" data-reveal style="--d:.1s">
-        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Palo Alto</div></div>
+        <div class="cl-ph" data-img="city-palo-alto"><!--img--><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>city-palo-alto.jpg · 4:3
+          <span class="cl-ph__prompt">Tree-lined street in Palo Alto's Professorville with historic Craftsman homes, mature oaks, soft morning light, editorial real-estate photography, photorealistic, no text</span></div><!--/img--></div>
         <div class="cl-area__row"><h3 class="cl-h cl-h3">Palo Alto</h3><span class="arr">→</span></div>
       </a>
       <a href="#" class="cl-area cl-zoom" data-reveal style="--d:.2s">
-        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Mountain View</div></div>
+        <div class="cl-ph" data-img="city-mountain-view"><!--img--><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>city-mountain-view.jpg · 4:3
+          <span class="cl-ph__prompt">Castro Street in downtown Mountain View at dusk, outdoor café tables, warm string lights, low-rise storefronts, editorial lifestyle photography, photorealistic, no legible signage</span></div><!--/img--></div>
         <div class="cl-area__row"><h3 class="cl-h cl-h3">Mountain View</h3><span class="arr">→</span></div>
       </a>
       <a href="#" class="cl-area cl-zoom" data-reveal style="--d:.3s">
-        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Sunnyvale</div></div>
+        <div class="cl-ph" data-img="city-sunnyvale"><!--img--><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>city-sunnyvale.jpg · 4:3
+          <span class="cl-ph__prompt">Bright mid-century ranch home in Sunnyvale's Cherry Chase neighborhood, manicured front yard, clear blue sky, late afternoon sun, editorial real-estate photography, photorealistic, no text</span></div><!--/img--></div>
         <div class="cl-area__row"><h3 class="cl-h cl-h3">Sunnyvale</h3><span class="arr">→</span></div>
       </a>
     </div>
@@ -458,19 +459,22 @@
     </div>
     <div class="cl-posts">
       <a href="#" class="cl-post cl-zoom" data-reveal>
-        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Featured image</div></div>
+        <div class="cl-ph" data-img="blog-tenant-risk"><!--img--><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>blog-tenant-risk.jpg · 3:2
+          <span class="cl-ph__prompt">A rental application checklist on a clean desk with reading glasses, a pen and a laptop showing a blurred report, soft window light, shallow depth of field, form text blurred and unreadable, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces</span></div><!--/img--></div>
         <div class="cl-post__meta">Tenant Risk · Sep 18, 2026</div>
         <h3 class="cl-h cl-h3">5 warning signs of a bad tenant, and how to spot them early</h3>
         <p>From gaps in rental history to rushed move-in dates, here is what our screening looks for.</p>
       </a>
       <a href="#" class="cl-post cl-zoom" data-reveal style="--d:.12s">
-        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Featured image</div></div>
+        <div class="cl-ph" data-img="blog-owner-tips"><!--img--><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>blog-owner-tips.jpg · 3:2
+          <span class="cl-ph__prompt">Bright freshly refreshed living room in a Bay Area home, new light-grey paint, a few paint swatches and a small roller tray in the foreground, hardwood floors, large window, soft daylight, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces</span></div><!--/img--></div>
         <div class="cl-post__meta">Owner Tips · Sep 4, 2026</div>
         <h3 class="cl-h cl-h3">How to prepare your home for a higher rent</h3>
         <p>Small, smart upgrades that help Bay Area rentals lease faster and earn more.</p>
       </a>
       <a href="#" class="cl-post cl-zoom" data-reveal style="--d:.24s">
-        <div class="cl-ph"><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>Featured image</div></div>
+        <div class="cl-ph" data-img="blog-market-update"><!--img--><div class="cl-ph__inner"><svg><use href="#i-image"/></svg>blog-market-update.jpg · 3:2
+          <span class="cl-ph__prompt">Quiet Bay Area residential street in early autumn, golden and orange leaves on the trees and sidewalk, tidy single-family homes with porches, soft late-afternoon light, editorial real-estate photography, photorealistic, natural light, Bay Area California setting, no text, no logos, no watermark, no visible faces</span></div><!--/img--></div>
         <div class="cl-post__meta">Local Market · Aug 21, 2026</div>
         <h3 class="cl-h cl-h3">Bay Area rental market update: fall 2026</h3>
         <p>Where rents are heading in Los Altos, Palo Alto and nearby cities this season.</p>

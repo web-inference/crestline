@@ -4,7 +4,19 @@
 const fs = require('fs');
 const path = require('path');
 
-const CSS = fs.readFileSync(path.join(__dirname, 'crestline-global.css'), 'utf8');
+const IM = require('../data/images.js');
+const CSS_FILE = path.join(__dirname, 'crestline-global.css');
+
+/* object-position per photo slot, generated from data/images.js into a marked block of the global CSS */
+(function syncFocusCss() {
+  const rules = IM.all().filter((e) => e.focus).map((e) => `.cl-focus-${e.slot} img{object-position:${e.focus}}`).join('\n');
+  const block = '/* FOCUS-START (generated from data/images.js) */\n' + rules + '\n/* FOCUS-END */';
+  let css = fs.readFileSync(CSS_FILE, 'utf8');
+  const re = /\/\* FOCUS-START[\s\S]*?\/\* FOCUS-END \*\//;
+  css = re.test(css) ? css.replace(re, block) : css.replace(/\s*$/, '\n\n' + block + '\n');
+  fs.writeFileSync(CSS_FILE, css);
+})();
+const CSS = fs.readFileSync(CSS_FILE, 'utf8');
 
 /* ---------------- tokens ---------------- */
 const C = {
@@ -155,14 +167,25 @@ function button(label, href, variant = 'gold', o = {}) {
     ...(o.mt ? { _margin: box(o.mt, 0, 0, 0) } : {}),
   });
 }
-const image = (cls, o = {}) => widget('image', {
-  image: { url: PH, id: '', size: '', alt: o.alt || '', source: 'library' },
-  image_size: 'full', width: pct(100), _css_classes: `cl-img ${cls}`,
-  // AI image prompt shows as the element name in Elementor's Navigator
-  ...(o.prompt ? { _title: `IMG PROMPT: ${o.prompt}` } : {}),
-  ...(o.mb !== undefined ? { _margin: box(0, 0, o.mb, 0) } : {}),
-  ...(o.anim === false ? {} : anim(o.delay || 0, o.animType || 'fadeIn')),
-});
+/** Image widget. o.slot = file name (without extension) from data/images.js. When assets/images/<slot>.jpg exists the
+ *  widget uses that photo (Elementor copies it into the media library on import); otherwise it shows the default
+ *  placeholder and the Navigator name carries the file name and the AI prompt. */
+const image = (cls, o = {}) => {
+  const e = o.slot ? IM.get(o.slot) : null;
+  const url = e && e.file ? IM.urlFor(e) : PH;
+  const prompt = o.prompt || (e && e.prompt);
+  const title = e
+    ? (e.file ? `IMG ${e.file} (in site)` : `IMG FILE ${e.slot}.jpg | PROMPT: ${prompt}`)
+    : (prompt ? `IMG PROMPT: ${prompt}` : null);
+  return widget('image', {
+    image: { url, id: '', size: '', alt: o.alt || (e && e.alt) || '', source: 'library' },
+    image_size: 'full', width: pct(100),
+    _css_classes: `cl-img ${cls}` + (e && e.focus ? ` cl-focus-${e.slot}` : ''),
+    ...(title ? { _title: title } : {}),
+    ...(o.mb !== undefined ? { _margin: box(0, 0, o.mb, 0) } : {}),
+    ...(o.anim === false ? {} : anim(o.delay || 0, o.animType || 'fadeIn')),
+  });
+};
 const SVG = {
   search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>',
   home: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/>',

@@ -29,7 +29,7 @@ const hero = section([
     text('<p class="cl-hero__lang"><span class="cl-hero__langtag">EN</span><span class="cl-hero__langtag">中文</span>English &amp; Mandarin support for local, out-of-state and overseas owners</p>', { t: { family: SANS, size: 14, weight: 300, lh: 1.5 }, color: '#AEB6C3', delay: 650 }),
   ], { width: 54, justify: 'center' }),
   con([
-    image('cl-r-1-1', { alt: 'Bay Area rental home', delay: 200 }),
+    image('cl-r-1-1', { slot: 'home-hero', delay: 200 }),
     heading('Los Altos · Palo Alto · Mountain View', {
       tag: 'div', t: { family: SANS, size: 12, sizeM: 10, weight: 400, lh: 1, ls: 1.9, transform: 'uppercase' }, color: '#E9ECF0',
       cls: 'cl-hero-tag', delay: 700, extra: {
@@ -69,7 +69,7 @@ const stats = section([
 
 const about = section([
   con([
-    image('cl-r-9-8', { alt: 'Crestline team in Los Altos', animType: 'fadeInLeft' }),
+    image('cl-r-9-8', { slot: 'home-about', animType: 'fadeInLeft' }),
     con([
       heading('Los Altos', { tag: 'div', t: { family: SERIF, size: 40, sizeM: 30, weight: 400, lh: 1 }, color: C.gold, mb: 16, anim: false }),
       heading('Local, Boutique Team', { tag: 'div', t: { family: SANS, size: 13, sizeM: 11, weight: 400, lh: 1, ls: 2.9, transform: 'uppercase' }, color: '#E9ECF0', anim: false }),
@@ -175,7 +175,7 @@ const values = section([
     heading('Our core values,<br><em>your peace of mind.</em>', { cls: 'cl-h', mb: 34, delay: 100 }),
     widget('divider', { width: px(96), align: 'left', color: C.navy, weight: px(1), gap: px(0), _margin: box(0, 0, 34, 0), ...anim(200) }),
     heading('Everything we do is built around you.', { tag: 'p', t: { family: SERIF, size: 26, sizeM: 22, weight: 400, lh: 1.4, style: 'italic' }, color: '#5A5F69', mb: 56, delay: 250 }),
-    image('cl-r-17-10', { alt: 'Modern Bay Area home', delay: 200 }),
+    image('cl-r-17-10', { slot: 'home-values', delay: 200 }),
   ], { width: 45 }),
   con([
     value('You Come First', 'Your goals guide every decision we make, from how we price your home to who we choose to live in it.', 0),
@@ -190,7 +190,7 @@ const process = section([
     eyebrow('Getting Started'),
     heading('From first call<br>to <em>fully managed.</em>', { cls: 'cl-h', mb: 30, delay: 100 }),
     text('<p>Handing over your property should feel easy. Four calm, clear steps, and we take care of the rest.</p>', { t: T.small, maxW: 420, mb: 52, delay: 200 }),
-    image('cl-r-5-3', { alt: 'Bright living room', mb: 36, delay: 200 }),
+    image('cl-r-5-3', { slot: 'home-process', mb: 36, delay: 200 }),
     button('Book a Free Consultation →', '#contact', 'navy', { pad: box(22, 28, 22, 28) }),
   ], { width: 42 }),
   con([
@@ -221,8 +221,8 @@ const pricing = section([
   ], { grid: [3, 2, 1], gap: 28 }),
 ], { bg: C.white, extra: { _element_id: 'fees' } });
 
-const area = (name, href, delay, prompt) => con([
-  image('cl-r-4-3', { alt: `${name} rental home`, anim: false, prompt }),
+const area = (name, href, delay, slot) => con([
+  image('cl-r-4-3', { slot, anim: false }),
   con([
     heading(name, { tag: 'h3', t: { ...T.h3, size: 28 }, anim: false }),
     heading('→', { tag: 'div', t: { family: SANS, size: 20, weight: 300, lh: 1 }, color: C.goldDark, cls: 'cl-arrow', anim: false }),
@@ -235,7 +235,7 @@ const areas = section([
   headRow('Service Areas', 'Areas <em>We Serve</em>',
     text('<p>Each area links to its own page with local history and rental insights. New areas can be added any time.</p>', { maxW: 520, delay: 200 })),
   con([
-    ...CITIES.map((c, i) => area(c.name, cityBuilt(c.slug) ? `/service-areas/${c.slug}/` : '/service-areas/#cities', (i % 3) * 100, c.prompt)),
+    ...CITIES.map((c, i) => area(c.name, cityBuilt(c.slug) ? `/service-areas/${c.slug}/` : '/service-areas/#cities', (i % 3) * 100, `city-${c.slug}`)),
   ], { grid: [3, 2, 1], gap: 28, rowGap: 40 }),
   text(`<p>Our office is in Los Altos. Also serving: ${CITIES.ALSO_SERVING.filter((n) => n !== 'Los Altos').join(' · ')}</p>`, { t: { family: SANS, size: 14, weight: 300, lh: 1.6 }, color: '#8E9198', delay: 100, extra: {} }),
 ], { bg: C.cream, extra: { _element_id: 'areas', border_border: 'solid', border_width: box(1, 0, 0, 0), border_color: '#E7E1D6' } });
@@ -251,8 +251,8 @@ const testimonials = section([
   ], { grid: [3, 2, 1], gap: 28 }),
 ], { bg: C.sand });
 
-const post = (meta, title, excerpt, delay) => con([
-  image('cl-r-post', { alt: title, mb: 28, anim: false }),
+const post = (meta, title, excerpt, delay, slot) => con([
+  image('cl-r-post', { slot, mb: 28, anim: false }),
   heading(meta, { tag: 'div', t: T.meta, color: C.eyebrowLight, mb: 12, anim: false }),
   heading(title, { tag: 'h3', t: { family: SERIF, size: 27, sizeM: 25, weight: 400, lh: 1.28 }, cls: 'cl-post-title', mb: 14, anim: false }),
   text(`<p>${excerpt}</p>`, { t: { family: SANS, size: 15, weight: 300, lh: 1.75 }, anim: false }),
@@ -262,9 +262,9 @@ const blog = section([
     heading('View All Articles →', { tag: 'div', t: { family: SANS, size: 13, weight: 400, lh: 1, ls: 2.9, transform: 'uppercase' }, color: C.goldDark, cls: 'cl-link', link: '/blog/', delay: 200 }),
     { mb: 56 }),
   con([
-    post('Tenant Risk · Sep 18, 2026', '5 warning signs of a bad tenant, and how to spot them early', 'From gaps in rental history to rushed move-in dates, here is what our screening looks for.', 0),
-    post('Owner Tips · Sep 4, 2026', 'How to prepare your home for a higher rent', 'Small, smart upgrades that help Bay Area rentals lease faster and earn more.', 120),
-    post('Local Market · Aug 21, 2026', 'Bay Area rental market update: fall 2026', 'Where rents are heading in Los Altos, Palo Alto and nearby cities this season.', 240),
+    post('Tenant Risk · Sep 18, 2026', '5 warning signs of a bad tenant, and how to spot them early', 'From gaps in rental history to rushed move-in dates, here is what our screening looks for.', 0, 'blog-tenant-risk'),
+    post('Owner Tips · Sep 4, 2026', 'How to prepare your home for a higher rent', 'Small, smart upgrades that help Bay Area rentals lease faster and earn more.', 120, 'blog-owner-tips'),
+    post('Local Market · Aug 21, 2026', 'Bay Area rental market update: fall 2026', 'Where rents are heading in Los Altos, Palo Alto and nearby cities this season.', 240, 'blog-market-update'),
   ], { grid: [3, 2, 1], gap: 36, rowGap: 48 }),
 ], { bg: C.cream, extra: { _element_id: 'blog' } });
 
